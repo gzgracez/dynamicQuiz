@@ -23,10 +23,12 @@ var quiz = {
 	]
 }
 
+document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
+
 function nextQuestion() {
-	if currentQuestion<quiz["questions"].length {
-		currentQuestion+=1;
-	}
+	// if currentQuestion<quiz["questions"].length {
+	// 	currentQuestion+=1;
+	// }
 	console.log(currentQuestion);
-	document.getElementById("question").innerHTML = quiz["questions"][currentQuestion];
+	document.getElementById("question").innerHTML = quiz["questions"][currentQuestion]["text"];
 }

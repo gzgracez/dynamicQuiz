@@ -16,25 +16,33 @@
   <div class="main">
     <h1>Dynamic Quiz</h1>
 
-    <div id="question"></div>
-    <!-- <form action="" id="nameForm">
-      First name:<br>
-      <input type="text" id="firstname" name="firstname" value="Mickey">
+    <div id="nameform"></div>
+    <form>
+      <div class="row">
+        <div class="row collapse">
+          <div class="small-10 columns">
+            <input type="text" placeholder="FirstName LastName" name="name" required/>
+          </div>
+          <div class="small-2 columns">
+          <button class="postfix" type="submit">Go</button>
+          </div>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+
       <br>
-      Last name:<br>
-      <input type="text" name="lastname" value="Mouse">
-      <br><br>
-      <input type="submit" value="Submit">
-    </form>  -->
-    <button id="nextQuestion">Next Question!</button>
-  </div>
-  <script src="static/js/vendor/modernizr.js"></script>
-  <script src="static/js/vendor/jquery.js"></script>
-  <script src="static/js/foundation.min.js"></script>
-  <script src="static/js/quiz.js"></script>
-  <script src="static/js/script.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-</body>
-</html>
+
+      <div id="question"></div>
+      <br>
+      <button id="nextQuestion">Next Question!</button>
+    </div>
+    <script src="static/js/vendor/modernizr.js"></script>
+    <script src="static/js/vendor/jquery.js"></script>
+    <script src="static/js/foundation.min.js"></script>
+    <script src="static/js/quiz.js"></script>
+    <script src="static/js/script.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+  </html>

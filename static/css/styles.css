@@ -34,3 +34,7 @@ a:active {
     text-align: center;
     background-color: rgba(242, 242, 242, 0.9);
 }
+
+label {
+    color: #000000;
+}

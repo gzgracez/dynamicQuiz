@@ -1,7 +1,8 @@
 var currentQuestion = -1;
 
-document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
-// document.getElementById("nameForm").addEventListener("submit", test);
+$(document).ready(function() {
+	document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
+})
 
 function nextQuestion() {
 	if (currentQuestion<quiz["questions"].length-1) {

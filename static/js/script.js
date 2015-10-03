@@ -1,10 +1,10 @@
-var currentQuestion = 0;
+var currentQuestion = -1;
 
 document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
 // document.getElementById("nameForm").addEventListener("submit", test);
 
 function nextQuestion() {
-	while (currentQuestion<quiz["questions"].length) {
+	if (currentQuestion<quiz["questions"].length-1) {
 		currentQuestion+=1;
 	}
 	console.log(currentQuestion);

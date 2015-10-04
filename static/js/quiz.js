@@ -38,3 +38,13 @@ var quiz = {
 		},
 	]
 }
+
+// var quiz;
+
+// $(document).ready(function() {
+// 	$.getJSON("https://raw.githubusercontent.com/gzgracez/dynamicQuiz/gh-pages/quiz.json?token=AGOnm2jbxQ508cb2AXgG-ocSYDvoLCtTks5WGdzJwA%3D%3D", function(json) {
+// 		quiz = json;
+// 		quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2))
+// 		console.log(json);
+// 	});
+// });

@@ -14,17 +14,22 @@
 </head>
 <body>
  <div class="container">
-  <h1>Dynamic Quiz</h1>
+  <h1 id="title">Grace's Dynamic Quiz</h1>
 
-  <form id="nameform">
+  <form id="nameForm">
     <label for="name">Name:</label>
     <input type="text" name="nameValue" placeholder="FirstName LastName" ><br><br>
     <input type="submit" value="Submit">
   </form>
   <h3 id="welcome"></h3>
-  
   <div id="questionNumber"></div>
   <div id="question"></div>
+  <form id="answerChoices">
+    <input type="radio" name="answers" id="1"><br>
+    <input type="radio" name="answers" id="2"><br>
+    <input type="radio" name="answers" id="3"><br>
+    <input type="radio" name="answers" id="4">
+  </form>
   <br>
   <button id="nextQuestion">Next Question!</button>
 </div>

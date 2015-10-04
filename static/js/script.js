@@ -1,20 +1,22 @@
 var currentQuestion = -1;
 
 $(document).ready(function() {
-  $('#nameform').submit(function (e) {
+  $('#answerChoices').hide();
+  $('#nextQuestion').hide();
+  $('#nameForm').submit(function (e) {
     e.preventDefault();
     nameForm();
   });
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
-})
+});
 
 function nameForm(){
-  var nameArray = $('#nameform').serializeArray();
+  var nameArray = $('#nameForm').serializeArray();
   var name = nameArray[0]["value"];
-  $('#nameform').hide();
+  $('#nameForm').hide();
+  $('#nextQuestion').show();
   $('#welcome').text("Welcome " + name + "!");
   nextQuestion();
-  console.log(name);
 }
 
 function nextQuestion() {
@@ -24,12 +26,4 @@ function nextQuestion() {
 	console.log(currentQuestion);
   $('#questionNumber').text("Question " + (currentQuestion+1));
 	$('#question').text(quiz["questions"][currentQuestion]["text"]);
-}
-
-function test(){
-	console.log(document.getElementById("firstname").value);
-	var name = document.getElementById("firstname").value;
-
-
-	document.getElementById("question").innerHTML = name;
 }

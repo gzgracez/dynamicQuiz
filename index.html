@@ -21,15 +21,20 @@
     <input type="text" name="nameValue" placeholder="First Name" ><br><br>
     <input type="submit" value="Submit">
   </form>
-  <h3 id="welcome"></h3>
-  <div id="questionNumber"></div>
-  <div id="question"></div>
+  <h2 id="welcome"></h2>
+  <h3 id="questionNumber"></h3>
+  <h4 id="question"></h4>
   <form id="answerChoices">
-    <input type="radio" name="answers" id="0"><br>
-    <input type="radio" name="answers" id="1"><br>
-    <input type="radio" name="answers" id="2"><br>
-    <input type="radio" name="answers" id="3"><br>
+    <input type="radio" name="answers" id="0">
+    <label for="0" id="ansLabels"></label><br><br>
+    <input type="radio" name="answers" id="1">
+    <label for="1" id="ansLabels"></label><br><br>
+    <input type="radio" name="answers" id="2">
+    <label for="2" id="ansLabels"></label><br><br>
+    <input type="radio" name="answers" id="3">
+    <label for="3" id="ansLabels"></label><br><br>
     <input type="radio" name="answers" id="4">
+    <label for="4" id="ansLabels"></label>
   </form>
   <br>
   <button id="nextQuestion">Next Question!</button>

@@ -36,13 +36,18 @@ function nextQuestion() {
 	$('#question').text(quiz["questions"][currentQuestion]["text"]);
   var numAns = 2 + Math.ceil((Math.random()*3));
   console.log(numAns);
-  for (var i = 0; i<numAns-1; i++) {
-    var aID = "#" + (i + 1);
+  for (var i = 0; i<numAns; i++) {
+    $('#' + i).show();
+    var aID = "label[for=" + i + "]";
     $(aID).show();
+    console.log(aID);
     console.log(quiz["questions"][currentQuestion]["answers"][i]);
-    $(aID).text(quiz["questions"][currentQuestion]["answers"][i]);
+    $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
   }
   for (var i = numAns; i<5; i++) {
+    console.log("hide");
     $('#' + i).hide();
+    var labelID = "label[for=" + i + "]";
+    $(labelID).hide();
   }
 }

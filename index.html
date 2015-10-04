@@ -9,36 +9,28 @@
 
   <link rel="stylesheet" href="static/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="static/css/styles.css">
+  <link rel="stylesheet" href="static/css/styles2.css">
 
 </head>
 <body>
-  <div class="main">
-    <h1>Dynamic Quiz</h1>
+ <div class="container">
+  <h1>Dynamic Quiz</h1>
 
-    <div id="nameform"></div>
+  <div id="nameform">
     <form>
-      <div class="row">
-        <div class="row collapse">
-          <div class="small-10 columns">
-            <input type="text" id="name" placeholder="FirstName LastName" name="name" required/>
-          </div>
-          <div class="small-2 columns">
-          <button class="postfix" type="submit">Go</button>
-          </div>
-        </div>
-        <input type="submit" value="Submit">
-      </form>
+      <label for="name">Name:</label>
+      <input type="text" name="name" placeholder="FirstName LastName" ><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
-      <br>
-
-      <div id="question"></div>
-      <br>
-      <button id="nextQuestion">Next Question!</button>
-    </div>
-    <script src="static/js/bootstrap.min.js"></script>
-    <script src="static/js/jquery-2.1.4.min.js"></script>
-    <script src="static/js/quiz.js"></script>
-    <script src="static/js/script.js"></script>
-  </body>
-  </html>
+  <div id="question"></div>
+  <br>
+  <button id="nextQuestion">Next Question!</button>
+</div>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/jquery-2.1.4.min.js"></script>
+<script src="static/js/quiz.js"></script>
+<script src="static/js/script.js"></script>
+</body>
+</html>

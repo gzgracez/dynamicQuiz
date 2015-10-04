@@ -38,3 +38,7 @@ a:active {
 label {
     color: #000000;
 }
+
+p, h1 {
+    color: #000000;
+}

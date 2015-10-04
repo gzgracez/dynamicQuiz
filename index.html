@@ -16,20 +16,20 @@
  <div class="container">
   <h1>Dynamic Quiz</h1>
 
-  <div id="nameform">
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" name="name" placeholder="FirstName LastName" ><br><br>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-
+  <form id="nameform">
+    <label for="name">Name:</label>
+    <input type="text" name="nameValue" placeholder="FirstName LastName" ><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <h3 id="welcome"></h3>
+  
+  <div id="questionNumber"></div>
   <div id="question"></div>
   <br>
   <button id="nextQuestion">Next Question!</button>
 </div>
-<script src="static/js/bootstrap.min.js"></script>
 <script src="static/js/jquery-2.1.4.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
 <script src="static/js/quiz.js"></script>
 <script src="static/js/script.js"></script>
 </body>

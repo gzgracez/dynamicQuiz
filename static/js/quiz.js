@@ -1,5 +1,5 @@
 var quiz = { 
-	"title": "Physics Quiz",
+	"title": "Grace's Dynamic Quiz",
 	"description": ".....",
 	"meta_tags": [
 		"sceince","physics", "fun"
@@ -7,16 +7,34 @@ var quiz = {
 	"difficulty": 1-20,
 	"questions": [
 		{
-			"text": "What is the secret number?",
-			"answers": ["0", "42", "17"],
-			"correct_answer": 1,
+			"text": "What is the specific heat of water?",
+			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"correct_answer": 0,
 			"meta_tags": ["geeky humor"]
 		},
 		{
-			"text": "Question 2?",
-			"answers": ["0", "42", "17"],
-			"correct_answer": 1,
+			"text": "What does the symbol Au stand for?",
+			"answers": ["aluminum", "silver", "gold", "arsenic", "actinium"],
+			"correct_answer": 2,
 			"meta_tags": ["geeky humor"]
-		}
+		},
+		{
+			"text": "What is the specific heat of water?",
+			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"correct_answer": 0,
+			"meta_tags": ["geeky humor"]
+		},
+		{
+			"text": "What is the specific heat of water?",
+			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"correct_answer": 0,
+			"meta_tags": ["geeky humor"]
+		},
+		{
+			"text": "What is the specific heat of water?",
+			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"correct_answer": 0,
+			"meta_tags": ["geeky humor"]
+		},
 	]
 }

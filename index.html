@@ -8,7 +8,6 @@
   <title>Dynamic Quiz</title>
 
   <link rel="stylesheet" href="static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="static/css/styles2.css">
   <link rel="shortcut icon" href="static/1.ico" />
 
@@ -17,16 +16,24 @@
  <div class="container">
   <h1 id="title"></h1>
 
-  <h4 id="nameFormWarning">Please enter your name before proceeding!</h4>
-  <form id="nameForm">
-    <label for="name">First Name:</label>
-    <input type="text" name="nameValue" placeholder="First Name" ><br><br>
-    <input type="submit" value="Submit">
+  <!-- <h4 id="nameFormWarning">Please enter your name before proceeding!</h4> -->
+  <div class="alert alert-danger" id="nameFormWarning" role="alert">
+    <p class="nameAlert">Please fill out your name before proceeding!&nbsp;<a href="" class="close nameAlert" data-hide="alert">&times;</a></p>
+  </div>
+
+  <form id="nameForm" role="form">
+    <div class="form-group">
+      <label for="name">First Name:</label>
+      <input type="text" name="nameValue" placeholder="First Name" class="form-control"><br>
+      <input class="btn btn-primary" class="form-control" type="submit" value="Submit">
+    </div>
   </form>
+  
   <h2 id="welcome"></h2>
   <h4 id="answerWarning">Please enter an answer before proceeding!</h4>
   <h3 id="questionNumber"></h3>
   <h4 id="question"></h4>
+  
   <form id="answerChoices">
     <input type="radio" name="answers" id="0">
     <label for="0" id="ansLabels"></label><br>
@@ -39,8 +46,7 @@
     <input type="radio" name="answers" id="4">
     <label for="4" id="ansLabels"></label>
   </form>
-  <br>
-  <button id="nextQuestion">Next Question!</button>
+  <button id="nextQuestion" class="btn btn-success btn-sm">Next Question!</button>
   <div id="score">
     <h2 id="nameScore"></h2>
   </div>

@@ -16,6 +16,9 @@ $(document).ready(function() {
   $('#nextQuestion').hide();
   $('#answerWarning').hide();
   $('#nameFormWarning').hide();
+  $('[data-hide]').on("click", function(){
+    $('#nameFormWarning').hide();
+  });
   $('#nameForm').submit(function (e) {
     e.preventDefault();
     nameForm();

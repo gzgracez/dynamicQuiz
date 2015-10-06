@@ -48,7 +48,10 @@ function whichChecked() {
   for (var i = 0; i < numAns; i++) {
     if ($("input[name='answers'][id='" + i + "']").is(':checked')) {
       console.log ("This number is checked " + i);
-      userAnswers.push([currentQuestion, i]);
+      if (i === quiz["questions"][currentQuestion]["correct_answer"])
+        userAnswers.push([currentQuestion, true, i]);
+      else 
+        userAnswers.push([currentQuestion, false, i]);
     }
   }
 }
@@ -66,7 +69,6 @@ function nextQuestion() {
       // if an answer is checked
       else {
         $('#answerWarning').hide();
-        // ***add whether user is correct, what answer was chosen
         whichChecked();
         currentQuestion+=1;
         console.log(quizLength);
@@ -127,16 +129,14 @@ function nextQuestion() {
     // if an answer is checked
     else {
       $('#answerWarning').hide();
-      // ***add whether user is correct, what answer was chosen
-      whichChecked();
+      whichChecked();// Display end of quiz screen
+      $('#welcome').hide();
+      $('#questionNumber').hide();
+      $('#question').hide();
+      $('#nextQuestion').hide();
+      $('#answerChoices').hide();
+      $('#score').show();
+      $('#nameScore').text(name + ", your score on this quiz is:");
     }
-    // Display end of quiz screen
-    $('#welcome').hide();
-    $('#questionNumber').hide();
-    $('#question').hide();
-    $('#nextQuestion').hide();
-    $('#answerChoices').hide();
-    $('#score').show();
-    $('#nameScore').text(name + ", your score on this quiz is:");
   }
 }

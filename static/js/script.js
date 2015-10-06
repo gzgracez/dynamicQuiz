@@ -5,6 +5,7 @@ var currentQuestion = -1;
 var quizLength = 0;
 var numAns = 0;
 var userAnswers = [];
+var score = 0;
 
 // Initial setup
 $(document).ready(function() {
@@ -50,9 +51,17 @@ function whichChecked() {
       console.log ("This number is checked " + i);
       if (i === quiz["questions"][currentQuestion]["correct_answer"])
         userAnswers.push([currentQuestion, true, i]);
-      else 
+      else
         userAnswers.push([currentQuestion, false, i]);
     }
+  }
+}
+
+// Calculate Score
+function calculateScore() {
+  for (var i = 0; i < quizLength; i++){
+    if (userAnswers[currentQuestion][1])
+      score++;
   }
 }
 
@@ -136,7 +145,12 @@ function nextQuestion() {
       $('#nextQuestion').hide();
       $('#answerChoices').hide();
       $('#score').show();
-      $('#nameScore').text(name + ", your score on this quiz is:");
+      $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength);
+      var qResult = document.createElement("p");
+      var qNode = document.createTextNode("Question 1: ");
+      qResult.appendChild(qNode);
+      var dElement = document.getElementById("score");
+      dElement.appendChild(qResult);
     }
   }
 }

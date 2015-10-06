@@ -11,6 +11,7 @@ $(document).ready(function() {
   $('#title').text("Grace's Chemistry Quiz");
   $('#answerChoices').hide();
   $('#nextQuestion').hide();
+  $('#answerWarning').hide();
   $('#nameFormWarning').hide();
   $('#nameForm').submit(function (e) {
     e.preventDefault();
@@ -43,32 +44,58 @@ function nextQuestion() {
       // ***add whether user is correct, what answer was chosen
       userAnswers.push([currentQuestion]);
       if (!$("input[name='answers']").is(':checked')){
+        $('#answerWarning').show();
         console.log("NOTHING CHECKED");
       }
       else {
         console.log("SOMETHING CHECKED");
+        $('#answerWarning').hide();
+        currentQuestion+=1;
+        console.log(quizLength);
+        $('#questionNumber').text("Question " + (currentQuestion+1));
+        $('#question').text(quiz["questions"][currentQuestion]["text"]);
+        var numAns = 2 + Math.ceil((Math.random()*3));
+        console.log(numAns);
+        // uncheck answers
+        $('input[name="answers"]').prop('checked',false);
+        for (var i = 0; i<numAns; i++) {
+          $('#' + i).show();
+          // answer choices radio button labels
+          var aID = "label[for=" + i + "]";
+          $(aID).show();
+          $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+        }
+        // hide excess answer choices
+        for (var a = numAns; a<5; a++) {
+          $('#' + a).hide();
+          var labelID = "label[for=" + a + "]";
+          $(labelID).hide();
+        }
       }
-    }
-    currentQuestion+=1;
-    console.log(quizLength);
-    $('#questionNumber').text("Question " + (currentQuestion+1));
-    $('#question').text(quiz["questions"][currentQuestion]["text"]);
-    var numAns = 2 + Math.ceil((Math.random()*3));
-    console.log(numAns);
-    // uncheck answers
-    $('input[name="answers"]').prop('checked',false);
-    for (var i = 0; i<numAns; i++) {
-      $('#' + i).show();
-      // answer choices radio button labels
-      var aID = "label[for=" + i + "]";
-      $(aID).show();
-      $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
-    }
-    // hide excess answer choices
-    for (var a = numAns; a<5; a++) {
-      $('#' + a).hide();
-      var labelID = "label[for=" + a + "]";
-      $(labelID).hide();
+    } 
+    // if first question of quiz
+    else {
+      currentQuestion+=1;
+      console.log(quizLength);
+      $('#questionNumber').text("Question " + (currentQuestion+1));
+      $('#question').text(quiz["questions"][currentQuestion]["text"]);
+      var numAns = 2 + Math.ceil((Math.random()*3));
+      console.log(numAns);
+      // uncheck answers
+      $('input[name="answers"]').prop('checked',false);
+      for (var i = 0; i<numAns; i++) {
+        $('#' + i).show();
+        // answer choices radio button labels
+        var aID = "label[for=" + i + "]";
+        $(aID).show();
+        $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+      }
+      // hide excess answer choices
+      for (var a = numAns; a<5; a++) {
+        $('#' + a).hide();
+        var labelID = "label[for=" + a + "]";
+        $(labelID).hide();
+      }
     }
   }
 

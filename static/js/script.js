@@ -3,6 +3,7 @@
 var name = "Name";
 var currentQuestion = -1;
 var quizLength = 0;
+var numAns = 0;
 var userAnswers = [];
 
 // Initial setup
@@ -40,8 +41,12 @@ function nameForm(){
 
 // Check which radio button is checked and record
 function whichChecked() {
-  if ($("input[name='answers'][id='" + currentQuestion + "']").prop("checked",true))
-    userAnswers.push([currentQuestion]);
+  for (var i = 0; i < numAns; i++) {
+    if ($("input[name='answers'][id='" + i + "']").is(':checked')) {
+      console.log ("This number is checked " + i);
+      userAnswers.push([currentQuestion, i]);
+    }
+  }
 }
 
 // Go to next question in quiz
@@ -63,11 +68,11 @@ function nextQuestion() {
         console.log(quizLength);
         $('#questionNumber').text("Question " + (currentQuestion+1));
         $('#question').text(quiz["questions"][currentQuestion]["text"]);
-        var numAns = 2 + Math.ceil((Math.random()*3));
+        numAns = 2 + Math.ceil((Math.random()*3));
         console.log(numAns);
         // uncheck answers
         $('input[name="answers"]').prop('checked',false);
-        for (var i = 0; i<numAns; i++) {
+        for (var i = 0; i < numAns; i++) {
           $('#' + i).show();
           // answer choices radio button labels
           var aID = "label[for=" + i + "]";
@@ -81,19 +86,6 @@ function nextQuestion() {
           $(labelID).hide();
         }
       }
-    } 
-    // if last question of quiz
-    else if (currentQuestion === quizLength) {
-      // if answer is not checked
-      if (!$("input[name='answers']").is(':checked')){
-        $('#answerWarning').show();
-      }
-      // if an answer is checked
-      else {
-        $('#answerWarning').hide();
-        // ***add whether user is correct, what answer was chosen
-        whichChecked();
-      }
     }
     // if before first question of quiz
     else {
@@ -101,28 +93,40 @@ function nextQuestion() {
       console.log(quizLength);
       $('#questionNumber').text("Question " + (currentQuestion+1));
       $('#question').text(quiz["questions"][currentQuestion]["text"]);
-      var numAns = 2 + Math.ceil((Math.random()*3));
+      numAns = 2 + Math.ceil((Math.random()*3));
       console.log(numAns);
       // uncheck answers
       $('input[name="answers"]').prop('checked',false);
-      for (var i = 0; i<numAns; i++) {
-        $('#' + i).show();
+      for (var j = 0; j<numAns; j++) {
+        $('#' + j).show();
         // answer choices radio button labels
-        var aID = "label[for=" + i + "]";
-        $(aID).show();
-        $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+        var aIDs = "label[for=" + j + "]";
+        $(aIDs).show();
+        $(aIDs).html(quiz["questions"][currentQuestion]["answers"][j]);
       }
       // hide excess answer choices
-      for (var a = numAns; a<5; a++) {
-        $('#' + a).hide();
-        var labelID = "label[for=" + a + "]";
-        $(labelID).hide();
+      for (var e = numAns; e<5; e++) {
+        $('#' + e).hide();
+        var labelIDh = "label[for=" + e + "]";
+        $(labelIDh).hide();
       }
     }
   }
 
   // End of quiz
   else {
+    // Check last question of quiz
+    // if answer is not checked
+    if (!$("input[name='answers']").is(':checked')){
+      $('#answerWarning').show();
+    }
+    // if an answer is checked
+    else {
+      $('#answerWarning').hide();
+      // ***add whether user is correct, what answer was chosen
+      whichChecked();
+    }
+    // Display end of quiz screen
     $('#welcome').hide();
     $('#questionNumber').hide();
     $('#question').hide();

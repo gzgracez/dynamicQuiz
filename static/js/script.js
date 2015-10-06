@@ -18,6 +18,7 @@ $(document).ready(function() {
   $('#nameFormWarning').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
+    $('#answerWarning').hide();
   });
   $('#nameForm').submit(function (e) {
     e.preventDefault();

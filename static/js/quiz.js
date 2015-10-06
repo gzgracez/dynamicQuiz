@@ -8,7 +8,7 @@ var quiz = {
 	"questions": [
 		{
 			"text": "What is the specific heat of water?",
-			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"answers": ["4.18 J/g&degC", "5.18 J/g&degC", "40.56 J/g&degC", "20.56 J/g&degC", "-2.56 J/g&degC"],
 			"correct_answer": 0,
 			"meta_tags": ["geeky humor"]
 		},
@@ -20,19 +20,19 @@ var quiz = {
 		},
 		{
 			"text": "What is the specific heat of water?",
-			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"answers": ["4.18 J/g&degC", "5.18 J/g&degC", "40.56 J/g&degC", "20.56 J/g&degC", "-2.56 J/g&degC"],
 			"correct_answer": 0,
 			"meta_tags": ["geeky humor"]
 		},
 		{
 			"text": "What is the specific heat of water?",
-			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"answers": ["4.18 J/g&degC", "5.18 J/g&degC", "40.56 J/g&degC", "20.56 J/g&degC", "-2.56 J/g&degC"],
 			"correct_answer": 0,
 			"meta_tags": ["geeky humor"]
 		},
 		{
 			"text": "What is the specific heat of water?",
-			"answers": ["4.18 J/g˚C", "5.18 J/g˚C", "40.56 J/g˚C", "20.56 J/g˚C", "-2.56 J/g˚C"],
+			"answers": ["4.18 J/g&degC", "5.18 J/g&degC", "40.56 J/g&degC", "20.56 J/g&degC", "-2.56 J/g&degC"],
 			"correct_answer": 0,
 			"meta_tags": ["geeky humor"]
 		},

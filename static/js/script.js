@@ -1,3 +1,5 @@
+// Make separate method for checking which answer is selected
+
 var name = "Name";
 var currentQuestion = -1;
 var quizLength = 0;
@@ -36,20 +38,27 @@ function nameForm(){
   }
 }
 
+// Check which radio button is checked and record
+function whichChecked() {
+  if ($("input[name='answers'][id='" + currentQuestion + "']").prop("checked",true))
+    userAnswers.push([currentQuestion]);
+}
+
 // Go to next question in quiz
 function nextQuestion() {
-  // Questions in quiz
+  // Before end of quiz
   if (currentQuestion<quizLength-1) {
+    // if one of the quiz questions
     if (currentQuestion > -1) {
-      // ***add whether user is correct, what answer was chosen
-      userAnswers.push([currentQuestion]);
+      // if no answer is checked
       if (!$("input[name='answers']").is(':checked')){
         $('#answerWarning').show();
-        console.log("NOTHING CHECKED");
       }
+      // if an answer is checked
       else {
-        console.log("SOMETHING CHECKED");
         $('#answerWarning').hide();
+        // ***add whether user is correct, what answer was chosen
+        whichChecked();
         currentQuestion+=1;
         console.log(quizLength);
         $('#questionNumber').text("Question " + (currentQuestion+1));
@@ -73,7 +82,20 @@ function nextQuestion() {
         }
       }
     } 
-    // if first question of quiz
+    // if last question of quiz
+    else if (currentQuestion === quizLength) {
+      // if answer is not checked
+      if (!$("input[name='answers']").is(':checked')){
+        $('#answerWarning').show();
+      }
+      // if an answer is checked
+      else {
+        $('#answerWarning').hide();
+        // ***add whether user is correct, what answer was chosen
+        whichChecked();
+      }
+    }
+    // if before first question of quiz
     else {
       currentQuestion+=1;
       console.log(quizLength);

@@ -48,7 +48,7 @@ function nameForm(){
 function whichChecked() {
   for (var i = 0; i < numAns; i++) {
     if ($("input[name='answers'][id='" + i + "']").is(':checked')) {
-      console.log ("This number is checked " + i);
+      console.log ("This number is checked " + i + " " + quiz["questions"][currentQuestion]["correct_answer"]);
       if (i === quiz["questions"][currentQuestion]["correct_answer"])
         userAnswers.push([currentQuestion, true, i]);
       else
@@ -60,8 +60,10 @@ function whichChecked() {
 // Calculate Score
 function calculateScore() {
   for (var i = 0; i < quizLength; i++){
-    if (userAnswers[currentQuestion][1])
+    if (userAnswers[i][1]) {
       score++;
+      console.log("CORRECT" + currentQuestion);
+    }
   }
 }
 
@@ -145,12 +147,15 @@ function nextQuestion() {
       $('#nextQuestion').hide();
       $('#answerChoices').hide();
       $('#score').show();
+      calculateScore();
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength);
-      var qResult = document.createElement("p");
-      var qNode = document.createTextNode("Question 1: ");
-      qResult.appendChild(qNode);
-      var dElement = document.getElementById("score");
-      dElement.appendChild(qResult);
+      for (var r = 0; r < quizLength; r++) {
+        var qResult = document.createElement("p");
+        var qNode = document.createTextNode("Question " + (r + 1) + ": " + "correct/incorrect - incorrect-reiterate question");
+        qResult.appendChild(qNode);
+        var dElement = document.getElementById("score");
+        dElement.appendChild(qResult);
+      }
     }
   }
 }

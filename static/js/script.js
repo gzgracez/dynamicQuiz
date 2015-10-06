@@ -44,6 +44,31 @@ function nameForm(){
   }
 }
 
+// Show questions and answers
+function generateQA (){
+  currentQuestion+=1;
+  console.log(quizLength);
+  $('#questionNumber').text("Question " + (currentQuestion+1));
+  $('#question').text(quiz["questions"][currentQuestion]["text"]);
+  numAns = 2 + Math.ceil((Math.random()*3));
+  console.log(numAns);
+  // uncheck answers
+  $('input[name="answers"]').prop('checked',false);
+  for (var i = 0; i < numAns; i++) {
+    $('#' + i).show();
+    // answer choices radio button labels
+    var aID = "label[for=" + i + "]";
+    $(aID).show();
+    $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+  }
+  // hide excess answer choices
+  for (var a = numAns; a<5; a++) {
+    $('#' + a).hide();
+    var labelID = "label[for=" + a + "]";
+    $(labelID).hide();
+  }
+}
+
 // Check which radio button is checked and record
 function whichChecked() {
   for (var i = 0; i < numAns; i++) {
@@ -62,8 +87,21 @@ function calculateScore() {
   for (var i = 0; i < quizLength; i++){
     if (userAnswers[i][1]) {
       score++;
-      console.log("CORRECT" + currentQuestion);
     }
+  }
+}
+
+function scorePerQuestion() {
+  for (var r = 0; r < quizLength; r++) {
+    var qResult = document.createElement("p");
+    var qNode;
+    if (userAnswers[r][1])
+      qNode = document.createTextNode("Question " + (r + 1) + ": " + "correct");
+    else
+      qNode = document.createTextNode("Question " + (r + 1) + ": " + "incorrect");
+    qResult.appendChild(qNode);
+    var dElement = document.getElementById("score");
+    dElement.appendChild(qResult);
   }
 }
 
@@ -81,52 +119,12 @@ function nextQuestion() {
       else {
         $('#answerWarning').hide();
         whichChecked();
-        currentQuestion+=1;
-        console.log(quizLength);
-        $('#questionNumber').text("Question " + (currentQuestion+1));
-        $('#question').text(quiz["questions"][currentQuestion]["text"]);
-        numAns = 2 + Math.ceil((Math.random()*3));
-        console.log(numAns);
-        // uncheck answers
-        $('input[name="answers"]').prop('checked',false);
-        for (var i = 0; i < numAns; i++) {
-          $('#' + i).show();
-          // answer choices radio button labels
-          var aID = "label[for=" + i + "]";
-          $(aID).show();
-          $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
-        }
-        // hide excess answer choices
-        for (var a = numAns; a<5; a++) {
-          $('#' + a).hide();
-          var labelID = "label[for=" + a + "]";
-          $(labelID).hide();
-        }
+        generateQA();
       }
     }
     // if before first question of quiz
     else {
-      currentQuestion+=1;
-      console.log(quizLength);
-      $('#questionNumber').text("Question " + (currentQuestion+1));
-      $('#question').text(quiz["questions"][currentQuestion]["text"]);
-      numAns = 2 + Math.ceil((Math.random()*3));
-      console.log(numAns);
-      // uncheck answers
-      $('input[name="answers"]').prop('checked',false);
-      for (var j = 0; j<numAns; j++) {
-        $('#' + j).show();
-        // answer choices radio button labels
-        var aIDs = "label[for=" + j + "]";
-        $(aIDs).show();
-        $(aIDs).html(quiz["questions"][currentQuestion]["answers"][j]);
-      }
-      // hide excess answer choices
-      for (var e = numAns; e<5; e++) {
-        $('#' + e).hide();
-        var labelIDh = "label[for=" + e + "]";
-        $(labelIDh).hide();
-      }
+      generateQA();
     }
   }
 
@@ -149,13 +147,7 @@ function nextQuestion() {
       $('#score').show();
       calculateScore();
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength);
-      for (var r = 0; r < quizLength; r++) {
-        var qResult = document.createElement("p");
-        var qNode = document.createTextNode("Question " + (r + 1) + ": " + "correct/incorrect - incorrect-reiterate question");
-        qResult.appendChild(qNode);
-        var dElement = document.getElementById("score");
-        dElement.appendChild(qResult);
-      }
+      scorePerQuestion();
     }
   }
 }

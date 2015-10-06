@@ -11,6 +11,7 @@ $(document).ready(function() {
   $('#title').text("Grace's Chemistry Quiz");
   $('#answerChoices').hide();
   $('#nextQuestion').hide();
+  $('#nameFormWarning').hide();
   $('#nameForm').submit(function (e) {
     e.preventDefault();
     nameForm();
@@ -20,12 +21,18 @@ $(document).ready(function() {
 
 // After name is submitted on initial screen
 function nameForm(){
-	name = $('#nameForm').serializeArray()[0]["value"];
-	$('#nameForm').hide();
-	$('#nextQuestion').show();
-	$('#answerChoices').show();
-	$('#welcome').text("Welcome " + name + "!");
-	nextQuestion();
+  name = $('#nameForm').serializeArray()[0]["value"];
+  if (name.length === 0) {
+    $('#nameFormWarning').show();
+  }
+  else {
+    $('#nameFormWarning').hide();
+    $('#nameForm').hide();
+    $('#nextQuestion').show();
+    $('#answerChoices').show();
+    $('#welcome').text("Welcome " + name + "!");
+    nextQuestion();
+  }
 }
 
 // Go to next question in quiz
@@ -35,6 +42,12 @@ function nextQuestion() {
     if (currentQuestion > -1) {
       // ***add whether user is correct, what answer was chosen
       userAnswers.push([currentQuestion]);
+      if (!$("input[name='answers']").is(':checked')){
+        console.log("NOTHING CHECKED");
+      }
+      else {
+        console.log("SOMETHING CHECKED");
+      }
     }
     currentQuestion+=1;
     console.log(quizLength);

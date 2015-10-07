@@ -12,7 +12,7 @@ $(document).ready(function() {
   // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2)))+(quiz["questions"].length/2)
   quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
   $('#title').text(quiz["title"]);
-  $('#title').text("Grace's Chemistry Quiz");
+  $('#title').text("Chemistry Quiz");
   $('#answerChoices').hide();
   $('#nextQuestion').hide();
   $('#answerWarning').hide();
@@ -25,6 +25,7 @@ $(document).ready(function() {
     e.preventDefault();
     nameForm();
   });
+  $('#piechart').hide();
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
 });
 
@@ -91,18 +92,60 @@ function calculateScore() {
   }
 }
 
+// Display correct/incorrect for each question
 function scorePerQuestion() {
   for (var r = 0; r < quizLength; r++) {
     var qResult = document.createElement("p");
     var qNode;
     if (userAnswers[r][1])
-      qNode = document.createTextNode("Question " + (r + 1) + ": " + "correct");
+      qNode = document.createTextNode("Question " + (r + 1) + ": " + "Correct");
     else
-      qNode = document.createTextNode("Question " + (r + 1) + ": " + "incorrect");
+      qNode = document.createTextNode("Question " + (r + 1) + ": " + "Incorrect");
     qResult.appendChild(qNode);
     var dElement = document.getElementById("score");
     dElement.appendChild(qResult);
   }
+}
+
+// Create pie chart for score
+function createPieChart(wrong,right) {
+  var red = "#FF0000 ";
+  var green = "#006600";
+
+  var chart = document.getElementById('piechart');
+  var ctx = chart.getContext('2d');
+  ctx.clearRect(0, 0, chart.width, chart.height);
+
+  var cx = 150;
+  var cy = 150;
+  var radius = 100;
+
+  var wrongFraction = Math.PI * 2.0 * (wrong/(right+wrong));
+  var rightFraction = Math.PI * 2.0 * (right/(right+wrong));
+  console.log(wrongFraction);
+  console.log(rightFraction);
+
+  // incorrect
+  ctx.fillStyle = red;
+  ctx.strokeStyle = "#000000";
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.arc(cx, cy, radius, 0, wrongFraction, true);
+  ctx.lineTo(cx,cy);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
+
+  // correct
+  ctx.fillStyle = green;
+  ctx.strokeStyle = "#000000";
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.arc(cx, cy, radius, wrongFraction, Math.PI * 2, true);
+  ctx.lineTo(cx,cy);
+  ctx.closePath();
+  ctx.stroke();
+  ctx.fill();
 }
 
 // Go to next question in quiz
@@ -145,9 +188,11 @@ function nextQuestion() {
       $('#nextQuestion').hide();
       $('#answerChoices').hide();
       $('#score').show();
+      $('#piechart').show();
       calculateScore();
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength);
       scorePerQuestion();
+      createPieChart(quizLength-score, score);
     }
   }
 }

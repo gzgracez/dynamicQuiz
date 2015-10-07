@@ -1,5 +1,5 @@
 var quiz = { 
-	"title": "Grace's Chemistry Quiz",
+	"title": "Chemistry Quiz",
 	"description": ".....",
 	"meta_tags": [
 		"sceince","physics", "fun"

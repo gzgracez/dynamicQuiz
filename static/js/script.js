@@ -94,6 +94,13 @@ function generateQA (){
       $(aID).show();
       $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
     }
+    // hide excess answer choices
+    for (var a = numAns; a<5; a++) {
+      $('#' + a).hide();
+      var labelID = "label[for=" + a + "]";
+      $(labelID).hide();
+    }
+
   }
   // if hasn't been answered before
   else {
@@ -106,6 +113,13 @@ function generateQA (){
       $(aID).show();
       $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
     }
+    // hide excess answer choices
+    for (var a = numAns; a<5; a++) {
+      $('#' + a).hide();
+      var labelID = "label[for=" + a + "]";
+      $(labelID).hide();
+    }
+
   }
   if (currentQuestion === 0) {
     $('#previousQuestion').hide();

@@ -19,15 +19,15 @@ var quiz = {
 			"meta_tags": ["geeky humor"]
 		},
 		{
-			"text": "What is the specific heat of water?",
-			"answers": ["4.18 J/g&deg;C", "5.18 J/g&deg;C", "40.56 J/g&deg;C", "20.56 J/g&deg;C", "-2.56 J/g&deg;C"],
-			"correct_answer": 0,
+			"text": "How can we solve for change in internal energy?",
+			"answers": ["mC&#916;T", "P&#916;V", "q/T", "q + w"],
+			"correct_answer": 3,
 			"meta_tags": ["geeky humor"]
 		},
 		{
-			"text": "What is the specific heat of water?",
-			"answers": ["4.18 J/g&deg;C", "5.18 J/g&deg;C", "40.56 J/g&deg;C", "20.56 J/g&deg;C", "-2.56 J/g&deg;C"],
-			"correct_answer": 0,
+			"text": "What is one type of calorimetry?",
+			"answers": ["clock calorimetry", "coffee cup calorimetry", "styrofoam calorimetry"],
+			"correct_answer": 1,
 			"meta_tags": ["geeky humor"]
 		},
 		{

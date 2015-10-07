@@ -18,6 +18,7 @@ $(document).ready(function() {
   $('#nextQuestion').hide();
   $('#answerWarning').hide();
   $('#nameFormWarning').hide();
+  $('#home').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
@@ -163,6 +164,7 @@ function calculateScore() {
       score++;
     }
   }
+  console.log(score);
 }
 
 // Display correct/incorrect for each question
@@ -195,14 +197,13 @@ function createPieChart(wrong,right,percentW,percentR) {
 
   var wrongFraction = Math.PI * 2.0 * (wrong/(right+wrong));
   var rightFraction = Math.PI * 2.0 * (right/(right+wrong));
-  console.log(wrongFraction);
-  console.log(rightFraction);
+  console.log(wrong + "  " + wrongFraction);
+  console.log(right + " "  + rightFraction);
 
   // incorrect
   ctx.fillStyle = red;
-  // ctx.strokeStyle = "#000000";
   ctx.beginPath();
-  ctx.arc(cx, cy, radius, 0, wrongFraction, true);
+  ctx.arc(cx, cy, radius, 0, wrongFraction, false);
   ctx.lineTo(cx,cy);
   ctx.closePath();
   ctx.fill();
@@ -214,9 +215,8 @@ function createPieChart(wrong,right,percentW,percentR) {
 
   // correct
   ctx.fillStyle = green;
-  // ctx.strokeStyle = "#000000";
   ctx.beginPath();
-  ctx.arc(cx, cy, radius, wrongFraction, Math.PI * 2, true);
+  ctx.arc(cx, cy, radius, wrongFraction, Math.PI * 2, false);
   ctx.lineTo(cx,cy);
   ctx.closePath();
   ctx.fill();
@@ -285,9 +285,11 @@ function nextQuestion() {
       $('#answerChoices').hide();
       $('#score').show();
       $('#piechart').show();
+      $('#home').show();
       calculateScore();
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength);
       scorePerQuestion();
+      console.log(score);
       createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
     }
   }

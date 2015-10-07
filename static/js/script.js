@@ -83,20 +83,28 @@ function generateQA (){
   $('#questionNumber').text("Question " + (currentQuestion+1));
   $('#question').text(quiz["questions"][currentQuestion]["text"]);
   numAns = quiz["questions"][currentQuestion]["answers"].length;
-  // uncheck answers
-  $('input[name="answers"]').prop('checked',false);
-  for (var i = 0; i < numAns; i++) {
-    $('#' + i).show();
-    // answer choices radio button labels
-    var aID = "label[for=" + i + "]";
-    $(aID).show();
-    $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+  // if answered already
+  if (currentQuestion < userAnswers.length) {
+    $('input[name="answers"][id="' + userAnswers[currentQuestion][2] + '"]').prop('checked',true);
+    for (var i = 0; i < numAns; i++) {
+      $('#' + i).show();
+      // answer choices radio button labels
+      var aID = "label[for=" + i + "]";
+      $(aID).show();
+      $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+    }
   }
-  // hide excess answer choices
-  for (var a = numAns; a<5; a++) {
-    $('#' + a).hide();
-    var labelID = "label[for=" + a + "]";
-    $(labelID).hide();
+  // if hasn't been answered before
+  else {
+    // uncheck answers
+    $('input[name="answers"]').prop('checked',false);
+    for (var i = 0; i < numAns; i++) {
+      $('#' + i).show();
+      // answer choices radio button labels
+      var aID = "label[for=" + i + "]";
+      $(aID).show();
+      $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+    }
   }
   if (currentQuestion === 0) {
     $('#previousQuestion').hide();
@@ -125,11 +133,25 @@ function back(){
 function whichChecked() {
   for (var i = 0; i < numAns; i++) {
     if ($("input[name='answers'][id='" + i + "']").is(':checked')) {
-      console.log ("This number is checked " + i + " " + quiz["questions"][currentQuestion]["correct_answer"]);
-      if (i === quiz["questions"][currentQuestion]["correct_answer"])
-        userAnswers.push([currentQuestion, true, i]);
-      else
-        userAnswers.push([currentQuestion, false, i]);
+      console.log ("The answer chosen is " + i + " " + quiz["questions"][currentQuestion]["correct_answer"]);
+      // if already added to userAnswers
+      if (currentQuestion < userAnswers.length) {
+        if (i === quiz["questions"][currentQuestion]["correct_answer"]) {
+          userAnswers[currentQuestion][1] = true;
+          userAnswers[currentQuestion][2] = i;
+        }
+        else {
+          userAnswers[currentQuestion][1] = false;
+          userAnswers[currentQuestion][2] = i;
+        }
+      }
+      // if new answer
+      else {
+        if (i === quiz["questions"][currentQuestion]["correct_answer"])
+          userAnswers.push([currentQuestion, true, i]);
+        else
+          userAnswers.push([currentQuestion, false, i]);
+      }
     }
   }
 }

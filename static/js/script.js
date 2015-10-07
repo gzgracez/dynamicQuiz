@@ -295,7 +295,6 @@ function nextQuestion() {
       $('#previousQuestion').hide();
       $('#nextQuestion').hide();
       $('#answerChoices').hide();
-      $('#score').show();
       $('#piechart').show();
       $('#home').show();
       calculateScore();

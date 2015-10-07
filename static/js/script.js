@@ -12,7 +12,7 @@ $(document).ready(function() {
   // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2)))+(quiz["questions"].length/2)
   quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
   $('#title').text(quiz["title"]);
-  $('#title').text("Chemistry Quiz");
+  // $('#title').text("Chemistry Quiz");
   $('#answerChoices').hide();
   $('#previousQuestion').hide();
   $('#nextQuestion').hide();

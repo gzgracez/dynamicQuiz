@@ -50,6 +50,18 @@ body {
   font-size: 16px;
 }
 
+.table { border: 1px solid #2980B9; }
+.table thead > tr > th { border-bottom: none; }
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td { border: 1px solid #000000; }
+
+th {
+  text-align: center;
+}
+
+.questionNum {
+  text-align: left;
+}
+
 h1{
   font-weight: 600;
   text-align: center;

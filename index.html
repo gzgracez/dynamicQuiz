@@ -48,15 +48,27 @@
   </form>
   <button id="previousQuestion" class="btn btn-danger btn-sm"><< Back</button>
   <button id="nextQuestion" class="btn btn-success btn-sm">Next >></button>
-  <div id="score">
-    <h2 id="nameScore"></h2>
-  </div>
+  <h2 id="nameScore"></h2>
   <center>
     <canvas id="piechart" width="300" height="300"></canvas>
   </center>
+  <table class="table table-hover" id="scoreTable">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Correct Answer</th>
+      </tr>
+      <tbody>
+      </tbody>
+    </thead>
+  </table>
+  <div id="score">
+  </div>
   <center>
     <a href="" id="home" class="btn btn-primary btn-sm">Back To Home</a>
   </center>
+  <br>
 </div>
 <script src="static/js/jquery-2.1.4.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>

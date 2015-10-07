@@ -20,6 +20,7 @@ $(document).ready(function() {
   $('#nextQuestion').hide();
   $('#answerWarning').hide();
   $('#nameFormWarning').hide();
+  $('#scoreTable').hide();
   $('#home').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
@@ -198,6 +199,26 @@ function scorePerQuestion() {
   }
 }
 
+// Display score table
+function scorePerQuestionTable() {
+  for (var r = 0; r < quizLength; r++) {
+    $('#scoreTable').show();
+    if (userAnswers[r][1])
+      $('#scoreTable > tbody:last-child').append('<tr class="success"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + '</td></tr>');
+    else
+      $('#scoreTable > tbody:last-child').append('<tr class="danger"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + '</td></tr>');
+    // var qResult = document.createElement("tr");
+    // var qNode;
+    // if (userAnswers[r][1])
+    //   qNode = document.createTextNode("Question " + (r + 1) + ": " + "Correct");
+    // else
+    //   qNode = document.createTextNode("Question " + (r + 1) + ": " + "Incorrect");
+    // qResult.appendChild(qNode);
+    // var dElement = document.getElementById("score");
+    // dElement.appendChild(qResult);
+  }
+}
+
 // Create pie chart for score
 function createPieChart(wrong,right,percentW,percentR) {
   var red = "#FF0000 ";
@@ -304,7 +325,7 @@ function nextQuestion() {
       $('#home').show();
       calculateScore();
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength);
-      scorePerQuestion();
+      scorePerQuestionTable();
       console.log(score);
       createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
     }

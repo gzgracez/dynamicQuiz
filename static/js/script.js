@@ -9,7 +9,6 @@ var score = 0;
 
 // Initial setup
 $(document).ready(function() {
-  // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2)))+(quiz["questions"].length/2)
   // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
   quizLength = quiz["questions"].length;
   console.log(quizLength);
@@ -184,21 +183,6 @@ function calculateScore() {
   console.log(score);
 }
 
-// Display correct/incorrect for each question
-function scorePerQuestion() {
-  for (var r = 0; r < quizLength; r++) {
-    var qResult = document.createElement("p");
-    var qNode;
-    if (userAnswers[r][1])
-      qNode = document.createTextNode("Question " + (r + 1) + ": " + "Correct");
-    else
-      qNode = document.createTextNode("Question " + (r + 1) + ": " + "Incorrect");
-    qResult.appendChild(qNode);
-    var dElement = document.getElementById("score");
-    dElement.appendChild(qResult);
-  }
-}
-
 // Display score table
 function scorePerQuestionTable() {
   for (var r = 0; r < quizLength; r++) {
@@ -207,15 +191,6 @@ function scorePerQuestionTable() {
       $('#scoreTable > tbody:last-child').append('<tr class="success"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + '</td></tr>');
     else
       $('#scoreTable > tbody:last-child').append('<tr class="danger"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + '</td></tr>');
-    // var qResult = document.createElement("tr");
-    // var qNode;
-    // if (userAnswers[r][1])
-    //   qNode = document.createTextNode("Question " + (r + 1) + ": " + "Correct");
-    // else
-    //   qNode = document.createTextNode("Question " + (r + 1) + ": " + "Incorrect");
-    // qResult.appendChild(qNode);
-    // var dElement = document.getElementById("score");
-    // dElement.appendChild(qResult);
   }
 }
 

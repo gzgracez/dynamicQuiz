@@ -13,7 +13,7 @@ var quiz = {
 			"meta_tags": ["specific heat", "water", "heat capacity"]
 		},
 		{
-			"text": "What is the mass of iron?",
+			"text": "What is the molar mass of iron?",
 			"answers": ["0.56 grams", "5.6 grams", " 56 grams", "560 grams"],
 			"correct_answer": 2,
 			"meta_tags": ["iron", "Fe", "mass"]
@@ -55,7 +55,7 @@ var quiz = {
 			"meta_tags": ["calorimetry"]
 		},
 		{
-			"text": "What is the mass of hydrogen?",
+			"text": "What is the molar mass of hydrogen?",
 			"answers": ["0.01 grams", "0.1 grams", "1 gram", "10 grams", "100 grams", "1000 grams"],
 			"correct_answer": 2,
 			"meta_tags": ["hydrogen", "H", "mass"]
@@ -79,7 +79,7 @@ var quiz = {
 			"meta_tags": ["rectangular prism", "volume"]
 		},
 		{
-			"text": "What is the mass of tin?",
+			"text": "What is the molar mass of tin?",
 			"answers": ["0.119 grams", "1.19 grams", "11.9 grams", "119 grams", "1190 grams"],
 			"correct_answer": 3,
 			"meta_tags": ["tin", "mass", "Sn"]
@@ -97,7 +97,7 @@ var quiz = {
 			"meta_tags": ["free energy", "Gibbs", "state function"]
 		},
 		{
-			"text": "What is the mass of one gram of titanium?",
+			"text": "What is the molar mass of one gram of titanium?",
 			"answers": ["4.8 grams", "48 grams", "480 grams", "4800 grams"],
 			"correct_answer": 1,
 			"meta_tags": ["titanium", "mass", "Ti"]

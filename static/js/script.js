@@ -10,7 +10,9 @@ var score = 0;
 // Initial setup
 $(document).ready(function() {
   // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2)))+(quiz["questions"].length/2)
-  quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
+  // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
+  quizLength = quiz["questions"].length;
+  console.log(quizLength);
   $('#title').text(quiz["title"]);
   // $('#title').text("Chemistry Quiz");
   $('#answerChoices').hide();

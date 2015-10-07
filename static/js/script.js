@@ -201,13 +201,10 @@ function createPieChart(wrong,right,percentW,percentR) {
   // incorrect
   ctx.fillStyle = red;
   // ctx.strokeStyle = "#000000";
-  ctx.strokeStyle = red;
-  ctx.lineWidth = 3;
   ctx.beginPath();
   ctx.arc(cx, cy, radius, 0, wrongFraction, true);
   ctx.lineTo(cx,cy);
   ctx.closePath();
-  ctx.stroke();
   ctx.fill();
   // var wTextX = Math.cos(wrongFraction/2) * 100 + cx;
   // var wTextY = Math.sin(wrongFraction/2) * 100 + cy;
@@ -218,13 +215,10 @@ function createPieChart(wrong,right,percentW,percentR) {
   // correct
   ctx.fillStyle = green;
   // ctx.strokeStyle = "#000000";
-  ctx.strokeStyle = green;
-  ctx.lineWidth = 3;
   ctx.beginPath();
   ctx.arc(cx, cy, radius, wrongFraction, Math.PI * 2, true);
   ctx.lineTo(cx,cy);
   ctx.closePath();
-  ctx.stroke();
   ctx.fill();
   // var rTextX = Math.cos(wrongFraction + (rightFraction/2)) * 100 + cx;
   // var rTextY = Math.sin(wrongFraction + (rightFraction/2)) * 100 + cy;

@@ -203,8 +203,8 @@ function createPieChart(wrong,right,percentW,percentR) {
   var ctx = chart.getContext('2d');
   ctx.clearRect(0, 0, chart.width, chart.height);
 
-  var cx = 150;
-  var cy = 150;
+  var cx = chart.width/2;
+  var cy = chart.height/2;
   var radius = 100;
 
   var wrongFraction = Math.PI * 2.0 * (wrong/(right+wrong));
@@ -219,11 +219,6 @@ function createPieChart(wrong,right,percentW,percentR) {
   ctx.lineTo(cx,cy);
   ctx.closePath();
   ctx.fill();
-  // var wTextX = Math.cos(wrongFraction/2) * 100 + cx;
-  // var wTextY = Math.sin(wrongFraction/2) * 100 + cy;
-  // ctx.fillStyle = "#ffffff";
-  // ctx.font = '14px Calibri';
-  // ctx.fillText("Incorrect: " + percentW,wTextX,wTextY);
 
   // correct
   ctx.fillStyle = green;
@@ -232,11 +227,17 @@ function createPieChart(wrong,right,percentW,percentR) {
   ctx.lineTo(cx,cy);
   ctx.closePath();
   ctx.fill();
-  // var rTextX = Math.cos(wrongFraction + (rightFraction/2)) * 100 + cx;
-  // var rTextY = Math.sin(wrongFraction + (rightFraction/2)) * 100 + cy;
-  // ctx.fillStyle = "#ffffff";
-  // ctx.font = '14px Calibri';
-  // ctx.fillText("Correct: " + percentR,rTextX,rTextY);
+
+  // legend
+  ctx.font = "14px Calibri";
+
+  ctx.fillStyle = green;
+  ctx.fillRect(cx + radius + 50,cy - 20,20,15);
+  ctx.fillText("Correct",cx + radius + 80,cy - 10);
+
+  ctx.fillStyle = red;
+  ctx.fillRect(cx + radius + 50,cy + 20,20,15);
+  ctx.fillText("Incorrect",cx + radius + 80,cy + 30);
 }
 
 // Go to next question in quiz

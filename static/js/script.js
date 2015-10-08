@@ -39,7 +39,7 @@ $(document).ready(function() {
 function nameForm(){
   name = $('#nameForm').serializeArray()[0]["value"];
   if (name.length === 0) {
-    $('#nameFormWarning').show();
+    $('#nameFormWarning').fadeIn();
   }
   else {
     $('#nameFormWarning').hide();

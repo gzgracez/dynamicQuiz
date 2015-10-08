@@ -86,7 +86,7 @@ var quiz = {
   },
   {
     "text": "How do we solve for Gibbs' free energy?",
-    "answers": ["H - PV", "PV + TS", "q + PV", "TP + q", "q + TS", "H-TS"],
+    "answers": ["H - PV", "PV + TS", "q + PV", "TP + q", "q + TS", "H - TS"],
     "correct_answer": 5,
     "meta_tags": ["free energy", "Gibbs", "G"]
   },

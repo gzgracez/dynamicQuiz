@@ -13,7 +13,8 @@ $(document).ready(function() {
   quizLength = quiz["questions"].length;
   console.log(quizLength);
   $('#title').text(quiz["title"]);
-  // $('#title').text("Chemistry Quiz");
+  $('#title').hide().fadeIn("slow");
+  $('#nameForm').hide().fadeIn("slow");
   $('#answerChoices').hide();
   $('#previousQuestion').hide();
   $('#nextQuestion').hide();
@@ -50,57 +51,27 @@ function nameForm(){
   }
 }
 
-// Show questions and answers of random length
-function generateQARandom (){
-  console.log(quizLength);
-  $('#questionNumber').text("Question " + (currentQuestion+1));
-  $('#question').text(quiz["questions"][currentQuestion]["text"]);
-  numAns = 2 + Math.ceil((Math.random()*3));
-  console.log(numAns);
-  // uncheck answers
-  $('input[name="answers"]').prop('checked',false);
-  for (var i = 0; i < numAns; i++) {
-    $('#' + i).show();
-    // answer choices radio button labels
-    var aID = "label[for=" + i + "]";
-    $(aID).show();
-    $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
-  }
-  // hide excess answer choices
-  for (var a = numAns; a<5; a++) {
-    $('#' + a).hide();
-    var labelID = "label[for=" + a + "]";
-    $(labelID).hide();
-  }
-  if (currentQuestion === 0) {
-    $('#previousQuestion').hide();
-  }
-  else {
-    $('#previousQuestion').show();
-  }
-}
-
 // Show questions and answers
 function generateQA (){
   console.log(quizLength);
-  $('#questionNumber').text("Question " + (currentQuestion+1));
-  $('#question').text(quiz["questions"][currentQuestion]["text"]);
+  $('#questionNumber').text("Question " + (currentQuestion+1)).hide().fadeIn();
+  $('#question').text(quiz["questions"][currentQuestion]["text"]).hide().fadeIn();
   numAns = quiz["questions"][currentQuestion]["answers"].length;
   // if answered already
   if (currentQuestion < userAnswers.length) {
     $('input[name="answers"][id="' + userAnswers[currentQuestion][2] + '"]').prop('checked',true);
     for (var i = 0; i < numAns; i++) {
-      $('#' + i).show();
+      $('#' + i).fadeIn();
       // answer choices radio button labels
       var aID = "label[for=" + i + "]";
-      $(aID).show();
-      $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+      $(aID).fadeIn();
+      $(aID).html(quiz["questions"][currentQuestion]["answers"][i]).hide().fadeIn();
     }
     // hide excess answer choices
     for (var a = numAns; a<5; a++) {
-      $('#' + a).hide();
+      $('#' + a).fadeOut();
       var labelID = "label[for=" + a + "]";
-      $(labelID).hide();
+      $(labelID).fadeOut();
     }
 
   }
@@ -109,17 +80,17 @@ function generateQA (){
     // uncheck answers
     $('input[name="answers"]').prop('checked',false);
     for (var i = 0; i < numAns; i++) {
-      $('#' + i).show();
+      $('#' + i).fadeIn();
       // answer choices radio button labels
       var aID = "label[for=" + i + "]";
-      $(aID).show();
-      $(aID).html(quiz["questions"][currentQuestion]["answers"][i]);
+      $(aID).fadeIn();
+      $(aID).html(quiz["questions"][currentQuestion]["answers"][i]).hide().fadeIn();
     }
     // hide excess answer choices
     for (var a = numAns; a<5; a++) {
-      $('#' + a).hide();
+      $('#' + a).fadeOut();
       var labelID = "label[for=" + a + "]";
-      $(labelID).hide();
+      $(labelID).fadeOut();
     }
 
   }
@@ -249,7 +220,7 @@ function nextQuestion() {
     if (currentQuestion > -1) {
       // if no answer is checked
       if (!$("input[name='answers']").is(':checked')){
-        $('#answerWarning').show();
+        $('#answerWarning').fadeIn();
         if (currentQuestion === 0) {
           $('#previousQuestion').hide();
         }

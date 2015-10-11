@@ -20,4 +20,4 @@ server.on('request',function(req,res) {
 	res.end();
 });
 
-server.listen(4000);
+server.listen(process.env.PORT || 4000);

@@ -1,5 +1,5 @@
 {
-  "name": "ChemistryQuiz",
+  "name": "chemistryquiz",
   "version": "1.0.0",
   "description": "nodeJS server for chemistry quiz",
   "main": "server.js",
@@ -9,12 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gzgracez/nodeQuizServer.git"
+    "url": "git+https://github.com/gzgracez/dynamicQuiz.git"
   },
   "author": "Grace",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gzgracez/nodeQuizServer/issues"
+    "url": "https://github.com/gzgracez/dynamicQuiz/issues"
   },
-  "homepage": "https://github.com/gzgracez/nodeQuizServer"
+  "homepage": "https://github.com/gzgracez/dynamicQuiz",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }

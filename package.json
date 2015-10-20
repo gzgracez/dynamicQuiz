@@ -2,22 +2,23 @@
   "name": "chemistryquiz",
   "version": "1.0.0",
   "description": "nodeJS server for chemistry quiz",
-  "main": "server.js",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gzgracez/dynamicQuiz.git"
+    "url": "git+ssh://git@github.com/gzgracez/dynamicQuiz.git"
   },
-  "author": "Grace",
+  "author": "Grace Zhang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gzgracez/dynamicQuiz/issues"
   },
-  "homepage": "https://github.com/gzgracez/dynamicQuiz",
-  "dependencies": {
-    "express": "^4.13.3"
-  }
+  "homepage": "https://github.com/gzgracez/dynamicQuiz#readme"
 }

@@ -1,0 +1,161 @@
+$body-font: "Trebuchet MS", Helvetica, sans-serif;
+$navy: #000084;
+$lighterNavy: #0000d3;
+$yellow: #dcdd63;
+$gray: #F8F8F8;
+$green: #1f6300;
+$red: red;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+
+body, nav {
+  font-family: $body-font;
+  color: $navy;
+  background-color: $gray;
+}
+
+body {
+  a {
+    text-decoration: underline;
+  }
+}
+
+.nameAlert{
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.alert {
+   display: inline-block;    
+}
+
+#nameForm {
+  margin-top: 20px;
+}
+
+#home, #nextQuestion, #previousQuestion {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+.table { border: 1px solid #2980B9; }
+.table thead > tr > th { border-bottom: none; }
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td { border: 1px solid #000000; }
+
+th {
+  text-align: center;
+}
+
+.questionNum {
+  text-align: left;
+}
+
+h1{
+  font-weight: 600;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+#question {
+  font-weight: 500;
+}
+
+#nameFormWarning, #answerWarning {
+  font-weight: 300;
+  color: $red;
+}
+
+nav {
+  a {
+    text-decoration: none;
+    color: $navy;
+  }
+}
+
+a {
+  color: $lighterNavy;
+  &:hover{
+    color: #00B7FF;
+  }
+  .cNavbar{
+    color: $navy;
+  }
+  .navbar-brand{
+    color: $navy;
+  }
+  #navbar, .navbar-nav, .nav, .icon-bar, .navbar-default{
+    color: $navy;
+    background-color: $navy;
+  }
+}
+
+p, a, li, label{
+  font-size: 24px;
+}
+
+form{
+  label{
+    display: inline-block;
+    float:left;
+  }
+}
+
+label#ansLabels {
+  float: inherit;
+  font-weight: 300;
+}
+
+table,{
+  border: 2px solid black;
+  text-align: center;
+  font-size: 20px;
+}
+
+tr{
+  padding: 10px; 
+  border:2px solid black;
+}
+
+td{
+ padding-left: 10px;
+ padding-right: 10px;
+ border:2px solid black;
+}
+
+.notice{
+  font-size: 16px;
+  color: $green;
+}
+
+.error{
+  font-size: 18px;
+  color: $red;
+}
+
+.bodyText{
+  padding-top: 70px;
+  height: 100%;
+}
+
+.container {
+  height: 80%;
+}
+
+.icon-bar{
+  background-color: $navy;
+}

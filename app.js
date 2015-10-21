@@ -4,7 +4,8 @@ var path = require('path');
 
 var app = express();
 var content = fs.readFileSync("index.html", 'utf8');
-app.use("/static", express.static(path.join(__dirname, 'static')));
+// app.use("/static", express.static(path.join(__dirname, 'static')));
+app.use("/static", express.static('static'));
 
 app.get('/', function (req, res) {
 

@@ -8,9 +8,7 @@ var content = fs.readFileSync("index.html", 'utf8');
 app.use("/static", express.static('static'));
 
 app.get('/', function (req, res) {
-
   res.send(content);
-
 });
 
 var server = app.listen(process.env.PORT || 4000, function() {

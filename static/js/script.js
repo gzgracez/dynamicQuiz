@@ -6,6 +6,20 @@ var quizLength = 0;
 var numAns = 0;
 var userAnswers = [];
 var score = 0;
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET', 'static/quiz.json', true);
+xhr.send(null);
+
+xhr.onload = function() {                       // When readystate changes
+  // The following conditional check will not work locally - only on a server
+  //if(xhr.status === 200) {                      // If server status was ok
+    // responseObject = JSON.parse(xhr.responseText);
+
+    console.log(xhr.responseText);
+
+  //}
+};
 
 // Initial setup
 $(document).ready(function() {

@@ -1,5 +1,5 @@
 // Make separate method for checking which answer is selected
-
+var quiz;
 var name = "Name";
 var currentQuestion = -1;
 var quizLength = 0;
@@ -8,17 +8,16 @@ var userAnswers = [];
 var score = 0;
 var xhr = new XMLHttpRequest();
 
+// get quiz.json
 xhr.open('GET', 'static/quiz.json', true);
 xhr.send(null);
 
-xhr.onload = function() {                       // When readystate changes
-  // The following conditional check will not work locally - only on a server
-  //if(xhr.status === 200) {                      // If server status was ok
-    // responseObject = JSON.parse(xhr.responseText);
-
+xhr.onload = function() {
+  console.log(xhr.status);
+  if(xhr.status === 200) { // If server status was ok
     console.log(xhr.responseText);
-
-  //}
+    quiz = JSON.parse(xhr.responseText);
+  }
 };
 
 // Initial setup

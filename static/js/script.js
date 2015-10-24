@@ -9,16 +9,16 @@ var score = 0;
 var xhr = new XMLHttpRequest();
 
 // get quiz.json
-xhr.open('GET', 'static/quiz.json', true);
-xhr.send(null);
+// xhr.open('GET', 'static/quiz.json', true);
+// xhr.send(null);
 
-xhr.onload = function() {
-  console.log(xhr.status);
-  if(xhr.status === 200) { // If server status was ok
-    console.log(xhr.responseText);
-    quiz = JSON.parse(xhr.responseText);
-  }
-};
+// xhr.onload = function() {
+//   console.log(xhr.status);
+//   if(xhr.status === 200) { // If server status was ok
+//     console.log(xhr.responseText);
+//     quiz = JSON.parse(xhr.responseText);
+//   }
+// };
 
 // Initial setup
 $(document).ready(function() {
@@ -60,8 +60,23 @@ function nameForm(){
     $('#nextQuestion').show();
     $('#answerChoices').show();
     $('#welcome').text("Welcome " + name + "!");
+    loadQuiz();
     nextQuestion();
   }
+}
+
+// load quiz.json
+function loadQuiz(){
+    $.getJSON('static/quiz.json')
+    .done(function (data) {
+      quiz = data;
+      console.log(data);
+    })
+    .fail(function() {
+      $('#welcome').append (" Sorry, we cannot load the quiz");
+    })
+    .always(function() {
+    })
 }
 
 // Show questions and answers

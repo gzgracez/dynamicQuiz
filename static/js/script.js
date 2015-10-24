@@ -35,6 +35,7 @@ $(document).ready(function() {
   $('#nameFormWarning').hide();
   $('#scoreTable').hide();
   $('#home').hide();
+  $('#ajaxloading').hide();
   $('#backHome').hide();
   $('#reload').hide();
   $('[data-hide]').on("click", function(){
@@ -68,6 +69,7 @@ function nameForm(){
 function loadQuiz(){
     $.getJSON('static/quiz.json')
     .done(function (data) {
+      $('#ajaxloading').hide();
       $('#backHome').hide();
       $('#reload').hide();
       quiz = data;
@@ -78,7 +80,8 @@ function loadQuiz(){
       console.log(data);
     })
     .fail(function() {
-      $('#welcome').text ("Welcome " + name + "! Sorry, we cannot load the quiz. Please reload the page to try again.");
+      $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
+      $('#ajaxloading').show();
       $('#reload').show();
       $('#backHome').show();
     })
@@ -191,8 +194,10 @@ function whichChecked() {
 function calculateScore() {
   for (var i = 0; i < quizLength; i++){
     if (userAnswers[i][1]) {
+      quiz["questions"][i]["global_correct"]+=1;
       score++;
     }
+    quiz["questions"][i]["global_total"]+=1;
   }
   console.log(score);
 }
@@ -316,6 +321,24 @@ function nextQuestion() {
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength + " questions or " + Math.round(100*score/quizLength) + "%");
       scorePerQuestionTable();
       console.log(score);
+      $.ajax({
+        type:"POST",
+        url: "static/quiz.json",
+        data: JSON.stringify(quiz),
+        timeout: 2000,
+        beforeSend: function(){
+          console.log ("BEFORE SEND");
+        },
+        complete: function() {
+          console.log ("COMPLETE LOADING");
+        },
+        success: function(data){
+          console.log("SUCCESS");
+        },
+        fail: function(){
+          console.log("FAILED");
+        }
+      });
       createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
     }
   }

@@ -100,6 +100,7 @@ function generateQA (){
   if (currentQuestion < userAnswers.length) {
     $('input[name="answers"][id="' + userAnswers[currentQuestion][2] + '"]').prop('checked',true);
     for (var i = 0; i < numAns; i++) {
+      $('#b' + i).show();
       $('#' + i).fadeIn();
       // answer choices radio button labels
       var aID = "label[for=" + i + "]";
@@ -107,7 +108,8 @@ function generateQA (){
       $(aID).html(quiz["questions"][currentQuestion]["answers"][i]).hide().fadeIn();
     }
     // hide excess answer choices
-    for (var a = numAns; a<5; a++) {
+    for (var a = numAns; a<7; a++) {
+      $('#b' + a).fadeOut();
       $('#' + a).fadeOut();
       var labelID = "label[for=" + a + "]";
       $(labelID).fadeOut();
@@ -119,6 +121,7 @@ function generateQA (){
     // uncheck answers
     $('input[name="answers"]').prop('checked',false);
     for (var i = 0; i < numAns; i++) {
+      $('#b' + i).show();
       $('#' + i).fadeIn();
       // answer choices radio button labels
       var aID = "label[for=" + i + "]";
@@ -126,7 +129,8 @@ function generateQA (){
       $(aID).html(quiz["questions"][currentQuestion]["answers"][i]).hide().fadeIn();
     }
     // hide excess answer choices
-    for (var a = numAns; a<5; a++) {
+    for (var a = numAns; a<7; a++) {
+      $('#b' + a).fadeOut();
       $('#' + a).fadeOut();
       var labelID = "label[for=" + a + "]";
       $(labelID).fadeOut();

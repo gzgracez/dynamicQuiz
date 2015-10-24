@@ -35,6 +35,8 @@ $(document).ready(function() {
   $('#nameFormWarning').hide();
   $('#scoreTable').hide();
   $('#home').hide();
+  $('#backHome').hide();
+  $('#reload').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
@@ -66,6 +68,8 @@ function nameForm(){
 function loadQuiz(){
     $.getJSON('static/quiz.json')
     .done(function (data) {
+      $('#backHome').hide();
+      $('#reload').hide();
       quiz = data;
       quizLength = quiz["questions"].length;
       $('#nextQuestion').show();
@@ -74,9 +78,15 @@ function loadQuiz(){
       console.log(data);
     })
     .fail(function() {
-      $('#welcome').append (" Sorry, we cannot load the quiz");
+      $('#welcome').text ("Welcome " + name + "! Sorry, we cannot load the quiz. Please reload the page to try again.");
+      $('#reload').show();
+      $('#backHome').show();
     })
     .always(function() {
+      $('#reload').on('click', function(e){
+        e.preventDefault();
+        loadQuiz();
+      });
     })
 }
 

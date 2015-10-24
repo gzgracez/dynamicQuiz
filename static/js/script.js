@@ -23,9 +23,9 @@ var xhr = new XMLHttpRequest();
 // Initial setup
 $(document).ready(function() {
   // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
-  quizLength = quiz["questions"].length;
-  console.log(quizLength);
-  $('#title').text(quiz["title"]);
+  // quizLength = quiz["questions"].length;
+  // $('#title').text(quiz["title"]);
+  $('#title').text("Dynamic Quiz");
   $('#title').hide().fadeIn("slow");
   $('#nameForm').hide().fadeIn("slow");
   $('#answerChoices').hide();
@@ -57,11 +57,8 @@ function nameForm(){
   else {
     $('#nameFormWarning').hide();
     $('#nameForm').hide();
-    $('#nextQuestion').show();
-    $('#answerChoices').show();
     $('#welcome').text("Welcome " + name + "!");
     loadQuiz();
-    nextQuestion();
   }
 }
 
@@ -70,6 +67,10 @@ function loadQuiz(){
     $.getJSON('static/quiz.json')
     .done(function (data) {
       quiz = data;
+      quizLength = quiz["questions"].length;
+      $('#nextQuestion').show();
+      $('#answerChoices').show();
+      nextQuestion();
       console.log(data);
     })
     .fail(function() {

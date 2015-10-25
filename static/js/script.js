@@ -202,9 +202,17 @@ function scorePerQuestionTable() {
   for (var r = 0; r < quizLength; r++) {
     $('#scoreTable').fadeIn("slow");
     if (userAnswers[r][1])
-      $('#scoreTable > tbody:last-child').append('<tr class="success"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + '</td></tr>');
+      $('#scoreTable > tbody:last-child').append('<tr class="success"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + 
+        '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + 
+        '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + 
+        '</td><td>' + quiz["questions"][r]["global_correct"] + " / " + quiz["questions"][r]["global_total"] +  
+        '</tr>');
     else
-      $('#scoreTable > tbody:last-child').append('<tr class="danger"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + '</td></tr>');
+      $('#scoreTable > tbody:last-child').append('<tr class="danger"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + 
+        '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + 
+        '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + 
+        '</td><td>' + quiz["questions"][r]["global_correct"] + " / " + quiz["questions"][r]["global_total"] +  
+        '</tr>');
   }
 }
 

@@ -189,6 +189,14 @@ function whichChecked() {
   }
 }
 
+// top ten users
+function topTen(allUsers) {
+  allUsers.sort(function(a,b) {
+    return ((a["user_correct"]*1.0)/a["user_total"]) - ((b["user_correct"]*1.0)/b["user_total"])
+  });
+  console.log(allUsers);
+}
+
 // user info
 function userScore() {
   $.getJSON('static/users.json')
@@ -224,7 +232,9 @@ function userScore() {
       userJSON[currentUser]["user_total"]+=1;
     }
     console.log("SCORE: " + score);
-    console.log("CALC SCORE USER JSON: " + userJSON);console.log(JSON.stringify(userJSON));
+    console.log("CALC SCORE USER JSON: " + userJSON);
+    topTen(userJSON);
+    console.log(JSON.stringify(userJSON));
     // User Scores
     $.ajax({
       type:"POST",
@@ -247,17 +257,17 @@ function userScore() {
     });
     createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
   })
-  .fail(function() {
-    console.log("Failed to load user JSON");
-    for (var i = 0; i < quizLength; i++){
-      if (userAnswers[i][1]) {
-        quiz["questions"][i]["global_correct"]+=1;
-        score++;
-      }
-      quiz["questions"][i]["global_total"]+=1;
+.fail(function() {
+  console.log("Failed to load user JSON");
+  for (var i = 0; i < quizLength; i++){
+    if (userAnswers[i][1]) {
+      quiz["questions"][i]["global_correct"]+=1;
+      score++;
     }
-    createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
-  });
+    quiz["questions"][i]["global_total"]+=1;
+  }
+  createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
+});
 }
 
 // Calculate Score and add to global + user scores

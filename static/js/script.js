@@ -55,7 +55,6 @@ function nameForm(){
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");
     loadQuiz();
-    loadUsers();
   }
 }
 
@@ -78,7 +77,6 @@ function loadQuiz(){
       $('#nextQuestion').show();
       $('#answerChoices').show();
       nextQuestion();
-      console.log(data);
     }
   })
   .fail(function() {
@@ -95,24 +93,8 @@ function loadQuiz(){
   });
 }
 
-function loadUsers(){
-  $.getJSON('static/users.json')
-  .done(function (data) {
-    console.log(data);
-    userJSON = data;
-  })
-  .fail(function() {
-    console.log("Failed to load user JSON");
-  })  
-  .always(function() {
-    console.log( "complete" );
-  });
-  console.log(userJSON);
-}
-
 // Show questions and answers
 function generateQA (){
-  console.log(quizLength);
   $('#questionNumber').text("Question " + (currentQuestion+1)).hide().fadeIn();
   $('#question').text(quiz["questions"][currentQuestion]["text"]).hide().fadeIn();
   numAns = quiz["questions"][currentQuestion]["answers"].length;
@@ -207,12 +189,71 @@ function whichChecked() {
   }
 }
 
-// Calculate Score
-function calculateScore() {
-  loadUsers();
-  var currentUser;
-  if (userJSON === undefined) {
-    console.log ("userJSON failed to load");
+// user info
+function userScore() {
+  $.getJSON('static/users.json')
+  .done(function (data) {
+    // console.log("USER JSON SUCCESSFULLY LOADED");
+    userJSON = data;
+    // console.log(userJSON);
+    currentUser = userJSON.length;
+    for (var i = 0; i < userJSON.length; i++) {
+      if (userJSON[i].name === name) {
+        currentUser = i;
+        break;
+      }
+    }
+    console.log ("CURRENT USER: " + currentUser);
+    // if new user
+    if (currentUser === userJSON.length) {
+      var newUser = {
+        "name": name,
+        "questions": [],
+        "user_correct": 0,
+        "user_total": 0
+      };
+      for (var j = 0; j < quizLength; j++) {
+        newUser["questions"][j] = 0;
+      }
+      userJSON[currentUser] = newUser;
+      // console.log(userJSON);
+    }
+    for (var n = 0; n < quizLength; n++){
+      if (userAnswers[n][1]) {
+        quiz["questions"][n]["global_correct"]+=1;
+        userJSON[currentUser]["questions"][n]+=1;
+        userJSON[currentUser]["user_correct"]+=1;
+        score++;
+      }
+      quiz["questions"][n]["global_total"]+=1;
+      userJSON[currentUser]["user_total"]+=1;
+    }
+    console.log("SCORE: " + score);
+    console.log("CALC SCORE USER JSON: " + userJSON);console.log(JSON.stringify(userJSON));
+    // User Scores
+    $.ajax({
+      type:"POST",
+      url: "static/users.json",
+      data: JSON.stringify(userJSON),
+      timeout: 2000,
+      contentType: "application/json; charset=utf-8",
+      beforeSend: function(){
+        // console.log ("BEFORE USER SEND");
+      },
+      complete: function() {
+        // console.log ("COMPLETE USER LOADING");
+      },
+      success: function(data){
+        console.log(data);
+      },
+      fail: function(){
+        // console.log("USER FAILED");
+      }
+    });
+    createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
+  })
+  .fail(function() {
+    console.log("Failed to load user JSON");
     for (var i = 0; i < quizLength; i++){
       if (userAnswers[i][1]) {
         quiz["questions"][i]["global_correct"]+=1;
@@ -220,38 +261,19 @@ function calculateScore() {
       }
       quiz["questions"][i]["global_total"]+=1;
     }
-    console.log(score);
-    console.log(userJSON);
+    createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
+  });
+}
+
+// Calculate Score and add to global + user scores
+function calculateScore() {
+  for (var i = 0; i < quizLength; i++){
+    if (userAnswers[i][1]) {
+      quiz["questions"][i]["global_correct"]+=1;
+      score++;
+    }
+    quiz["questions"][i]["global_total"]+=1;
   }
-  // else {
-  //   console.log(userJSON);
-  //   currentUser = userJSON.length;
-  //   for (var i = 0; i < userJSON.length; i++) {
-  //     if (userJSON[i].name === name) {
-  //       currentUser = i;
-  //       break;
-  //     }
-  //   }
-  //   // if new user
-  //   if (currentUser === userJSON.length) {
-  //     userJSON[currentUser]["name"] = name;
-  //     userJSON[currentUser]["questions"] = [];
-  //     userJSON[currentUser]["user_total"] = 0;
-  //     userJSON[currentUser]["user_correct"] = 0;
-  //   }
-  //   for (var i = 0; i < quizLength; i++){
-  //     if (userAnswers[i][1]) {
-  //       quiz["questions"][i]["global_correct"]+=1;
-  //       userJSON[currentUser]["questions"][i]+=1;
-  //       userJSON[currentUser]["user_correct"]+=1;
-  //       score++;
-  //     }
-  //     quiz["questions"][i]["global_total"]+=1;
-  //     userJSON[currentUser]["user_total"]+=1;
-  //   }
-  //   console.log(score);
-  //   console.log(userJSON);
-  // }
 }
 
 // Display score table
@@ -289,8 +311,6 @@ function createPieChart(wrong,right,percentW,percentR) {
 
   var wrongFraction = Math.PI * 2.0 * (wrong/(right+wrong));
   var rightFraction = Math.PI * 2.0 * (right/(right+wrong));
-  console.log(wrong + "  " + wrongFraction);
-  console.log(right + " "  + rightFraction);
 
   // incorrect
   ctx.fillStyle = red;
@@ -325,32 +345,8 @@ function instagram(){
   // need api key
 }
 
-// Keep track of users + their scores
-function userScores(){
-  $.ajax({
-    type:"POST",
-    url: "static/users.json",
-    data: JSON.stringify(userJSON),
-    timeout: 2000,
-    contentType: "application/json; charset=utf-8",
-    beforeSend: function(){
-      console.log ("BEFORE USER SEND");
-    },
-    complete: function() {
-      console.log ("COMPLETE USER LOADING");
-    },
-    success: function(data){
-      console.log(data);
-    },
-    fail: function(){
-      console.log("USER FAILED");
-    }
-  });
-}
-
 // Go to next question in quiz
 function nextQuestion() {
-  console.log ("CURRENT QUESTION" +currentQuestion);
   // Before end of quiz
   if (currentQuestion<quizLength-1) {
     // if one of the quiz questions
@@ -407,10 +403,10 @@ function nextQuestion() {
       $('#piechart').fadeIn("slow");
       $('#home').show();
       calculateScore();
+      console.log("SCORE AFTER CALC SCORE: " + score);
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength + " questions or " + Math.round(100*score/quizLength) + "%");
       scorePerQuestionTable();
-      console.log(score);
-      console.log(JSON.stringify(quiz));
+
       // Global Scores
       $.ajax({
         type:"POST",
@@ -419,20 +415,42 @@ function nextQuestion() {
         timeout: 2000,
         contentType: "application/json; charset=utf-8",
         beforeSend: function(){
-          console.log ("BEFORE SEND");
+          // console.log ("BEFORE SEND");
         },
         complete: function() {
-          console.log ("COMPLETE LOADING");
+          // console.log ("COMPLETE LOADING");
         },
         success: function(data){
-          console.log(data);
+          // console.log(data);
         },
         fail: function(){
-          console.log("FAILED");
+          // console.log("FAILED");
         }
       });
-      
-      createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
+
+      // console.log(JSON.stringify(userJSON));
+      // // User Scores
+      // $.ajax({
+      //   type:"POST",
+      //   url: "static/users.json",
+      //   data: JSON.stringify(userJSON),
+      //   timeout: 2000,
+      //   contentType: "application/json; charset=utf-8",
+      //   beforeSend: function(){
+      //     // console.log ("BEFORE USER SEND");
+      //   },
+      //   complete: function() {
+      //     // console.log ("COMPLETE USER LOADING");
+      //   },
+      //   success: function(data){
+      //     console.log(data);
+      //   },
+      //   fail: function(){
+      //     // console.log("USER FAILED");
+      //   }
+      // });
+      // createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
+      userScore();
     }
   }
 }

@@ -208,20 +208,15 @@ function userScore() {
     if (currentUser === userJSON.length) {
       var newUser = {
         "name": name,
-        "questions": [],
         "user_correct": 0,
         "user_total": 0
       };
-      for (var j = 0; j < quizLength; j++) {
-        newUser["questions"][j] = 0;
-      }
       userJSON[currentUser] = newUser;
       // console.log(userJSON);
     }
     for (var n = 0; n < quizLength; n++){
       if (userAnswers[n][1]) {
         quiz["questions"][n]["global_correct"]+=1;
-        userJSON[currentUser]["questions"][n]+=1;
         userJSON[currentUser]["user_correct"]+=1;
         score++;
       }

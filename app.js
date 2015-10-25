@@ -17,7 +17,9 @@ app.get('/', function (req, res) {
 
 app.post('/static/quiz.json', function(req, res){
 	var obj = {};
-	console.log('body: ' + JSON.stringify(req.body));
+	var jsonString = JSON.stringify(req.body);
+	console.log('body: ' + jsonString);
+	fs.writeFile("static/quiz.json", jsonString);
 	res.send(req.body);
 });
 

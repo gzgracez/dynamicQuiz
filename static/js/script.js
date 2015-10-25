@@ -321,7 +321,7 @@ function nextQuestion() {
           console.log ("COMPLETE LOADING");
         },
         success: function(data){
-          console.log("SUCCESS");
+          console.log(data);
         },
         fail: function(){
           console.log("FAILED");

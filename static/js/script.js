@@ -36,6 +36,11 @@ $(document).ready(function() {
   $('#piechart').hide();
   document.getElementById("previousQuestion").addEventListener("click", back);
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
+  $("#answerChoices").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#nextQuestion").click();
+    }
+});
 });
 
 // After name is submitted on initial screen
@@ -201,17 +206,18 @@ function calculateScore() {
 function scorePerQuestionTable() {
   for (var r = 0; r < quizLength; r++) {
     $('#scoreTable').fadeIn("slow");
+    var scorePercent = Math.round(100*quiz["questions"][r]["global_correct"]/quiz["questions"][r]["global_total"]);
     if (userAnswers[r][1])
-      $('#scoreTable > tbody:last-child').append('<tr class="success"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + 
-        '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + 
-        '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + 
-        '</td><td>' + quiz["questions"][r]["global_correct"] + " / " + quiz["questions"][r]["global_total"] +  
+      $('#scoreTable > tbody:last-child').append('<tr class="success"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] +
+        '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] +
+        '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] +
+        '</td><td>' + scorePercent + "%" +
         '</tr>');
     else
-      $('#scoreTable > tbody:last-child').append('<tr class="danger"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] + 
-        '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] + 
-        '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] + 
-        '</td><td>' + quiz["questions"][r]["global_correct"] + " / " + quiz["questions"][r]["global_total"] +  
+      $('#scoreTable > tbody:last-child').append('<tr class="danger"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] +
+        '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] +
+        '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] +
+        '</td><td>' + scorePercent + "%" +
         '</tr>');
   }
 }

@@ -4,11 +4,9 @@ var fs = require('fs');
 var path = require('path');
 
 var app = express();
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-// app.use(express.bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 var content = fs.readFileSync("index.html", 'utf8');
-// app.use("/static", express.static(path.join(__dirname, 'static')));
 app.use("/static", express.static('static'));
 
 app.get('/', function (req, res) {
@@ -16,11 +14,19 @@ app.get('/', function (req, res) {
 });
 
 app.post('/static/quiz.json', function(req, res){
-	var obj = {};
-	var jsonString = JSON.stringify(req.body);
-	console.log('body: ' + jsonString);
-	fs.writeFile("static/quiz.json", jsonString);
-	res.send(req.body);
+  var obj = {};
+  var jsonString = JSON.stringify(req.body);
+  console.log('body: ' + jsonString);
+  fs.writeFile("static/quiz.json", jsonString);
+  res.send(req.body);
+});
+
+app.post('/static/users.json', function(req, res){
+  var obj = {};
+  var jsonString = JSON.stringify(req.body);
+  console.log('body: ' + jsonString);
+  fs.writeFile("static/users.json", jsonString);
+  res.send(req.body);
 });
 
 var server = app.listen(process.env.PORT || 4000, function() {

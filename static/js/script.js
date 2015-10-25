@@ -55,6 +55,7 @@ function nameForm(){
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");
     loadQuiz();
+    loadUsers();
   }
 }
 
@@ -102,6 +103,9 @@ function loadUsers(){
   })
   .fail(function() {
     console.log("Failed to load user JSON");
+  })  
+  .always(function() {
+    console.log( "complete" );
   });
   console.log(userJSON);
 }

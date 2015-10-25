@@ -1,8 +1,12 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
 
 var app = express();
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+// app.use(express.bodyParser());
 var content = fs.readFileSync("index.html", 'utf8');
 // app.use("/static", express.static(path.join(__dirname, 'static')));
 app.use("/static", express.static('static'));

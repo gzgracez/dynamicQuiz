@@ -311,7 +311,7 @@ function nextQuestion() {
       console.log(JSON.stringify(quiz));
       $.ajax({
         type:"POST",
-        url: "http://localhost:4000/static/quiz.json",
+        url: "static/quiz.json",
         data: JSON.stringify(quiz),
         timeout: 2000,
         beforeSend: function(){

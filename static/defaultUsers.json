@@ -1,8 +1,7 @@
 [
-  {
-    "name": "grace",
-    "questions": [],
-    "user_correct": 0,
-    "user_total": 0
-  }
+    {
+        "name": "asdf",
+        "user_correct": 3,
+        "user_total": 3
+    }
 ]

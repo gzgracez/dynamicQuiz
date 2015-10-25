@@ -8,9 +8,6 @@
     "express": "^4.13.3",
     "fs": "0.0.2"
   },
-  "devDependencies": {
-    "body-parser": "^1.14.1"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"

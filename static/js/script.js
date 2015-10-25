@@ -22,6 +22,8 @@ $(document).ready(function() {
   $('#answerWarning').hide();
   $('#nameFormWarning').hide();
   $('#scoreTable').hide();
+  $('#userTable').hide();
+  $('#tenScores').hide();
   $('#home').hide();
   $('#ajaxloading').hide();
   $('#backHome').hide();
@@ -192,18 +194,25 @@ function whichChecked() {
 // top ten users
 function topTen(allUsers) {
   allUsers.sort(function(a,b) {
-    return ((a["user_correct"]*1.0)/a["user_total"]) - ((b["user_correct"]*1.0)/b["user_total"])
+    return ((b["user_correct"]*1.0)/b["user_total"]) - ((a["user_correct"]*1.0)/a["user_total"]);
   });
-  console.log(allUsers);
+  for (var i = 0; i < 10; i++) {
+    if (i < allUsers.length) {
+      $('#userTable > tbody:last-child').append('<tr class="success"><td>' + allUsers[i]["name"] +
+        '</td><td>' + Math.round((allUsers[i]["user_correct"]*100)/allUsers[i]["user_total"]) +
+        '</td></tr>');
+    }
+    else break;
+  }
+  $('#userTable').fadeIn();
+  $('#tenScores').fadeIn();
 }
 
 // user info
 function userScore() {
   $.getJSON('static/users.json')
   .done(function (data) {
-    // console.log("USER JSON SUCCESSFULLY LOADED");
     userJSON = data;
-    // console.log(userJSON);
     currentUser = userJSON.length;
     for (var i = 0; i < userJSON.length; i++) {
       if (userJSON[i].name === name) {
@@ -220,7 +229,6 @@ function userScore() {
         "user_total": 0
       };
       userJSON[currentUser] = newUser;
-      // console.log(userJSON);
     }
     for (var n = 0; n < quizLength; n++){
       if (userAnswers[n][1]) {
@@ -231,9 +239,8 @@ function userScore() {
       quiz["questions"][n]["global_total"]+=1;
       userJSON[currentUser]["user_total"]+=1;
     }
-    console.log("SCORE: " + score);
-    console.log("CALC SCORE USER JSON: " + userJSON);
     topTen(userJSON);
+
     console.log(JSON.stringify(userJSON));
     // User Scores
     $.ajax({
@@ -291,13 +298,13 @@ function scorePerQuestionTable() {
         '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] +
         '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] +
         '</td><td>' + scorePercent + "%" +
-        '</tr>');
+        '</td></tr>');
     else
       $('#scoreTable > tbody:last-child').append('<tr class="danger"><td class="questionNum">' + (r + 1) + '. ' + quiz["questions"][r]["text"] +
         '</td><td>' + quiz["questions"][r]["answers"][userAnswers[r][2]] +
         '<td>' + quiz["questions"][r]["answers"][quiz["questions"][r]["correct_answer"]] +
         '</td><td>' + scorePercent + "%" +
-        '</tr>');
+        '</td></tr>');
   }
 }
 

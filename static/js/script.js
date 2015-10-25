@@ -60,11 +60,19 @@ function loadQuiz(){
       $('#backHome').hide();
       $('#reload').hide();
       quiz = data;
-      quizLength = quiz["questions"].length;
-      $('#nextQuestion').show();
-      $('#answerChoices').show();
-      nextQuestion();
-      console.log(data);
+      if (quiz["questions"] === undefined) {
+        $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
+        $('#ajaxloading').show();
+        $('#reload').show();
+        $('#backHome').show();
+      }
+      else {
+        quizLength = quiz["questions"].length;
+        $('#nextQuestion').show();
+        $('#answerChoices').show();
+        nextQuestion();
+        console.log(data);
+      }
     })
     .fail(function() {
       $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
@@ -314,6 +322,7 @@ function nextQuestion() {
         url: "static/quiz.json",
         data: JSON.stringify(quiz),
         timeout: 2000,
+        contentType: "application/json; charset=utf-8",
         beforeSend: function(){
           console.log ("BEFORE SEND");
         },

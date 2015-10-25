@@ -168,7 +168,7 @@ function back(){
 function whichChecked() {
   for (var i = 0; i < numAns; i++) {
     if ($("input[name='answers'][id='" + i + "']").is(':checked')) {
-      console.log ("The answer chosen is " + i + " " + quiz["questions"][currentQuestion]["correct_answer"]);
+      // console.log ("The answer chosen is " + i + " " + quiz["questions"][currentQuestion]["correct_answer"]);
       // if already added to userAnswers
       if (currentQuestion < userAnswers.length) {
         if (i === quiz["questions"][currentQuestion]["correct_answer"]) {
@@ -199,7 +199,7 @@ function topTen(allUsers) {
   for (var i = 0; i < 10; i++) {
     if (i < allUsers.length) {
       $('#userTable > tbody:last-child').append('<tr class="success"><td>' + allUsers[i]["name"] +
-        '</td><td>' + Math.round((allUsers[i]["user_correct"]*100)/allUsers[i]["user_total"]) +
+        '</td><td>' + Math.round((allUsers[i]["user_correct"]*100)/allUsers[i]["user_total"]) + "%" +
         '</td></tr>');
     }
     else break;
@@ -220,7 +220,6 @@ function userScore() {
         break;
       }
     }
-    console.log ("CURRENT USER: " + currentUser);
     // if new user
     if (currentUser === userJSON.length) {
       var newUser = {
@@ -241,7 +240,6 @@ function userScore() {
     }
     topTen(userJSON);
 
-    console.log(JSON.stringify(userJSON));
     // User Scores
     $.ajax({
       type:"POST",
@@ -256,7 +254,7 @@ function userScore() {
         // console.log ("COMPLETE USER LOADING");
       },
       success: function(data){
-        console.log(data);
+        console.log("users sent");
       },
       fail: function(){
         // console.log("USER FAILED");
@@ -415,7 +413,6 @@ function nextQuestion() {
       $('#piechart').fadeIn("slow");
       $('#home').show();
       calculateScore();
-      console.log("SCORE AFTER CALC SCORE: " + score);
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength + " questions or " + Math.round(100*score/quizLength) + "%");
       scorePerQuestionTable();
 
@@ -433,35 +430,12 @@ function nextQuestion() {
           // console.log ("COMPLETE LOADING");
         },
         success: function(data){
-          // console.log(data);
+          console.log("quiz sent");
         },
         fail: function(){
           // console.log("FAILED");
         }
       });
-
-      // console.log(JSON.stringify(userJSON));
-      // // User Scores
-      // $.ajax({
-      //   type:"POST",
-      //   url: "static/users.json",
-      //   data: JSON.stringify(userJSON),
-      //   timeout: 2000,
-      //   contentType: "application/json; charset=utf-8",
-      //   beforeSend: function(){
-      //     // console.log ("BEFORE USER SEND");
-      //   },
-      //   complete: function() {
-      //     // console.log ("COMPLETE USER LOADING");
-      //   },
-      //   success: function(data){
-      //     console.log(data);
-      //   },
-      //   fail: function(){
-      //     // console.log("USER FAILED");
-      //   }
-      // });
-      // createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
       userScore();
     }
   }

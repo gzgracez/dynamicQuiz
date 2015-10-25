@@ -40,7 +40,7 @@ $(document).ready(function() {
     if(event.keyCode == 13){
         $("#nextQuestion").click();
     }
-});
+  });
 });
 
 // After name is submitted on initial screen
@@ -266,6 +266,11 @@ function createPieChart(wrong,right,percentW,percentR) {
   ctx.fillStyle = red;
   ctx.fillRect(cx + radius + 50,cy + 20,20,15);
   ctx.fillText("Incorrect",cx + radius + 80,cy + 30);
+}
+
+// Add instagram picture
+function instagram(){
+  // need api key
 }
 
 // Go to next question in quiz

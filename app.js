@@ -11,6 +11,12 @@ app.get('/', function (req, res) {
   res.send(content);
 });
 
+app.post('/static/quiz.json', function(req, res){
+	var obj = {};
+	console.log('body: ' + JSON.stringify(req.body));
+	res.send(req.body);
+});
+
 var server = app.listen(process.env.PORT || 4000, function() {
   var host = server.address().address;
   var port = server.address().port;

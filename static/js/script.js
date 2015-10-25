@@ -6,19 +6,6 @@ var quizLength = 0;
 var numAns = 0;
 var userAnswers = [];
 var score = 0;
-// var xhr = new XMLHttpRequest();
-
-// get quiz.json
-// xhr.open('GET', 'static/quiz.json', true);
-// xhr.send(null);
-
-// xhr.onload = function() {
-//   console.log(xhr.status);
-//   if(xhr.status === 200) { // If server status was ok
-//     console.log(xhr.responseText);
-//     quiz = JSON.parse(xhr.responseText);
-//   }
-// };
 
 // Initial setup
 $(document).ready(function() {
@@ -324,7 +311,7 @@ function nextQuestion() {
       console.log(JSON.stringify(quiz));
       $.ajax({
         type:"POST",
-        url: "static/quiz.json",
+        url: "http://localhost:4000/static/quiz.json",
         data: JSON.stringify(quiz),
         timeout: 2000,
         beforeSend: function(){

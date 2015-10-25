@@ -1,1 +1,0 @@
-sass --watch static/css/styles2.scss:static/css/styles2.css --style compressed

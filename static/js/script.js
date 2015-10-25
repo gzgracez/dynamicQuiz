@@ -6,7 +6,7 @@ var quizLength = 0;
 var numAns = 0;
 var userAnswers = [];
 var score = 0;
-var xhr = new XMLHttpRequest();
+// var xhr = new XMLHttpRequest();
 
 // get quiz.json
 // xhr.open('GET', 'static/quiz.json', true);
@@ -321,6 +321,7 @@ function nextQuestion() {
       $('#nameScore').text(name + ", your score on this quiz is: " + score + "/" + quizLength + " questions or " + Math.round(100*score/quizLength) + "%");
       scorePerQuestionTable();
       console.log(score);
+      console.log(JSON.stringify(quiz));
       $.ajax({
         type:"POST",
         url: "static/quiz.json",

@@ -233,7 +233,6 @@ function userScore() {
       if (userAnswers[n][1]) {
         quiz["questions"][n]["global_correct"]+=1;
         userJSON[currentUser]["user_correct"]+=1;
-        score++;
       }
       quiz["questions"][n]["global_total"]+=1;
       userJSON[currentUser]["user_total"]+=1;
@@ -267,7 +266,6 @@ function userScore() {
   for (var i = 0; i < quizLength; i++){
     if (userAnswers[i][1]) {
       quiz["questions"][i]["global_correct"]+=1;
-      score++;
     }
     quiz["questions"][i]["global_total"]+=1;
   }

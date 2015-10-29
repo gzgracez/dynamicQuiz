@@ -242,7 +242,7 @@ function userScore() {
     // User Scores
     $.ajax({
       type:"POST",
-      url: "static/users.json",
+      url: "users",
       data: JSON.stringify(userJSON),
       timeout: 2000,
       contentType: "application/json; charset=utf-8",
@@ -417,7 +417,7 @@ function nextQuestion() {
       // Global Scores
       $.ajax({
         type:"POST",
-        url: "static/quiz.json",
+        url: "quiz",
         data: JSON.stringify(quiz),
         timeout: 2000,
         contentType: "application/json; charset=utf-8",

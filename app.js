@@ -13,16 +13,14 @@ app.get('/', function (req, res) {
   res.send(content);
 });
 
-app.post('/static/quiz.json', function(req, res){
+app.post('/quiz', function(req, res){
   var jsonString = JSON.stringify(req.body);
-  console.log('body: ' + jsonString);
   fs.writeFile("static/quiz.json", jsonString);
   res.send(req.body);
 });
 
-app.post('/static/users.json', function(req, res){
+app.post('/users', function(req, res){
   var jsonString = JSON.stringify(req.body);
-  console.log('body: ' + jsonString);
   fs.writeFile("static/users.json", jsonString);
   res.send(req.body);
 });

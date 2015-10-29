@@ -14,24 +14,24 @@ app.get('/', function (req, res) {
 });
 
 app.get('/quiz', function (req, res) {
-  var readQuiz = fs.readFileSync("quiz.json", 'utf8');
+  var readQuiz = fs.readFileSync("data/quiz.json", 'utf8');
   res.send(readQuiz);
 });
 
 app.post('/quiz', function(req, res){
   var jsonString = JSON.stringify(req.body);
-  fs.writeFile("quiz.json", jsonString);
+  fs.writeFile("data/quiz.json", jsonString);
   res.send(req.body);
 });
 
 app.get('/users', function (req, res) {
-  var readUsers = fs.readFileSync("users.json", 'utf8');
+  var readUsers = fs.readFileSync("data/users.json", 'utf8');
   res.send(readUsers);
 });
 
 app.post('/users', function(req, res){
   var jsonString = JSON.stringify(req.body);
-  fs.writeFile("users.json", jsonString);
+  fs.writeFile("data/users.json", jsonString);
   res.send(req.body);
 });
 

@@ -62,7 +62,7 @@ function nameForm(){
 
 // load quiz.json
 function loadQuiz(){
-  $.getJSON('static/quiz.json')
+  $.getJSON('quiz')
   .done(function (data) {
     $('#ajaxloading').hide();
     $('#backHome').hide();
@@ -210,7 +210,7 @@ function topTen(allUsers) {
 
 // user info
 function userScore() {
-  $.getJSON('static/users.json')
+  $.getJSON('users')
   .done(function (data) {
     userJSON = data;
     currentUser = userJSON.length;

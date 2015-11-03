@@ -141,6 +141,19 @@ function generateQA (){
     }
 
   }
+  $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+  {
+    tags: quiz["questions"][currentQuestion]["meta_tags"][0],
+    tagmode: "any",
+    format: "json"
+  },
+  function(data) {
+    $.each(data.items, function(i,item){
+      $( "#images" ).empty();
+      $("<img />").attr("src", item.media.m).appendTo("#images");
+      if ( i == 0 ) return false;
+    });
+  });
   if (currentQuestion === 0) {
     $('#previousQuestion').hide();
   }

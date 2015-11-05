@@ -19,7 +19,7 @@
             ],
             "correct_answer": 0,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "specific heat",
                 "water",
@@ -36,10 +36,9 @@
             ],
             "correct_answer": 2,
             "global_correct": 1,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "iron",
-                "Fe",
                 "mass"
             ]
         },
@@ -54,9 +53,8 @@
             ],
             "correct_answer": 2,
             "global_correct": 1,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
-                "Au",
                 "gold",
                 "element",
                 "symbol"
@@ -72,7 +70,7 @@
             ],
             "correct_answer": 3,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "internal energy",
                 "energy"
@@ -86,10 +84,11 @@
                 "styrofoam calorimetry"
             ],
             "correct_answer": 1,
-            "global_correct": 0,
-            "global_total": 1,
+            "global_correct": 1,
+            "global_total": 2,
             "meta_tags": [
-                "calorimetry"
+                "calorimetry",
+                "coffee cup calorimetry"
             ]
         },
         {
@@ -104,10 +103,9 @@
             ],
             "correct_answer": 1,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
-                "ideal gas law",
-                "gas"
+                "ideal gas law"
             ]
         },
         {
@@ -118,7 +116,7 @@
             ],
             "correct_answer": 0,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "enthalpy",
                 "H",
@@ -135,7 +133,7 @@
             ],
             "correct_answer": 0,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "calorimetry"
             ]
@@ -152,7 +150,7 @@
             ],
             "correct_answer": 2,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "hydrogen",
                 "H",
@@ -168,7 +166,7 @@
             ],
             "correct_answer": 2,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "thermodynamics",
                 "first law of thermodynamics"
@@ -181,8 +179,8 @@
                 "No"
             ],
             "correct_answer": 1,
-            "global_correct": 1,
-            "global_total": 1,
+            "global_correct": 2,
+            "global_total": 2,
             "meta_tags": [
                 "work",
                 "w",
@@ -199,7 +197,7 @@
             ],
             "correct_answer": 0,
             "global_correct": 1,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "rectangular prism",
                 "volume"
@@ -216,7 +214,7 @@
             ],
             "correct_answer": 3,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "tin",
                 "mass",
@@ -235,11 +233,11 @@
             ],
             "correct_answer": 5,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "free energy",
-                "Gibbs",
-                "G"
+                "equation",
+                "Gibbs"
             ]
         },
         {
@@ -249,8 +247,8 @@
                 "no"
             ],
             "correct_answer": 0,
-            "global_correct": 0,
-            "global_total": 1,
+            "global_correct": 1,
+            "global_total": 2,
             "meta_tags": [
                 "free energy",
                 "Gibbs",
@@ -267,7 +265,7 @@
             ],
             "correct_answer": 1,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "titanium",
                 "mass",
@@ -284,8 +282,8 @@
                 "Tantaium"
             ],
             "correct_answer": 0,
-            "global_correct": 0,
-            "global_total": 1,
+            "global_correct": 1,
+            "global_total": 2,
             "meta_tags": [
                 "antimony",
                 "Sb",
@@ -303,7 +301,7 @@
             ],
             "correct_answer": 3,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "entropy",
                 "probability"
@@ -317,7 +315,7 @@
             ],
             "correct_answer": 0,
             "global_correct": 0,
-            "global_total": 1,
+            "global_total": 2,
             "meta_tags": [
                 "entropy",
                 "state function"
@@ -335,8 +333,8 @@
                 "63"
             ],
             "correct_answer": 1,
-            "global_correct": 1,
-            "global_total": 1,
+            "global_correct": 2,
+            "global_total": 2,
             "meta_tags": [
                 "argon",
                 "protons"

@@ -141,9 +141,15 @@ function generateQA (){
     }
 
   }
+  var tempTags = "";
+  for (var z = 0; z < quiz["questions"][currentQuestion]["meta_tags"].length; z++) {
+    tempTags+=quiz["questions"][currentQuestion]["meta_tags"][z] + ", ";
+    console.log(tempTags);
+  }
+  console.log(tempTags); 
   $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
   {
-    tags: quiz["questions"][currentQuestion]["meta_tags"][0],
+    tags: tempTags,
     tagmode: "any",
     format: "json"
   },

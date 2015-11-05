@@ -427,6 +427,7 @@ function nextQuestion() {
       $('#previousQuestion').hide();
       $('#nextQuestion').hide();
       $('#answerChoices').hide();
+      $('#images').hide();
       $('#piechart').fadeIn("slow");
       $('#home').show();
       calculateScore();

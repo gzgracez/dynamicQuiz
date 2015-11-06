@@ -6,7 +6,7 @@ var path = require('path');
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-var content = fs.readFileSync("index.html", 'utf8');
+var content = fs.readFileSync("static/index.html", 'utf8');
 app.use("/static", express.static('static'));
 
 app.get('/', function (req, res) {

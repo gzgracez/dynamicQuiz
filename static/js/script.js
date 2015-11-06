@@ -13,7 +13,7 @@ $(document).ready(function() {
   // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
   // quizLength = quiz["questions"].length;
   // $('#title').text(quiz["title"]);
-  $('#title').text("Dynamic Quiz");
+  $('#title').text("Dynamic Chemistry Quiz");
   $('#title').hide().fadeIn("slow");
   $('#nameForm').hide().fadeIn("slow");
   $('#answerChoices').hide();

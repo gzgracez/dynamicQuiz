@@ -28,7 +28,7 @@
     "correct_answer": 2,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["gold", "element", "symbol"]
+    "meta_tags": ["gold", "chemistry"]
   },
   {
     "text": "How can we solve for change in internal energy?",
@@ -76,7 +76,7 @@
     "correct_answer": 2,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["hydrogen", "H"]
+    "meta_tags": ["hydrogen"]
   },
   {
     "text": "What is the first law of thermodynamics?",
@@ -132,7 +132,7 @@
     "correct_answer": 1,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["titanium"]
+    "meta_tags": ["titanium", "grams"]
   },
   {
     "text": "What does the symbol Sb stand for?",
@@ -140,7 +140,7 @@
     "correct_answer": 0,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["antimony", "symbol", "element"]
+    "meta_tags": ["antimony", "chemistry"]
   },
   {
     "text": "How do we solve for entropy?",

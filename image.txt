@@ -1,2 +1,0 @@
-{"photos":{"page":1,"pages":68698,"perpage":1,"total":"68698","photo":[{"id":"22088302914","owner":"94713265@N05","secret":"7f0f62a2ec","server":"597","farm":1,"title":"Blackmoore","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}
-

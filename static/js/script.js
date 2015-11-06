@@ -157,6 +157,7 @@ function generateQA (){
     $.each(data.items, function(i,item){
       $( "#images" ).empty();
       $("<img />").attr("src", item.media.m).appendTo("#images");
+      $( "#images" ).hide().fadeIn("slow");
       if ( i == 0 ) return false;
     });
   });

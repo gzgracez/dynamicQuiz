@@ -20,7 +20,7 @@
     "correct_answer": 2,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["iron", "Fe", "mass"]
+    "meta_tags": ["iron", "protons"]
   },
   {
     "text": "What does the symbol Au stand for?",
@@ -28,7 +28,7 @@
     "correct_answer": 2,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["Au", "gold", "element", "symbol"]
+    "meta_tags": ["gold", "element", "symbol"]
   },
   {
     "text": "How can we solve for change in internal energy?",
@@ -76,7 +76,7 @@
     "correct_answer": 2,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["hydrogen", "H", "mass"]
+    "meta_tags": ["hydrogen", "H"]
   },
   {
     "text": "What is the first law of thermodynamics?",
@@ -108,7 +108,7 @@
     "correct_answer": 3,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["tin", "mass", "Sn"]
+    "meta_tags": ["tin", "Sn"]
   },
   {
     "text": "How do we solve for Gibbs' free energy?",
@@ -116,7 +116,7 @@
     "correct_answer": 5,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["free energy", "Gibbs", "G"]
+    "meta_tags": ["free energy", "Gibbs"]
   },
   {
     "text": "Is free energy a state function?",
@@ -132,7 +132,7 @@
     "correct_answer": 1,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["titanium", "mass", "Ti"]
+    "meta_tags": ["titanium", "grams"]
   },
   {
     "text": "What does the symbol Sb stand for?",
@@ -140,7 +140,7 @@
     "correct_answer": 0,
     "global_correct": 0,
     "global_total": 0,
-    "meta_tags": ["antimony", "Sb", "symbol", "element"]
+    "meta_tags": ["antimony", "symbol", "element"]
   },
   {
     "text": "How do we solve for entropy?",

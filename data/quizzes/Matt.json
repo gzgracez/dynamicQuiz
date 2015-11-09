@@ -1,0 +1,154 @@
+{
+    "title": "Physics Quiz",
+    "description": "BEST QUIZ EVER",
+    "meta_tags": [
+        "science",
+        "books",
+        "friends",
+        "english",
+        "sports",
+        "leagueoflegends",
+        "jewish",
+        "argentina",
+        "math"
+    ],
+    "diffifculty": "1-20",
+    "questions": [
+        {
+            "text": "1). What is Alastairs middle name?",
+            "answers": [
+                "Borthwick",
+                "Johnny",
+                "Conor",
+                "James"
+            ],
+            "correct_answer": "Borthwick",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "english"
+        },
+        {
+            "text": "2). What is 9 plus 10?",
+            "answers": [
+                "21",
+                "66",
+                "34",
+                "19",
+                "394950495"
+            ],
+            "correct_answer": "21",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "addition"
+        },
+        {
+            "text": "3). What is Kerner's mom's maiden name?",
+            "answers": [
+                "Gallow",
+                "Neumeyer",
+                "Katz"
+            ],
+            "correct_answer": "Gallow",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "name"
+        },
+        {
+            "text": "4). What is Ivkov's middle name?",
+            "answers": [
+                "Javier",
+                "Dragan",
+                "Yusef",
+                "Milow",
+                "Novak"
+            ],
+            "correct_answer": "Javier",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "argentina"
+        },
+        {
+            "text": "5). What is Armstrongs's middle name?",
+            "answers": [
+                "David",
+                "Issac",
+                "Samuel",
+                "Jacob",
+                "Hayden"
+            ],
+            "correct_answer": "Samuel",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "middlename"
+        },
+        {
+            "text": "6). What is Joon's favorite league champion?",
+            "answers": [
+                "Leblanc",
+                "Diana",
+                "Cho'gath",
+                "Yasuo",
+                "Fiora"
+            ],
+            "correct_answer": "Yasuo",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "leagueoflegends"
+        },
+        {
+            "text": "7). Most OP league champion?",
+            "answers": [
+                "Darius",
+                "Riven",
+                "Gangplank",
+                "Garen",
+                "Leblanc"
+            ],
+            "correct_answer": "Darius",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "leagueoflegends"
+        },
+        {
+            "text": "8). What is Andrea's (matt's mom's) favorite sport?",
+            "answers": [
+                "Tennis",
+                "Swimming",
+                "Fieldhockey",
+                "Skiing"
+            ],
+            "correct_answer": "Tennis",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "sports"
+        },
+        {
+            "text": "9). What is Scott Armstrong's favorite book?",
+            "answers": [
+                "The Davinci Code",
+                "Pet Cemetery",
+                "Lost World",
+                "American Sniper",
+                "Pelican Brief"
+            ],
+            "correct_answer": "Pet Cemetery",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "books"
+        },
+        {
+            "text": "10). Who is Conor Yuen's best friend?",
+            "answers": [
+                "Justin He",
+                "Alastair Beeson",
+                "No Friends",
+                "Ulises Acosta",
+                "Matt Armstrong"
+            ],
+            "correct_answer": "No Friends",
+            "global_correct": 0,
+            "global_total": 0,
+            "meta_tags": "foreveralone"
+        }
+    ]
+}

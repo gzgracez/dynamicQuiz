@@ -1,0 +1,214 @@
+{
+    "id": "10",
+    "title": "Can you guess who said it?",
+    "description": "Quiz by Nathalie Young",
+    "difficulty": 10,
+    "questions": [
+        {
+            "text": "Happiness in not something ready made. It comes from your own actions",
+            "answers": [
+                "John Locke",
+                "Dalai Lama",
+                "Dr. Seuss",
+                "Confucius"
+            ],
+            "correct_answer": 1,
+            "global_correct": 6,
+            "global_total": 41,
+            "meta_tags": [
+                "greeneggsandham",
+                "yellowsmileyface"
+            ]
+        },
+        {
+            "text": "Anytime I feel lost, I pull out a map and stare. I stare until I have reminded myself that life is a giant adventure, so much to do, to see",
+            "answers": [
+                "Angelina Jolie",
+                "Aesop",
+                "Coco Chanel"
+            ],
+            "correct_answer": 0,
+            "global_correct": 6,
+            "global_total": 41,
+            "meta_tags": [
+                "maps",
+                "oldmaps"
+            ]
+        },
+        {
+            "text": "Common sense is not so common",
+            "answers": [
+                "Kanye West",
+                "Benjamin Franklin",
+                "Michael Jordan",
+                "Napolean",
+                "Voltaire"
+            ],
+            "correct_answer": 4,
+            "global_correct": 18,
+            "global_total": 41,
+            "meta_tags": [
+                "michaeljordan",
+                "napoleanportrait"
+            ]
+        },
+        {
+            "text": "The best thing to hold onto in life is each other",
+            "answers": [
+                "Buddha",
+                "Audrey Hepburn",
+                "Bob Marley"
+            ],
+            "correct_answer": 1,
+            "global_correct": 10,
+            "global_total": 41,
+            "meta_tags": [
+                "holdinghands",
+                "buddha",
+                "audreyhepburn"
+            ]
+        },
+        {
+            "text": "You have to learn the rules of the game. And then you have to play better than anyone else",
+            "answers": [
+                "Asap Rocky",
+                "Albert Einstein"
+            ],
+            "correct_answer": 1,
+            "global_correct": 31,
+            "global_total": 41,
+            "meta_tags": [
+                "asaprocky",
+                "chessboard",
+                "alberteinstein"
+            ]
+        },
+        {
+            "text": "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment",
+            "answers": [
+                "Buddha",
+                "Helen Keller",
+                "Friedrich Nietsche",
+                "J.R.R. Tolkien"
+            ],
+            "correct_answer": 0,
+            "global_correct": 7,
+            "global_total": 41,
+            "meta_tags": [
+                "penandscroll",
+                "FriedrichNietsche"
+            ]
+        },
+        {
+            "text": "What about love? What about love",
+            "answers": [
+                "Nelson Mandela",
+                "Martin Luther King Jr.",
+                "The Weeknd",
+                "Donald Trump"
+            ],
+            "correct_answer": 2,
+            "global_correct": 13,
+            "global_total": 41,
+            "meta_tags": [
+                "cartoonheart",
+                "donaldtrump"
+            ]
+        },
+        {
+            "text": "Have you finished your homework",
+            "answers": [
+                "Adina Young",
+                "George Haywood",
+                "Woody Young",
+                "Arlette Haywood"
+            ],
+            "correct_answer": 0,
+            "global_correct": 14,
+            "global_total": 41,
+            "meta_tags": [
+                "homework",
+                "textbooks"
+            ]
+        },
+        {
+            "text": "Be as you wish to seem",
+            "answers": [
+                "Lao Tzu",
+                "Plato",
+                "Mahatma Gandi",
+                "Socrates"
+            ],
+            "correct_answer": 3,
+            "global_correct": 23,
+            "global_total": 41,
+            "meta_tags": [
+                "plato",
+                "socrates"
+            ]
+        },
+        {
+            "text": "I believe there's a god above me, I'm just the god of everything else",
+            "answers": [
+                "Jay Z",
+                "Kanye West",
+                "Pusha T"
+            ],
+            "correct_answer": 2,
+            "global_correct": 26,
+            "global_total": 41,
+            "meta_tags": [
+                "praying",
+                "sky",
+                "god"
+            ]
+        },
+        {
+            "text": "I'm not a businessman, I'm a business, man",
+            "answers": [
+                "Jay Z",
+                "Kanye West",
+                "Pusha T"
+            ],
+            "correct_answer": 0,
+            "global_correct": 10,
+            "global_total": 41,
+            "meta_tags": [
+                "businessman",
+                "jayz"
+            ]
+        },
+        {
+            "text": "I love the name of honor, more than I fear death",
+            "answers": [
+                "Julius Caesar",
+                "John Adams"
+            ],
+            "correct_answer": 0,
+            "global_correct": 16,
+            "global_total": 41,
+            "meta_tags": [
+                "honor",
+                "death",
+                "juliuscaesar"
+            ]
+        }
+    ],
+    "highscores": [
+        {
+            "name": "Nathalie Young",
+            "score": 12,
+            "date": "10/5/2015"
+        },
+        {
+            "name": "natnat",
+            "score": 11,
+            "date": "10/4/2015"
+        },
+        {
+            "name": "nathhhh",
+            "score": "11",
+            "date": "10/4/2015"
+        }
+    ]
+}

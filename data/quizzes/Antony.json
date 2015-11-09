@@ -1,0 +1,101 @@
+{
+    "title": "Music Quiz",
+    "description": "Quiz",
+    "meta_tags": [
+       "Music"
+    ],
+
+    "questions" :[
+        {
+         "text": "What is a whole step above B?",
+         "answers": ["D", "F", "G#", "C#", "A flat"],
+         "correct_answer": "3",
+         "global_correct": "0",
+         "global_total": "0",
+         "meta_tags": [
+            "Music", "Violin", "Piano"
+        ]
+  }, {
+        "text": "What is the fourth note in a C major scale?",
+        "answers": ["A", "F", "G flat", "A flat", "B#"],
+        "correct_answer": "1",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano"
+        ]
+  }, {
+        "text": "Which is a major triad?",
+        "answers": ["D, F#, B", "F, D, B flat", "D, F#, A", "D, G flat, A", "F, G, B"],
+        "correct_answer": "2",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano"
+        ]
+  }, {
+        "text": "What is the 7th note of a G major scale?",
+        "answers": ["A", "F flat", "F#", "G", "E flat"],
+        "correct_answer": "2",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano"
+        ]
+  }, {
+        "text": "How many flats are in the key signature of B flat?",
+        "answers": ["1", "2", "3", "4", "5"],
+        "correct_answer": "1",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano"
+        ]
+  }, {
+        "text": "Which is a the formula for a Dorian scale?",
+        "answers": ["W-H-W-W-W-H-W", "H-W-W-W-H-W-W", "W-W-W-W-W-W-W", "H-H-W-W-W-H-W", "H-W-W-W-W-H-H"],
+        "correct_answer": "0",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano"
+        ]
+  }, {
+        "text": "What scale is exactly the same as the E Locrian scale?",
+        "answers": ["G Phrygian", "F Locrian", "A Phrygian", "C Major", "F Minor"],
+        "correct_answer": "2",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano"
+        ]
+  }, {
+        "text": "Which of the following was an Italian classical composer, born south of Verona, Italy, known for his contributions to 18th-century opera?",
+        "answers": ["Antonio Vivaldi", "Giacomo Puccini","Vincenzo Bellini", "Antonio Salieri", "Gioacchino Rossini"],
+        "correct_answer": "3",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano", "Vivaldi", "Puccini", "Bellini", "Salieri", "Rossini"
+        ]
+  }, {
+        "text": "What is the time signature in Led Zeppelin’s 'The Ocean?'' ",
+        "answers": ["4/4 -> 2/4", "3/4", "5/8 -> 3/8", "6/8 -> 3/2", "4/4 -> 2/4 -> 3/8"],
+        "correct_answer": "4",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano", "Led Zeppelin"
+        ]
+  }, {
+        "text": "What is, according to Billboard, the most successful song of all time?",
+        "answers": ["'The Twist', Chubby Checker", "'Smooth', Santana ft. Rob Thomas", "'I Gotta Feeling', The Black Eyed Peas", "'Another Day in Paradise', Phil Collins", "'Hey Jude', The Beatles"],
+        "correct_answer": "0",
+        "global_correct": "0",
+        "global_total": "0",
+        "meta_tags": [
+            "Music", "Violin", "Piano", "Santana", "The Beatles"
+        ]
+    }
+    ]
+}

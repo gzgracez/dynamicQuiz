@@ -1,0 +1,183 @@
+{
+    "title": "Space Quiz",
+    "description": "Space Quiz",
+    "meta_tags": [
+        "Space",
+        "Astrophysics",
+        "Astronomy",
+        "Stars",
+        "Planets",
+        "Galaxies",
+        "Universe"
+    ],
+    "difficulty": "12",
+    "questions": [
+        {
+            "text": "When did the Universe begin, according to the Big Bang Theory?",
+            "answers": [
+                "4.1 billion years ago",
+                "13.7 billion years ago",
+                "14.6 billion years ago",
+                "50 millions years ago"
+            ],
+            "correct_answer": "1",
+            "global_correct": "17",
+            "global_total": "40",
+            "meta_tags": [
+                "Universe",
+                "Big Bang Theory"
+            ]
+        },
+        {
+            "text": "What is the nearest galaxy to the Milky Way?",
+            "answers": [
+                "Fireomeda",
+                "Belomanus",
+                "Andromeda",
+                "Micrasare",
+                "JustinHeWay",
+                "Casertada"
+            ],
+            "correct_answer": "2",
+            "global_correct": "21",
+            "global_total": "40",
+            "meta_tags": [
+                "galaxy",
+                "stars",
+                "andromeda"
+            ]
+        },
+        {
+            "text": "What is the name of the first successful U.S.A moon mission (that landed people on the moon)?",
+            "answers": [
+                "Neptune 7",
+                "Uranus 1",
+                "Apollo 17",
+                "Apollo 11",
+                "Neptune 16"
+            ],
+            "correct_answer": "3",
+            "global_correct": "23",
+            "global_total": "40",
+            "meta_tags": [
+                "Apollo",
+                "Moon",
+                "Rocket"
+            ]
+        },
+        {
+            "text": "What is the name of the first robotic space probe to successfully land on a Comet?",
+            "answers": [
+                "Rosetta",
+                "Fayre",
+                "Stonk"
+            ],
+            "correct_answer": "0",
+            "global_correct": "25",
+            "global_total": "40",
+            "meta_tags": [
+                "Probe",
+                "Comet"
+            ]
+        },
+        {
+            "text": "What is the name of the recent space probe that has taken the highest quality pictures of Pluto to date?",
+            "answers": [
+                "Seventeen",
+                "Big Bang",
+                "Rosetta",
+                "Plutonian1",
+                "Key Hole One",
+                "Terra Field",
+                "New Horizons"
+            ],
+            "correct_answer": "6",
+            "global_correct": "25",
+            "global_total": "40",
+            "meta_tags": [
+                "Pluto"
+            ]
+        },
+        {
+            "text": "How old is our Sun?",
+            "answers": [
+                "10 million years",
+                "615 million years",
+                "1.7 billion years",
+                "4.5 billion years"
+            ],
+            "correct_answer": "3",
+            "global_correct": "26",
+            "global_total": "40",
+            "meta_tags": [
+                "Sun",
+                "Star"
+            ]
+        },
+        {
+            "text": "What is the number of years needed to complete one Halley's Comet cycle?",
+            "answers": [
+                "56",
+                "75",
+                "11",
+                "34"
+            ],
+            "correct_answer": "1",
+            "global_correct": "19",
+            "global_total": "40",
+            "meta_tags": [
+                "Halley's Comet",
+                "Comet"
+            ]
+        },
+        {
+            "text": "What is the point of no return called in regards to light in a black hole?",
+            "answers": [
+                "Flat Horizon",
+                "New Horizons",
+                "Event Horizon",
+                "Spaghettification",
+                "Takayushi's Line"
+            ],
+            "correct_answer": "2",
+            "global_correct": "14",
+            "global_total": "40",
+            "meta_tags": [
+                "Black Hole",
+                "Event Horizon"
+            ]
+        },
+        {
+            "text": "What is the size of the Milky Way? (light years across)",
+            "answers": [
+                "17,500 Light Years",
+                "100,000 Light Years",
+                "210,000 Light Years",
+                "315,000 Light Years",
+                "351,000 Light Years"
+            ],
+            "correct_answer": "1",
+            "global_correct": "23",
+            "global_total": "40",
+            "meta_tags": [
+                "Milky Way"
+            ]
+        },
+        {
+            "text": "What is the most accurate description for the temperature of planet \"JustinHe\", located in galaxy \"Awesomeness?\"",
+            "answers": [
+                "Super Cool",
+                "Moderate",
+                "376 degrees Celcius",
+                "Absolute value of swag degrees"
+            ],
+            "correct_answer": "0",
+            "global_correct": "27",
+            "global_total": "40",
+            "meta_tags": [
+                "Planets",
+                "Suns"
+            ]
+        }
+    ]
+}

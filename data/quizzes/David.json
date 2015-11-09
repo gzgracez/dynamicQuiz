@@ -1,0 +1,166 @@
+{  
+   "title":"Solar System Quiz",
+   "description":"Test your knowledge of the Solar System",
+   "meta_tags":[  
+      "Science",
+      "Physics",
+      "Fun"
+   ],
+   "difficluty": "1-10",
+   "questions":[  
+      {  
+         "text":"How many planets are in the solar system?",
+         "answers":[  
+            "1",
+            "8",
+            "9",
+            "12"
+         ],
+         "correct_answer":1,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Solar System", "Planets"
+         ]
+      },
+      {  
+         "text":"Pluto is classified as a...",
+         "answers":[  
+            "Planet",
+            "Dwarf Planet",
+            "Comet",
+            "Astroid"
+         ],
+         "correct_answer":1,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Pluto", "Planet"
+         ]
+      },
+      {  
+         "text":"About how hot is the sun?",
+         "answers":[  
+            "Very Hot",
+            "5000 F",
+            "10000 F",
+            "15000 F",
+            "20000 F"
+         ],
+         "correct_answer":2,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Sun", "Star"
+         ]
+      },
+      {  
+         "text":"In what shape do planets orbit a single star?",
+         "answers":[  
+            "Circle",
+            "Ellipse",
+            "Parabola",
+            "Spiral"
+         ],
+         "correct_answer":1,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Planet", "Orbit"
+         ]
+      },
+      {  
+         "text":"The Moons of Uranus are named after...",
+         "answers":[  
+            "Ancient Egyptian Gods",
+            "Roman Emperors",
+            "Biblical Figures",
+            "Characters from Shakespeare's plays"
+         ],
+         "correct_answer":3,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Uranus", "Planet"
+         ]
+      },
+      {  
+         "text":"The first man-made object to leave the solar system was...",
+         "answers":[  
+            "Voyager 1",
+            "Voyager 2",
+            "New Horizon",
+            "Orion"
+         ],
+         "correct_answer":0,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Deep Space", "Solar System"
+         ]
+      },
+      {  
+         "text":"Many scientists view the canyons on Mars' surface primarily as evidence of...",
+         "answers":[  
+            "Early volcanic activity",
+            "Numerous dust storms",
+            "Early erosion from water",
+            "Frequent tectonic activity"
+         ],
+         "correct_answer":2,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Mars", "Planet"
+         ]
+      },
+      {  
+         "text":"Venus has surface temperatures that can melt lead. This is mainly due to...",
+         "answers":[  
+            "Intense heat from the sun",
+            "Rampant Greenhouse Effect",
+            "Geothermal Heat",
+            "Tidal forces with the sun"
+         ],
+         "correct_answer":1,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Venus", "Planet"
+         ]
+      },
+      {  
+         "text":"About how many times does Mercury orbit the Sun in one Neptune Year?",
+         "answers":[  
+            "105 times",
+            "231 times",
+            "574 times",
+            "685 times",
+            "1001 times"
+         ],
+         "correct_answer":3,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Mercury", "Planet"
+         ]
+      },
+      {  
+         "text":"How long does it take for light that leave the sun to pass Saturn?",
+         "answers":[  
+            "10 minutes",
+            "50 minutes",
+            "80 minutes",
+            "110 minutes",
+            "150 minutes"
+         ],
+         "correct_answer":2,
+         "global_correct":0,
+         "global_total":0,
+         "meta_tags":[  
+            "Saturn", "Planet"
+         ]
+      }
+   ]
+}
+

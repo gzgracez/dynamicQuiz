@@ -29,6 +29,12 @@ app.get('/users', function (req, res) {
   res.send(readUsers);
 });
 
+//handler for /user/:id which responds with the user id
+app.get('/quiz/:id', function (req, res) {
+  // var quizID = req.params.id;
+  res.end(req.params.id);
+});
+
 app.post('/users', function(req, res){
   var jsonString = JSON.stringify(req.body);
   fs.writeFile("data/users.json", jsonString);

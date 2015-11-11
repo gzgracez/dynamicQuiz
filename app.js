@@ -51,6 +51,19 @@ app.get('/quiz/:id', function (req, res) {
   res.send(targetQuiz);
 });
 
+app.post('/quiz/:id', function (req, res) {
+
+  var sentTargetQuiz = JSON.parse(req.body);
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var targetQuiz = jsonContent[req.params.id];
+
+  jsonContent[targetQuiz] = sentTargetQuiz;
+  var jsonString = JSON.stringify(jsonContent);
+  fs.writeFile("data/allQuizzes.json", jsonString);
+  res.send(req.body);
+});
+
 app.post('/users', function(req, res){
   var jsonString = JSON.stringify(req.body);
   fs.writeFile("data/users.json", jsonString);

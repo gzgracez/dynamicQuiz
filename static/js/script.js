@@ -13,7 +13,7 @@ var userAnswers = [];
 var userJSON;
 var score = 0;
 var titles;
-var selectedQuiz = "";
+var selectedQuiz = 0;
 
 // Initial setup
 $(document).ready(function() {
@@ -62,8 +62,8 @@ function nameForm(){
     $('#nameFormWarning').hide();
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");
-    var select = document.getElementById("titlesDropdown").selectedIndex;
-    loadQuiz(select);
+    selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
+    loadQuiz(selectedQuiz);
   }
 }
 
@@ -481,7 +481,7 @@ function nextQuestion() {
       // Global Scores
       $.ajax({
         type:"POST",
-        url: "quiz",
+        url: "quiz/" + selectedQuiz,
         data: JSON.stringify(quiz),
         timeout: 2000,
         contentType: "application/json; charset=utf-8",

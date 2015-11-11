@@ -1,5 +1,6 @@
 /* 
 Set title based on selected quiz
+Change dropdown CSS
 */
 
 // Make separate method for checking which answer is selected
@@ -79,7 +80,15 @@ function loadTitles(){
       $('#reload').show();
     }
     else {
-      // populate the dropdown
+      for (var i = 0; i < titles.length; i++) {
+        var ul = document.getElementById("titlesDropdown");
+        var li = document.createElement("li");
+        var aTag = document.createElement("a");
+        aTag.href = "#";
+        aTag.innerHTML = titles[i];
+        li.appendChild(aTag);
+        ul.appendChild(li);
+      }
     }
   })
   .fail(function() {

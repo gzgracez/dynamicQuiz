@@ -189,8 +189,8 @@
                     "A flat"
                 ],
                 "correct_answer": 3,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -207,8 +207,8 @@
                     "B#"
                 ],
                 "correct_answer": 1,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -225,8 +225,8 @@
                     "F, G, B"
                 ],
                 "correct_answer": 2,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -243,8 +243,8 @@
                     "E flat"
                 ],
                 "correct_answer": 2,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -261,8 +261,8 @@
                     "5"
                 ],
                 "correct_answer": 1,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -279,8 +279,8 @@
                     "H-W-W-W-W-H-H"
                 ],
                 "correct_answer": 0,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -297,8 +297,8 @@
                     "F Minor"
                 ],
                 "correct_answer": 2,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -315,8 +315,8 @@
                     "Gioacchino Rossini"
                 ],
                 "correct_answer": 3,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -338,8 +338,8 @@
                     "4/4 -> 2/4 -> 3/8"
                 ],
                 "correct_answer": 4,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -357,8 +357,8 @@
                     "'Hey Jude', The Beatles"
                 ],
                 "correct_answer": 0,
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 0,
+                "global_total": 0,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -389,8 +389,8 @@
                     "Celsius 233"
                 ],
                 "correct_answer": 1,
-                "global_correct": "8",
-                "global_total": "37",
+                "global_correct": 8,
+                "global_total": 3,
                 "meta_tags": [
                     "fire"
                 ]
@@ -406,8 +406,8 @@
                     "Freakonomics"
                 ],
                 "correct_answer": 1,
-                "global_correct": "5",
-                "global_total": "33",
+                "global_correct": 5,
+                "global_total": 3,
                 "meta_tags": [
                     "book"
                 ]
@@ -423,8 +423,8 @@
                     "Finch"
                 ],
                 "correct_answer": 0,
-                "global_correct": "8",
-                "global_total": "33",
+                "global_correct": 8,
+                "global_total": 3,
                 "meta_tags": [
                     "bird",
                     "raven",
@@ -442,8 +442,8 @@
                     "Macbeth"
                 ],
                 "correct_answer": 3,
-                "global_correct": "13",
-                "global_total": "33",
+                "global_correct": 1,
+                "global_total": 3,
                 "meta_tags": [
                     "Shakespeare",
                     "ghost"
@@ -457,8 +457,8 @@
                     "First Impressions"
                 ],
                 "correct_answer": 2,
-                "global_correct": "18",
-                "global_total": "33",
+                "global_correct": 1,
+                "global_total": 3,
                 "meta_tags": [
                     "impressionism"
                 ]
@@ -473,8 +473,8 @@
                     "250"
                 ],
                 "correct_answer": 3,
-                "global_correct": "10",
-                "global_total": "33",
+                "global_correct": 1,
+                "global_total": 3,
                 "meta_tags": [
                     "Paradise Lost"
                 ]
@@ -489,8 +489,8 @@
                     "Moriarity"
                 ],
                 "correct_answer": 4,
-                "global_correct": "16",
-                "global_total": "33",
+                "global_correct": 1,
+                "global_total": 3,
                 "meta_tags": [
                     "Sherlock Holmes",
                     "Moriarty"
@@ -504,8 +504,8 @@
                     "The Doormouse"
                 ],
                 "correct_answer": 2,
-                "global_correct": "24",
-                "global_total": "33",
+                "global_correct": 2,
+                "global_total": 3,
                 "meta_tags": [
                     "Robert Frost",
                     "Snowy"
@@ -520,8 +520,8 @@
                     "Notes From Underground"
                 ],
                 "correct_answer": 0,
-                "global_correct": "13",
-                "global_total": "33",
+                "global_correct": 1,
+                "global_total": 3,
                 "meta_tags": [
                     "invisible man",
                     "literature"
@@ -536,8 +536,8 @@
                     "Tom Robinson"
                 ],
                 "correct_answer": 3,
-                "global_correct": "16",
-                "global_total": "37",
+                "global_correct": 1,
+                "global_total": 3,
                 "meta_tags": [
                     "Mockingbird"
                 ]
@@ -1245,8 +1245,8 @@
                     "50 millions years ago"
                 ],
                 "correct_answer": 1,
-                "global_correct": "17",
-                "global_total": "40",
+                "global_correct": 1,
+                "global_total": 4,
                 "meta_tags": [
                     "Universe",
                     "Big Bang Theory"
@@ -1263,8 +1263,8 @@
                     "Casertada"
                 ],
                 "correct_answer": 2,
-                "global_correct": "21",
-                "global_total": "40",
+                "global_correct": 2,
+                "global_total": 4,
                 "meta_tags": [
                     "galaxy",
                     "stars",
@@ -1281,8 +1281,8 @@
                     "Neptune 16"
                 ],
                 "correct_answer": 3,
-                "global_correct": "23",
-                "global_total": "40",
+                "global_correct": 2,
+                "global_total": 4,
                 "meta_tags": [
                     "Apollo",
                     "Moon",
@@ -1297,8 +1297,8 @@
                     "Stonk"
                 ],
                 "correct_answer": 0,
-                "global_correct": "25",
-                "global_total": "40",
+                "global_correct": 2,
+                "global_total": 4,
                 "meta_tags": [
                     "Probe",
                     "Comet"
@@ -1316,8 +1316,8 @@
                     "New Horizons"
                 ],
                 "correct_answer": 6,
-                "global_correct": "25",
-                "global_total": "40",
+                "global_correct": 2,
+                "global_total": 4,
                 "meta_tags": [
                     "Pluto"
                 ]
@@ -1331,8 +1331,8 @@
                     "4.5 billion years"
                 ],
                 "correct_answer": 3,
-                "global_correct": "26",
-                "global_total": "40",
+                "global_correct": 2,
+                "global_total": 4,
                 "meta_tags": [
                     "Sun",
                     "Star"
@@ -1347,8 +1347,8 @@
                     "34"
                 ],
                 "correct_answer": 1,
-                "global_correct": "19",
-                "global_total": "40",
+                "global_correct": 1,
+                "global_total": 4,
                 "meta_tags": [
                     "Halley's Comet",
                     "Comet"
@@ -1364,8 +1364,8 @@
                     "Takayushi's Line"
                 ],
                 "correct_answer": 2,
-                "global_correct": "14",
-                "global_total": "40",
+                "global_correct": 1,
+                "global_total": 4,
                 "meta_tags": [
                     "Black Hole",
                     "Event Horizon"
@@ -1381,8 +1381,8 @@
                     "351,000 Light Years"
                 ],
                 "correct_answer": 1,
-                "global_correct": "23",
-                "global_total": "40",
+                "global_correct": 2,
+                "global_total": 4,
                 "meta_tags": [
                     "Milky Way"
                 ]
@@ -1396,8 +1396,8 @@
                     "Absolute value of swag degrees"
                 ],
                 "correct_answer": 0,
-                "global_correct": "27",
-                "global_total": "40",
+                "global_correct": 2,
+                "global_total": 4,
                 "meta_tags": [
                     "Planets",
                     "Suns"

@@ -45,8 +45,10 @@ app.get('/users', function (req, res) {
 
 //handler for /user/:id which responds with the user id
 app.get('/quiz/:id', function (req, res) {
-  // var quizID = req.params.id;
-  res.end(req.params.id);
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var targetQuiz = jsonContent[req.params.id];
+  res.send(targetQuiz);
 });
 
 app.post('/users', function(req, res){

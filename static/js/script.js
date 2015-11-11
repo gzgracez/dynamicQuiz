@@ -62,8 +62,8 @@ function nameForm(){
     $('#nameFormWarning').hide();
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");
-    var select = document.getElementById("titlesDropdown").selectedIndex + 1;
-    loadQuiz();
+    var select = document.getElementById("titlesDropdown").selectedIndex;
+    loadQuiz(select);
   }
 }
 
@@ -105,9 +105,9 @@ function loadTitles(){
 }
 
 
-// load quiz.json
-function loadQuiz(){
-  $.getJSON('quiz')
+// load target quiz json
+function loadQuiz(target){
+  $.getJSON('quiz/' + target)
   .done(function (data) {
     $('#ajaxloading').hide();
     $('#backHome').hide();

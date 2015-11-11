@@ -81,13 +81,11 @@ function loadTitles(){
     }
     else {
       for (var i = 0; i < titles.length; i++) {
-        var ul = document.getElementById("titlesDropdown");
-        var li = document.createElement("li");
+        var select = document.getElementById("titlesDropdown");
+        var option = document.createElement("option");
         var aTag = document.createElement("a");
-        aTag.href = "#";
-        aTag.innerHTML = titles[i];
-        li.appendChild(aTag);
-        ul.appendChild(li);
+        option.appendChild(document.createTextNode(titles[i]));
+        select.appendChild(option);
       }
     }
   })

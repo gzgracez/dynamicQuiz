@@ -14,7 +14,7 @@ app.use("/static", express.static('static'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-  res.send(content);
+  res.render('index');
 });
 
 /*

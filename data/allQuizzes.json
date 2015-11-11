@@ -534,7 +534,7 @@
                     "Boo Radley",
                     "Bill Johnson",
                     "Tom Robinson"
-                ],f
+                ],
                 "correct_answer": 3,
                 "global_correct": "16",
                 "global_total": "37",
@@ -1430,7 +1430,7 @@
                     "Conor",
                     "James"
                 ],
-                "correct_answer": Brthwick",
+                "correct_answer": 0,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "english"
@@ -1444,7 +1444,7 @@
                     "19",
                     "394950495"
                 ],
-                "correct_answer": 2",
+                "correct_answer": 2,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "addition"
@@ -1456,7 +1456,7 @@
                     "Neumeyer",
                     "Katz"
                 ],
-                "correct_answer": Gllow",
+                "correct_answer": 0,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "name"
@@ -1470,7 +1470,7 @@
                     "Milow",
                     "Novak"
                 ],
-                "correct_answer": Jvier",
+                "correct_answer": 0,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "argentina"
@@ -1484,7 +1484,7 @@
                     "Jacob",
                     "Hayden"
                 ],
-                "correct_answer": Smuel",
+                "correct_answer": 2,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "middlename"
@@ -1498,7 +1498,7 @@
                     "Yasuo",
                     "Fiora"
                 ],
-                "correct_answer": Ysuo",
+                "correct_answer": 3,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "leagueoflegends"
@@ -1512,7 +1512,7 @@
                     "Garen",
                     "Leblanc"
                 ],
-                "correct_answer": Drius",
+                "correct_answer": 0,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "leagueoflegends"
@@ -1525,7 +1525,7 @@
                     "Fieldhockey",
                     "Skiing"
                 ],
-                "correct_answer": Tnnis",
+                "correct_answer": 0,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "sports"
@@ -1539,7 +1539,7 @@
                     "American Sniper",
                     "Pelican Brief"
                 ],
-                "correct_answer": Pt Cemetery",
+                "correct_answer": 1,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "books"
@@ -1553,7 +1553,7 @@
                     "Ulises Acosta",
                     "Matt Armstrong"
                 ],
-                "correct_answer": N Friends",
+                "correct_answer": 2,
                 "global_correct": 0,
                 "global_total": 0,
                 "meta_tags": "foreveralone"

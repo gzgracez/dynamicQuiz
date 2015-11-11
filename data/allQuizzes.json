@@ -380,7 +380,7 @@
         ],
         "questions": [
             {
-                "texts": "What was the original title of Farenheight 451?",
+                "text": "What was the original title of Farenheight 451?",
                 "answers": [
                     "Farenheight 452",
                     "The Fireman",
@@ -396,7 +396,7 @@
                 ]
             },
             {
-                "texts": "What is the best-selling novel of all time?",
+                "text": "What is the best-selling novel of all time?",
                 "answers": [
                     "Jane Eyre",
                     "Don Quixote",
@@ -413,7 +413,7 @@
                 ]
             },
             {
-                "texts": "What type of bird did Edgar Allen Poe originally want to write about?",
+                "text": "What type of bird did Edgar Allen Poe originally want to write about?",
                 "answers": [
                     "Parrot",
                     "Raven",
@@ -433,7 +433,7 @@
                 ]
             },
             {
-                "texts": "Which Shakespeare play does not feature a ghost?",
+                "text": "Which Shakespeare play does not feature a ghost?",
                 "answers": [
                     "Julius Caesar",
                     "Richard III",
@@ -450,7 +450,7 @@
                 ]
             },
             {
-                "texts": "What was the original title of Pride and Prejudice?",
+                "text": "What was the original title of Pride and Prejudice?",
                 "answers": [
                     "Class and Heartlessness",
                     "Elizabeth + Darcy 5Ever",
@@ -464,7 +464,7 @@
                 ]
             },
             {
-                "texts": "How many different words are in John Milton's paradise lost?",
+                "text": "How many different words are in John Milton's paradise lost?",
                 "answers": [
                     "1,789",
                     "2,000",
@@ -480,7 +480,7 @@
                 ]
             },
             {
-                "texts": "Who is Shelock Holmes's archrival?",
+                "text": "Who is Shelock Holmes's archrival?",
                 "answers": [
                     "Morgart",
                     "Voledmort",
@@ -497,7 +497,7 @@
                 ]
             },
             {
-                "texts": "Which poem did Robert Frost not write?",
+                "text": "Which poem did Robert Frost not write?",
                 "answers": [
                     "The Witch of Coos",
                     "Fire and Ice",
@@ -512,7 +512,7 @@
                 ]
             },
             {
-                "texts": "\"I am an invisible man.\" This is the first line of which book?",
+                "text": "\"I am an invisible man.\" This is the first line of which book?",
                 "answers": [
                     "The Invisible Man",
                     "The Catcher in the Rye",
@@ -528,7 +528,7 @@
                 ]
             },
             {
-                "texts": "What is the name of the man being tried in To Kill a Mockingbird?",
+                "text": "What is the name of the man being tried in To Kill a Mockingbird?",
                 "answers": [
                     "Sam Clemens",
                     "Boo Radley",

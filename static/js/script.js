@@ -63,6 +63,8 @@ function nameForm(){
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");
     selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
+    var selectedTitle = $('#titlesDropdown option:selected').text();
+    $('#title').text(selectedTitle);
     loadQuiz(selectedQuiz);
   }
 }

@@ -13,6 +13,7 @@ var userAnswers = [];
 var userJSON;
 var score = 0;
 var titles;
+var selectedQuiz = "";
 
 // Initial setup
 $(document).ready(function() {
@@ -61,6 +62,7 @@ function nameForm(){
     $('#nameFormWarning').hide();
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");
+    var select = document.getElementById("titlesDropdown").selectedIndex + 1;
     loadQuiz();
   }
 }

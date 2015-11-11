@@ -1,18 +1,30 @@
+//update title of tab
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
+var path = require('ejs');
 
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var content = fs.readFileSync("static/index.html", 'utf8');
 app.use("/static", express.static('static'));
+app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
   res.send(content);
 });
 
+/*
+app.get('/template', function (req,res) {
+  var muppets = {
+    
+  };
+//res.render('index', {characters:muppets});  
+})
+*/
 app.get('/titles', function (req, res) {
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);

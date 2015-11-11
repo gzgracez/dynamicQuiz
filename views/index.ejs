@@ -1,0 +1,86 @@
+<% include header %>
+// <%= character.name %>
+
+<body>
+ <div class="container">
+  <h1 id="title"></h1>
+
+  <div class="alert alert-danger" id="nameFormWarning" role="alert">
+    <p class="nameAlert">Please enter your name before proceeding!&nbsp;<a href="#" class="close nameAlert" data-hide="alert">&times;</a></p>
+  </div>
+  <form id="nameForm" role="form">
+    <div class="form-group">
+      <label for="name">First Name:</label>
+      <input type="text" name="nameValue" placeholder="First Name" class="form-control"><br>
+      <select class="form-control" id="titlesDropdown"></select><br>
+      <input class="btn btn-primary" class="form-control" type="submit" value="Submit">
+    </div>
+  </form>
+  
+  <h2 id="welcome"></h2>
+  <h3 id="ajaxloading"></h3>
+  <button id="reload" class="btn btn-success btn-sm">Reload</button>
+  <a href="" id="backHome" class="btn btn-primary btn-sm">Back To Home</a>
+  <div class="alert alert-danger" id="answerWarning" role="alert">
+    <p class="nameAlert">Please choose an answer before proceeding!&nbsp;<a href="#" class="close nameAlert" data-hide="alert">&times;</a></p>
+  </div>
+  <h3 id="questionNumber"></h3>
+  <h3 id="question"></h3>
+  
+  <form id="answerChoices">
+    <input type="radio" name="answers" id="0">
+    <label for="0" id="ansLabels"></label><br id="b0">
+    <input type="radio" name="answers" id="1">
+    <label for="1" id="ansLabels"></label><br id="b1">
+    <input type="radio" name="answers" id="2">
+    <label for="2" id="ansLabels"></label><br id="b2">
+    <input type="radio" name="answers" id="3">
+    <label for="3" id="ansLabels"></label><br id="b3">
+    <input type="radio" name="answers" id="4">
+    <label for="4" id="ansLabels"></label><br id="b4">
+    <input type="radio" name="answers" id="5">
+    <label for="5" id="ansLabels"></label><br id="b5">
+    <input type="radio" name="answers" id="6">
+    <label for="6" id="ansLabels"></label><br id="b6">
+  </form>
+  <div id="images"></div><br>
+  <button id="previousQuestion" class="btn btn-danger btn-sm"><< Back</button>
+  <button id="nextQuestion" class="btn btn-success btn-sm">Next >></button>
+  <h2 id="nameScore"></h2>
+  <center>
+    <canvas id="piechart" width="480" height="250"></canvas>
+  </center>
+  <table class="table table-hover" id="scoreTable">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Correct Answer</th>
+        <th>Global Correct</th>
+      </tr>
+      <tbody>
+      </tbody>
+    </thead>
+  </table>
+  <h2 id="tenScores">Top Ten Users:</h2>
+  <table class="table table-hover" id="userTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <tbody>
+      </tbody>
+    </thead>
+  </table>
+  <center>
+    <a href="" id="home" class="btn btn-primary btn-sm">Back To Home</a>
+  </center>
+  <br>
+</div>
+<script src="static/js/jquery-2.1.4.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<!-- <script src="static/js/quiz.js"></script> -->
+<script src="static/js/script.js"></script>
+</body>
+</html>

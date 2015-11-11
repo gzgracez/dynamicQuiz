@@ -13,6 +13,20 @@ app.get('/', function (req, res) {
   res.send(content);
 });
 
+app.get('/titles', function (req, res) {
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var titles = "[";
+  for (var i = 0; i<jsonContent.length; i++) {
+    if (i < jsonContent.length -1)
+      titles += "\"" + jsonContent[i]["title"] + "\"" + ", ";
+    else
+      titles += "\"" + jsonContent[i]["title"] + "\"";
+  }
+  titles += "]";
+  res.send(titles);
+});
+
 app.get('/quiz', function (req, res) {
   var readQuiz = fs.readFileSync("data/quiz.json", 'utf8');
   res.send(readQuiz);

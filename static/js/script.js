@@ -1,3 +1,7 @@
+/* 
+Set title based on selected quiz
+*/
+
 // Make separate method for checking which answer is selected
 var quiz;
 var name = "Name";
@@ -7,11 +11,13 @@ var numAns = 0;
 var userAnswers = [];
 var userJSON;
 var score = 0;
+var titles;
 
 // Initial setup
 $(document).ready(function() {
   // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
-  $('#title').text("Dynamic Chemistry Quiz");
+  loadTitles();
+  $('#title').text("Dynamic Quiz");
   $('#title').hide().fadeIn("slow");
   $('#nameForm').hide().fadeIn("slow");
   $('#answerChoices').hide();
@@ -57,6 +63,38 @@ function nameForm(){
     loadQuiz();
   }
 }
+
+// load titles in allQuizzes
+function loadTitles(){
+  $.getJSON('titles')
+  .done(function (data) {
+    $('#ajaxloading').hide();
+    $('#backHome').hide();
+    $('#reload').hide();
+    titles = data;
+    console.log(data);
+    if (titles === undefined) {
+      $('#ajaxloading').text("Sorry, we cannot load the quizzes. Please reload the page to try again.");
+      $('#ajaxloading').show();
+      $('#reload').show();
+    }
+    else {
+      // populate the dropdown
+    }
+  })
+  .fail(function() {
+    $('#ajaxloading').text("Sorry, we cannot load the quizzes. Please reload the page to try again.");
+    $('#ajaxloading').show();
+    $('#reload').show();
+  })
+  .always(function() {
+    $('#reload').on('click', function(e){
+      e.preventDefault();
+      loadTitles();
+    });
+  });
+}
+
 
 // load quiz.json
 function loadQuiz(){
@@ -454,4 +492,5 @@ function nextQuestion() {
       userScore();
     }
   }
+
 }

@@ -1,5 +1,6 @@
-//update title of tab
-
+/*//update title of tab
+Take Quiz, modify quiz, edit quiz, delete quiz
+*/
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');

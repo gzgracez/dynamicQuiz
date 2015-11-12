@@ -65,6 +65,7 @@ function nameForm(){
     selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
     var selectedTitle = $('#titlesDropdown option:selected').text();
     $('#title').text(selectedTitle);
+    document.title = selectedTitle;
     loadQuiz(selectedQuiz);
   }
 }

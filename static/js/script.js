@@ -39,18 +39,21 @@ $(document).ready(function() {
     $('#answerWarning').hide();
   });
   document.getElementById("start_quiz").addEventListener("click", function (e) {
-    e.preventDefault();
     console.log("start");
+    e.preventDefault();
     nameForm();
   });
-  document.getElementById("create_quiz").addEventListener("click", function () {
+  document.getElementById("create_quiz").addEventListener("click", function (e) {
     console.log("create");
+    e.preventDefault();
   });
-  document.getElementById("update_quiz").addEventListener("click", function () {
+  document.getElementById("update_quiz").addEventListener("click", function (e) {
     console.log("update");
+    e.preventDefault();
   });
-  document.getElementById("delete_quiz").addEventListener("click", function () {
+  document.getElementById("delete_quiz").addEventListener("click", function (e) {
     console.log("delete");
+    e.preventDefault();
   });
   // $('#nameForm').submit(function (e) {
   //   e.preventDefault();

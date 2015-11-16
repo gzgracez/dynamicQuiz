@@ -77,6 +77,10 @@ app.post('/quiz/:id', function (req, res) {
   res.send(req.body);
 });
 
+app.delete('/quiz/:id', function (req, res) {
+  // DELETE QUIZ
+});
+
 app.post('/users', function(req, res){
   var jsonString = JSON.stringify(req.body);
   fs.writeFile("data/users.json", jsonString);

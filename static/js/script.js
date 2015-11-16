@@ -55,10 +55,6 @@ $(document).ready(function() {
     console.log("delete");
     e.preventDefault();
   });
-  // $('#nameForm').submit(function (e) {
-  //   e.preventDefault();
-  //   nameForm();
-  // });
   $('#piechart').hide();
   document.getElementById("previousQuestion").addEventListener("click", back);
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);

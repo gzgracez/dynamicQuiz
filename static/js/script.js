@@ -38,10 +38,23 @@ $(document).ready(function() {
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
   });
-  $('#nameForm').submit(function (e) {
-    e.preventDefault();
+  document.getElementById("start_quiz").addEventListener("click", function () {
+    console.log("start");
     nameForm();
   });
+  document.getElementById("create_quiz").addEventListener("click", function () {
+    console.log("create");
+  });
+  document.getElementById("update_quiz").addEventListener("click", function () {
+    console.log("update");
+  });
+  document.getElementById("delete_quiz").addEventListener("click", function () {
+    console.log("delete");
+  });
+  // $('#nameForm').submit(function (e) {
+  //   e.preventDefault();
+  //   nameForm();
+  // });
   $('#piechart').hide();
   document.getElementById("previousQuestion").addEventListener("click", back);
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);

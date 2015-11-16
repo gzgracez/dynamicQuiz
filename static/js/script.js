@@ -38,7 +38,8 @@ $(document).ready(function() {
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
   });
-  document.getElementById("start_quiz").addEventListener("click", function () {
+  document.getElementById("start_quiz").addEventListener("click", function (e) {
+    e.preventDefault();
     console.log("start");
     nameForm();
   });
@@ -68,6 +69,7 @@ $(document).ready(function() {
 // After name is submitted on initial screen
 function nameForm(){
   name = $('#nameForm').serializeArray()[0]["value"];
+  console.log(name);
   if (name.length === 0) {
     $('#nameFormWarning').fadeIn();
   }
@@ -91,7 +93,6 @@ function loadTitles(){
     $('#backHome').hide();
     $('#reload').hide();
     titles = data;
-    console.log(data);
     if (titles === undefined) {
       $('#ajaxloading').text("Sorry, we cannot load the quizzes. Please reload the page to try again.");
       $('#ajaxloading').show();

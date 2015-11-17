@@ -65,7 +65,6 @@ app.get('/quiz/:id', function (req, res) {
 });
 
 app.post('/quiz/:id', function (req, res) {
-
   var sentTargetQuiz = JSON.parse(req.body);
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
@@ -78,7 +77,12 @@ app.post('/quiz/:id', function (req, res) {
 });
 
 app.delete('/quiz/:id', function (req, res) {
-  // DELETE QUIZ
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  jsonContent.splice(req.params.id, 1);
+  var jsonString = JSON.stringify(jsonContent);
+  fs.writeFile("data/allQuizzes.json", jsonString);
+  res.send("deleted");
 });
 
 app.post('/users', function(req, res){

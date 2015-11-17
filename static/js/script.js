@@ -53,6 +53,24 @@ $(document).ready(function() {
   });
   document.getElementById("delete_quiz").addEventListener("click", function (e) {
     console.log("delete");
+    $.ajax({
+      type:"DELETE",
+      url: "quiz/" + selectedQuiz,
+      timeout: 2000,
+      contentType: "application/json; charset=utf-8",
+      beforeSend: function(){
+        console.log ("BEFORE DELETE SEND");
+      },
+      complete: function() {
+        console.log ("COMPLETE DELETE LOADING");
+      },
+      success: function(data){
+        console.log("DELETE sent");
+      },
+      fail: function(){
+        console.log("DELETE FAILED");
+      }
+    });
     e.preventDefault();
   });
   $('#piechart').hide();

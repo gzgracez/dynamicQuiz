@@ -33,10 +33,12 @@ $(document).ready(function() {
   $('#home').hide();
   $('#ajaxloading').hide();
   $('#backHome').hide();
+  $('#quizAlert').hide();
   $('#reload').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
+    $('#quizAlert').hide();
   });
   document.getElementById("start_quiz").addEventListener("click", function (e) {
     console.log("start");
@@ -52,7 +54,7 @@ $(document).ready(function() {
     e.preventDefault();
   });
   document.getElementById("delete_quiz").addEventListener("click", function (e) {
-    console.log("delete");
+    console.log("delete " + selectedQuiz);
     $.ajax({
       type:"DELETE",
       url: "quiz/" + selectedQuiz,
@@ -66,6 +68,9 @@ $(document).ready(function() {
       },
       success: function(data){
         console.log("DELETE sent");
+        $('#quizAlert').show();
+        $( "#titlesDropdown").empty();
+        loadTitles();
       },
       fail: function(){
         console.log("DELETE FAILED");

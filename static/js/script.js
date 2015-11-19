@@ -33,12 +33,14 @@ $(document).ready(function() {
   $('#home').hide();
   $('#ajaxloading').hide();
   $('#backHome').hide();
-  $('#quizAlert').hide();
+  $('#quizSuccess').hide();
+  $('#quizWarning').hide();
   $('#reload').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
-    $('#quizAlert').hide();
+    $('#quizSuccess').hide();
+    $('#quizWarning').hide();
   });
   document.getElementById("start_quiz").addEventListener("click", function (e) {
     console.log("start");
@@ -55,28 +57,37 @@ $(document).ready(function() {
   });
   document.getElementById("delete_quiz").addEventListener("click", function (e) {
     selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
-    console.log("delete " + selectedQuiz);
-    $.ajax({
-      type:"DELETE",
-      url: "quiz/" + selectedQuiz,
-      timeout: 2000,
-      contentType: "application/json; charset=utf-8",
-      beforeSend: function(){
-        console.log ("BEFORE DELETE SEND");
-      },
-      complete: function() {
-        console.log ("COMPLETE DELETE LOADING");
-      },
-      success: function(data){
-        console.log("DELETE sent");
-        $('#quizAlert').show();
-        $("#titlesDropdown").empty();
-        loadTitles();
-      },
-      fail: function(){
-        console.log("DELETE FAILED");
-      }
-    });
+    // if there exists a quiz
+    if (selectedQuiz > -1) {
+      console.log("delete " + selectedQuiz);
+      $.ajax({
+        type:"DELETE",
+        url: "quiz/" + selectedQuiz,
+        timeout: 2000,
+        contentType: "application/json; charset=utf-8",
+        beforeSend: function(){
+          console.log ("BEFORE DELETE SEND");
+        },
+        complete: function() {
+          console.log ("COMPLETE DELETE LOADING");
+        },
+        success: function(data){
+          console.log("DELETE sent");
+          $('#quizSuccess').show();
+          $("#titlesDropdown").empty();
+          loadTitles();
+        },
+        fail: function(){
+          console.log("DELETE FAILED");
+        }
+      });
+    }
+    // if no quiz
+    else {
+      console.log(selectedQuiz);
+      $('#quizSuccess').hide();
+      $('#quizWarning').show();
+    }
     e.preventDefault();
   });
   $('#piechart').hide();

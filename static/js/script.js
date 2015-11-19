@@ -54,6 +54,7 @@ $(document).ready(function() {
     e.preventDefault();
   });
   document.getElementById("delete_quiz").addEventListener("click", function (e) {
+    selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
     console.log("delete " + selectedQuiz);
     $.ajax({
       type:"DELETE",
@@ -69,7 +70,7 @@ $(document).ready(function() {
       success: function(data){
         console.log("DELETE sent");
         $('#quizAlert').show();
-        $( "#titlesDropdown").empty();
+        $("#titlesDropdown").empty();
         loadTitles();
       },
       fail: function(){

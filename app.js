@@ -85,6 +85,13 @@ app.delete('/quiz/:id', function (req, res) {
   res.send("deleted");
 });
 
+app.put('/quiz/:id', function (req, res) {
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var targetQuiz = jsonContent[req.params.id];
+  res.send(targetQuiz);
+});
+
 app.post('/users', function(req, res){
   var jsonString = JSON.stringify(req.body);
   fs.writeFile("data/users.json", jsonString);

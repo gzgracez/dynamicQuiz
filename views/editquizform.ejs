@@ -1,0 +1,8 @@
+  <form id="editQuiz" role="form">
+    <div class="form-group">
+      <% for(var i=0; i<editquiz.length; i++) {%>
+        <label for="name"><%= editquiz[i] %></label>
+        <input type="text" name="nameValue" placeholder=<%= editquiz[i] %> class="form-control"><br>
+      <% } %>
+    </div>
+  </form>

@@ -66,6 +66,7 @@ $(document).ready(function() {
         timeout: 2000,
         contentType: "application/json; charset=utf-8",
         beforeSend: function(){
+          $("delete_quiz").attr("disabled", true);
           console.log ("BEFORE DELETE SEND");
         },
         complete: function() {
@@ -73,6 +74,7 @@ $(document).ready(function() {
         },
         success: function(data){
           console.log("DELETE sent");
+          $("delete_quiz").attr("disabled", false);
           $('#quizSuccess').show();
           $("#titlesDropdown").empty();
           loadTitles();

@@ -223,6 +223,11 @@ function loadQuizToEdit(target) {
       $('#editQuiz').empty();
       for (var i = 0; i < quizLength; i++) {
         // console.log(quiz["questions"][i]);
+        $('<label>').attr({
+            for: 'questionlabel'+i,
+            id: 'questionlabel'+i
+        }).appendTo('#editQuiz');
+        $("#questionlabel"+i).text("Question "+(i+1));
         $('<input>').attr({
             type: 'text',
             id: 'question'+i,

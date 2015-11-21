@@ -79,6 +79,7 @@ $(document).ready(function() {
         contentType: "application/json; charset=utf-8",
         beforeSend: function(){
           $("delete_quiz").attr("disabled", true);
+          $('#editQuiz').hide();
           // console.log ("BEFORE DELETE SEND");
         },
         complete: function() {

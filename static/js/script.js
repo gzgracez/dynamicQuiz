@@ -236,6 +236,30 @@ function loadQuizToEdit(target) {
             value: quiz["questions"][i]["text"]
         }).appendTo('#editQuiz');
         $('<br>').appendTo('#editQuiz');
+        $('<div>').attr({
+            class: 'container',
+            id: 'answer'+i,
+            name: 'answers'
+        }).appendTo('#editQuiz');
+        $('<label>').attr({
+            for: 'answerLabel'+i,
+            id: 'answerLabel'+i,
+            class: 'answerLabel'
+        }).appendTo('#editQuiz');
+        $("#answerLabel"+i).text("Answer Choices");
+        for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
+          $('<input>').attr({
+              id: 'answer'+i+a,
+              class: 'form-control',
+              name: 'answers',
+              value: quiz["questions"][i]["answers"][a]
+          }).appendTo('#editQuiz');
+          if (quiz["questions"][i]["correct_answer"] === a) {
+            document.getElementById('answer'+i+a).style.borderColor = "green";
+            document.getElementById('answer'+i+a).style.borderWidth = "thick";
+          }
+          $('<br>').appendTo('#editQuiz');
+        }
       }
     }
   })

@@ -232,7 +232,8 @@ function loadQuizToEdit(target) {
             type: 'text',
             id: 'question'+i,
             name: 'questions',
-            class: 'form-control'
+            class: 'form-control',
+            value: quiz["questions"][i]["text"]
         }).appendTo('#editQuiz');
         $('<br>').appendTo('#editQuiz');
       }

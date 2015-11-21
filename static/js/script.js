@@ -58,37 +58,7 @@ $(document).ready(function() {
     // if there exists a quiz
     if (selectedQuiz > -1) {
       console.log(selectedQuiz);
-      $.getJSON('quiz/' + selectedQuiz)
-      .done(function (data) {
-        $('#ajaxloading').hide();
-        $('#backHome').hide();
-        $('#reload').hide();
-        quiz = data;
-        if (quiz["questions"] === undefined) {
-          $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
-          $('#ajaxloading').show();
-          $('#reload').show();
-          $('#backHome').show();
-        }
-        else {
-          quizLength = quiz["questions"].length;
-          for (var i = 0; i < quizLength; i++) {
-            console.log(quiz["questions"][i]);
-          }
-        }
-      })
-      .fail(function() {
-        $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
-        $('#ajaxloading').show();
-        $('#reload').show();
-        $('#backHome').show();
-      })
-      .always(function() {
-        $('#reload').on('click', function(e){
-          e.preventDefault();
-          loadQuiz();
-        });
-      });
+      loadQuizToEdit(selectedQuiz);
     }
     else {
       console.log(selectedQuiz);
@@ -228,7 +198,41 @@ function loadQuiz(target){
   .always(function() {
     $('#reload').on('click', function(e){
       e.preventDefault();
-      loadQuiz();
+      loadQuiz(target);
+    });
+  });
+}
+
+function loadQuizToEdit(target) {
+  $.getJSON('quiz/' + selectedQuiz)
+  .done(function (data) {
+    $('#ajaxloading').hide();
+    $('#backHome').hide();
+    $('#reload').hide();
+    quiz = data;
+    if (quiz["questions"] === undefined) {
+      $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
+      $('#ajaxloading').show();
+      $('#reload').show();
+      $('#backHome').show();
+    }
+    else {
+      quizLength = quiz["questions"].length;
+      for (var i = 0; i < quizLength; i++) {
+        console.log(quiz["questions"][i]);
+      }
+    }
+  })
+  .fail(function() {
+    $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
+    $('#ajaxloading').show();
+    $('#reload').show();
+    $('#backHome').show();
+  })
+  .always(function() {
+    $('#reload').on('click', function(e){
+      e.preventDefault();
+      loadQuizToEdit(target);
     });
   });
 }

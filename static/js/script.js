@@ -36,6 +36,7 @@ $(document).ready(function() {
   $('#quizSuccess').hide();
   $('#quizWarning').hide();
   $('#reload').hide();
+  $('#editQuiz').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
@@ -218,8 +219,16 @@ function loadQuizToEdit(target) {
     }
     else {
       quizLength = quiz["questions"].length;
+      $('#editQuiz').show();
       for (var i = 0; i < quizLength; i++) {
-        console.log(quiz["questions"][i]);
+        // console.log(quiz["questions"][i]);
+        $('<input>').attr({
+            type: 'text',
+            id: 'question'+i,
+            name: 'questions',
+            class: 'form-control'
+        }).appendTo('#editQuiz');
+        $('<br>').appendTo('#editQuiz');
       }
     }
   })

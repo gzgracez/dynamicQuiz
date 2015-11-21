@@ -53,13 +53,54 @@ $(document).ready(function() {
   });
   document.getElementById("update_quiz").addEventListener("click", function (e) {
     console.log("update");
+    selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
+    console.log(selectedQuiz);
+    // if there exists a quiz
+    if (selectedQuiz > -1) {
+      console.log(selectedQuiz);
+      $.getJSON('quiz/' + selectedQuiz)
+      .done(function (data) {
+        $('#ajaxloading').hide();
+        $('#backHome').hide();
+        $('#reload').hide();
+        quiz = data;
+        if (quiz["questions"] === undefined) {
+          $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
+          $('#ajaxloading').show();
+          $('#reload').show();
+          $('#backHome').show();
+        }
+        else {
+          quizLength = quiz["questions"].length;
+          for (var i = 0; i < quizLength; i++) {
+            console.log(quiz["questions"][i]);
+          }
+        }
+      })
+      .fail(function() {
+        $('#ajaxloading').text("Sorry, we cannot load the quiz. Please reload the page to try again.");
+        $('#ajaxloading').show();
+        $('#reload').show();
+        $('#backHome').show();
+      })
+      .always(function() {
+        $('#reload').on('click', function(e){
+          e.preventDefault();
+          loadQuiz();
+        });
+      });
+    }
+    else {
+      console.log(selectedQuiz);
+      $('#quizSuccess').hide();
+      $('#quizWarning').show();
+    }
     e.preventDefault();
   });
   document.getElementById("delete_quiz").addEventListener("click", function (e) {
     selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
     // if there exists a quiz
     if (selectedQuiz > -1) {
-      console.log("delete " + selectedQuiz);
       $.ajax({
         type:"DELETE",
         url: "quiz/" + selectedQuiz,
@@ -67,26 +108,26 @@ $(document).ready(function() {
         contentType: "application/json; charset=utf-8",
         beforeSend: function(){
           $("delete_quiz").attr("disabled", true);
-          console.log ("BEFORE DELETE SEND");
+          // console.log ("BEFORE DELETE SEND");
         },
         complete: function() {
-          console.log ("COMPLETE DELETE LOADING");
+          // console.log ("COMPLETE DELETE LOADING");
         },
         success: function(data){
-          console.log("DELETE sent");
+          // console.log("DELETE sent");
           $("delete_quiz").attr("disabled", false);
           $('#quizSuccess').show();
           $("#titlesDropdown").empty();
           loadTitles();
         },
         fail: function(){
-          console.log("DELETE FAILED");
+          // console.log("DELETE FAILED");
         }
       });
     }
     // if no quiz
     else {
-      console.log(selectedQuiz);
+      // console.log(selectedQuiz);
       $('#quizSuccess').hide();
       $('#quizWarning').show();
     }
@@ -156,7 +197,6 @@ function loadTitles(){
     });
   });
 }
-
 
 // load target quiz json
 function loadQuiz(target){

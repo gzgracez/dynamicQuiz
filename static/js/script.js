@@ -220,6 +220,7 @@ function loadQuizToEdit(target) {
     else {
       quizLength = quiz["questions"].length;
       $('#editQuiz').show();
+      $('#editQuiz').empty();
       for (var i = 0; i < quizLength; i++) {
         // console.log(quiz["questions"][i]);
         $('<input>').attr({

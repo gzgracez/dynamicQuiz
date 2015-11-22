@@ -262,8 +262,8 @@ function loadQuizToEdit(target) {
         for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
           $('<input>').attr({
               type: 'radio',
-              id: 'answerradiobutton'+i+a,
-              name: 'answersr'
+              name: 'answersr'+i,
+              id: 'answerradiobutton'+i+a
           }).appendTo('#editQuiz');
           $('<input>').attr({
               id: 'answer'+i+a,
@@ -274,7 +274,7 @@ function loadQuizToEdit(target) {
           if (quiz["questions"][i]["correct_answer"] === a) {
             document.getElementById('answer'+i+a).style.borderColor = "green";
             document.getElementById('answer'+i+a).style.borderWidth = "thick";
-            $('input[name="answersr"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
+            $('input[name="answersr' + i + '"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
             console.log('input[name="answersr"][id="answerradiobutton'+i+a+'"]');
           }
           $('<br>').appendTo('#editQuiz');

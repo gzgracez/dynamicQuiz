@@ -172,6 +172,7 @@ td{
 .answerLabel {
   font-size: 18px;
   font-weight: 500;
+  padding-right: 10px; 
 }
 
 .editanswers{
@@ -179,4 +180,8 @@ td{
   margin-left: 5px;
   margin-bottom: 5px;
   display: inline;
+}
+
+.editQuizAddAns {
+  margin-right: 5px;
 }

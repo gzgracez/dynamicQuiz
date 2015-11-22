@@ -37,6 +37,7 @@ $(document).ready(function() {
   $('#quizWarning').hide();
   $('#reload').hide();
   $('#editQuiz').hide();
+  $('#piechart').hide();
   $('[data-hide]').on("click", function(){
     $('#nameFormWarning').hide();
     $('#answerWarning').hide();
@@ -46,6 +47,7 @@ $(document).ready(function() {
   //start quiz
   document.getElementById("start_quiz").addEventListener("click", function (e) {
     console.log("start");
+    $('#editQuiz').hide();
     e.preventDefault();
     nameForm();
   });
@@ -112,7 +114,6 @@ $(document).ready(function() {
     }
     e.preventDefault();
   });
-  $('#piechart').hide();
   document.getElementById("previousQuestion").addEventListener("click", back);
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
   $("#answerChoices").keyup(function(event){
@@ -273,6 +274,8 @@ function loadQuizToEdit(target) {
           if (quiz["questions"][i]["correct_answer"] === a) {
             document.getElementById('answer'+i+a).style.borderColor = "green";
             document.getElementById('answer'+i+a).style.borderWidth = "thick";
+            $('input[name="answersr"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
+            console.log('input[name="answersr"][id="answerradiobutton'+i+a+'"]');
           }
           $('<br>').appendTo('#editQuiz');
         }

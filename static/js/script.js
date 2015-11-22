@@ -43,15 +43,20 @@ $(document).ready(function() {
     $('#quizSuccess').hide();
     $('#quizWarning').hide();
   });
+  //start quiz
   document.getElementById("start_quiz").addEventListener("click", function (e) {
     console.log("start");
     e.preventDefault();
     nameForm();
   });
+
+  //create quiz
   document.getElementById("create_quiz").addEventListener("click", function (e) {
     console.log("create");
     e.preventDefault();
   });
+
+  //update quiz
   document.getElementById("update_quiz").addEventListener("click", function (e) {
     console.log("update");
     selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
@@ -68,6 +73,8 @@ $(document).ready(function() {
     }
     e.preventDefault();
   });
+
+  //delete quiz
   document.getElementById("delete_quiz").addEventListener("click", function (e) {
     selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
     // if there exists a quiz
@@ -205,6 +212,7 @@ function loadQuiz(target){
   });
 }
 
+// load quiz for "update quizzes"
 function loadQuizToEdit(target) {
   $.getJSON('quiz/' + selectedQuiz)
   .done(function (data) {
@@ -248,10 +256,17 @@ function loadQuizToEdit(target) {
             class: 'answerLabel'
         }).appendTo('#editQuiz');
         $("#answerLabel"+i).text("Answer Choices");
+        $('<br>').appendTo('#editQuiz');
+        $('<br>').appendTo('#editQuiz');
         for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
           $('<input>').attr({
+              type: 'radio',
+              id: 'answerradiobutton'+i+a,
+              name: 'answersr'
+          }).appendTo('#editQuiz');
+          $('<input>').attr({
               id: 'answer'+i+a,
-              class: 'form-control',
+              class: 'form-control editanswers',
               name: 'answers',
               value: quiz["questions"][i]["answers"][a]
           }).appendTo('#editQuiz');
@@ -301,7 +316,6 @@ function generateQA (){
       var labelID = "label[for=" + a + "]";
       $(labelID).fadeOut();
     }
-
   }
   // if hasn't been answered before
   else {

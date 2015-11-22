@@ -256,7 +256,7 @@ function loadQuizToEdit(target) {
             id: 'answerLabel'+i,
             class: 'answerLabel'
         }).appendTo('#editQuiz');
-        $("#answerLabel"+i).text("Answer Choices");
+        $("#answerLabel"+i).text("Answer Choices:");
         $('<br>').appendTo('#editQuiz');
         $('<br>').appendTo('#editQuiz');
         for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
@@ -285,8 +285,7 @@ function loadQuizToEdit(target) {
             id: 'metaTagsLabel'+i,
             class: 'answerLabel'
         }).appendTo('#editQuiz');
-        $("#metaTagsLabel"+i).text("Meta Tags");
-        $('<br>').appendTo('#editQuiz');
+        $("#metaTagsLabel"+i).text("Meta Tags:");
         $('<br>').appendTo('#editQuiz');
         $('<input>').attr({
             type: 'text',

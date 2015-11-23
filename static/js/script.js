@@ -259,12 +259,12 @@ function loadQuizToEdit(target) {
         $("#answerLabel"+i).text("Answer Choices:");
         $('<button>').attr({
             id: 'editQuizAddAns'+i,
-            class: 'btn btn-success editQuizAddAns'
+            class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
         }).appendTo('#editQuiz');
         $("#editQuizAddAns"+i).text("+");
         $('<button>').attr({
             id: 'editQuizRemoveAns'+i,
-            class: 'btn btn-danger editQuizRemoveAns'
+            class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
         }).appendTo('#editQuiz');
         $("#editQuizRemoveAns"+i).text("—");
         $('<br>').appendTo('#editQuiz');
@@ -313,6 +313,7 @@ function loadQuizToEdit(target) {
           class: 'btn btn-warning',
           text: 'Submit'
       }).appendTo('#editQuiz');
+      
       // $('.answersradioclass [type="radio"]').on('change', function() {
       //     $(this)
       //     .prev().css('border-color', 'green')

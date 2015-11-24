@@ -121,6 +121,15 @@ $(document).ready(function() {
       $("#nextQuestion").click();
     }
   });
+
+  // edit quiz
+  $(".editQuizAddRemoveAns").click(function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation()
+    var temp = $(this).attr('class');
+    console.log(temp);
+    return false;
+  });
 });
 
 // After name is submitted on initial screen
@@ -229,96 +238,7 @@ function loadQuizToEdit(target) {
     }
     else {
       quizLength = quiz["questions"].length;
-      $('#editQuiz').show();
-      $('#editQuiz').empty();
-      for (var i = 0; i < quizLength; i++) {
-        // console.log(quiz["questions"][i]);
-        $('<label>').attr({
-            for: 'questionlabel'+i,
-            id: 'questionlabel'+i
-        }).appendTo('#editQuiz');
-        $("#questionlabel"+i).text("Question "+(i+1));
-        $('<input>').attr({
-            type: 'text',
-            id: 'question'+i,
-            name: 'questions',
-            class: 'form-control',
-            value: quiz["questions"][i]["text"]
-        }).appendTo('#editQuiz');
-        $('<br>').appendTo('#editQuiz');
-        $('<div>').attr({
-            class: 'container',
-            id: 'answer'+i,
-            name: 'answers'
-        }).appendTo('#editQuiz');
-        $('<label>').attr({
-            for: 'answerLabel'+i,
-            id: 'answerLabel'+i,
-            class: 'answerLabel'
-        }).appendTo('#editQuiz');
-        $("#answerLabel"+i).text("Answer Choices:");
-        $('<button>').attr({
-            id: 'editQuizAddAns'+i,
-            class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
-        }).appendTo('#editQuiz');
-        $("#editQuizAddAns"+i).text("+");
-        $('<button>').attr({
-            id: 'editQuizRemoveAns'+i,
-            class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
-        }).appendTo('#editQuiz');
-        $("#editQuizRemoveAns"+i).text("—");
-        $('<br>').appendTo('#editQuiz');
-        $('<br>').appendTo('#editQuiz');
-        for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
-          $('<input>').attr({
-              type: 'radio',
-              name: 'answersr'+i,
-              class: 'answersradioclass',
-              id: 'answerradiobutton'+i+a
-          }).appendTo('#editQuiz');
-          $('<input>').attr({
-              id: 'answer'+i+a,
-              class: 'form-control editanswers',
-              name: 'answers',
-              value: quiz["questions"][i]["answers"][a]
-          }).appendTo('#editQuiz');
-          if (quiz["questions"][i]["correct_answer"] === a) {
-            document.getElementById('answer'+i+a).style.borderColor = "green";
-            document.getElementById('answer'+i+a).style.borderWidth = "thick";
-            $('input[name="answersr' + i + '"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
-          }
-          $('<br>').appendTo('#editQuiz');
-        }
-        $('<br>').appendTo('#editQuiz');
-        $('<label>').attr({
-            for: 'metaTags'+i,
-            id: 'metaTagsLabel'+i,
-            class: 'answerLabel'
-        }).appendTo('#editQuiz');
-        $("#metaTagsLabel"+i).text("Meta Tags:");
-        $('<br>').appendTo('#editQuiz');
-        $('<input>').attr({
-            type: 'text',
-            id: 'metaTag'+i,
-            name: 'metaTag',
-            class: 'form-control',
-            value: quiz["questions"][i]["meta_tags"]
-        }).appendTo('#editQuiz');
-        $('<br>').appendTo('#editQuiz');
-      }
-      $('<br>').appendTo('#editQuiz');
-      $('<input>').attr({
-          type: 'submit',
-          id: 'editquizsubmit',
-          class: 'btn btn-warning',
-          text: 'Submit'
-      }).appendTo('#editQuiz');
-      
-      // $('.answersradioclass [type="radio"]').on('change', function() {
-      //     $(this)
-      //     .prev().css('border-color', 'green')
-      //     .siblings().css('border-color', 'black');
-      // });
+      editQuizFormat();
     }
   })
   .fail(function() {
@@ -333,6 +253,99 @@ function loadQuizToEdit(target) {
       loadQuizToEdit(target);
     });
   });
+}
+
+function editQuizFormat(){ 
+  $('#editQuiz').show();
+  $('#editQuiz').empty();
+  for (var i = 0; i < quizLength; i++) {
+    // console.log(quiz["questions"][i]);
+    $('<label>').attr({
+        for: 'questionlabel'+i,
+        id: 'questionlabel'+i
+    }).appendTo('#editQuiz');
+    $("#questionlabel"+i).text("Question "+(i+1));
+    $('<input>').attr({
+        type: 'text',
+        id: 'question'+i,
+        name: 'questions',
+        class: 'form-control',
+        value: quiz["questions"][i]["text"]
+    }).appendTo('#editQuiz');
+    $('<br>').appendTo('#editQuiz');
+    $('<div>').attr({
+        class: 'container',
+        id: 'answer'+i,
+        name: 'answers'
+    }).appendTo('#editQuiz');
+    $('<label>').attr({
+        for: 'answerLabel'+i,
+        id: 'answerLabel'+i,
+        class: 'answerLabel'
+    }).appendTo('#editQuiz');
+    $("#answerLabel"+i).text("Answer Choices:");
+    $('<button>').attr({
+        id: 'editQuizAddAns'+i,
+        class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
+    }).appendTo('#editQuiz');
+    $("#editQuizAddAns"+i).text("+");
+    $('<button>').attr({
+        id: 'editQuizRemoveAns'+i,
+        class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
+    }).appendTo('#editQuiz');
+    $("#editQuizRemoveAns"+i).text("—");
+    $('<br>').appendTo('#editQuiz');
+    $('<br>').appendTo('#editQuiz');
+    for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
+      $('<input>').attr({
+          type: 'radio',
+          name: 'answersr'+i,
+          class: 'answersradioclass',
+          id: 'answerradiobutton'+i+a
+      }).appendTo('#editQuiz');
+      $('<input>').attr({
+          id: 'answer'+i+a,
+          class: 'form-control editanswers',
+          name: 'answers',
+          value: quiz["questions"][i]["answers"][a]
+      }).appendTo('#editQuiz');
+      if (quiz["questions"][i]["correct_answer"] === a) {
+        document.getElementById('answer'+i+a).style.borderColor = "green";
+        document.getElementById('answer'+i+a).style.borderWidth = "thick";
+        $('input[name="answersr' + i + '"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
+      }
+      $('<br>').appendTo('#editQuiz');
+    }
+    $('<br>').appendTo('#editQuiz');
+    $('<label>').attr({
+        for: 'metaTags'+i,
+        id: 'metaTagsLabel'+i,
+        class: 'answerLabel'
+    }).appendTo('#editQuiz');
+    $("#metaTagsLabel"+i).text("Meta Tags:");
+    $('<br>').appendTo('#editQuiz');
+    $('<input>').attr({
+        type: 'text',
+        id: 'metaTag'+i,
+        name: 'metaTag',
+        class: 'form-control',
+        value: quiz["questions"][i]["meta_tags"]
+    }).appendTo('#editQuiz');
+    $('<br>').appendTo('#editQuiz');
+  }
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+      type: 'submit',
+      id: 'editquizsubmit',
+      class: 'btn btn-warning',
+      text: 'Submit'
+  }).appendTo('#editQuiz');
+  
+  // $('.answersradioclass [type="radio"]').on('change', function() {
+  //     $(this)
+  //     .prev().css('border-color', 'green')
+  //     .siblings().css('border-color', 'black');
+  // });
 }
 
 // Show questions and answers

@@ -26,6 +26,7 @@ app.get('/template', function (req,res) {
 //res.render('index', {characters:muppets});  
 })
 */
+
 app.get('/titles', function (req, res) {
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);

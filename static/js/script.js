@@ -123,7 +123,7 @@ $(document).ready(function() {
   });
 
   // edit quiz
-  $(".editQuizAddRemoveAns").click(function(e){
+  $(".editQuizFormDiv").click(function(e){
     e.preventDefault();
     e.stopImmediatePropagation()
     var temp = $(this).attr('class');
@@ -255,7 +255,7 @@ function loadQuizToEdit(target) {
   });
 }
 
-function editQuizFormat(){ 
+function editQuizFormat(){
   $('#editQuiz').show();
   $('#editQuiz').empty();
   for (var i = 0; i < quizLength; i++) {

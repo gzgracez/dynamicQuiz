@@ -16,7 +16,13 @@ app.use("/static", express.static('static'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-  res.render('index');
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var titles = [];
+  for (var i = 0; i<jsonContent.length; i++) {
+    titles[i] = jsonContent[i]["title"];
+  }
+  res.render('index',{titles: titles});
 });
 
 app.get('/titles', function (req, res) {

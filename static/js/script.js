@@ -22,8 +22,6 @@ var selectedQuiz = 0;
 
 // Initial setup
 $(document).ready(function() {
-  // quizLength = Math.ceil(Math.random()*(quiz["questions"].length-(quiz["questions"].length/2))+(quiz["questions"].length/2));
-  loadTitles();
   $('#title').text("Dynamic Quiz");
   $('#title').hide().fadeIn("slow");
   $('#nameForm').hide().fadeIn("slow");
@@ -219,7 +217,7 @@ $(document).ready(function() {
     var tempQuestionNum = parseInt(tempID.substring(6,tempID.length)) + 1;
     console.log(tempQuestionNum);
     var defaultNumOfAnswers = 1; //2 answers
-    if (($("#editQuiz > div").length) <= 25) {
+    if (($("#editQuiz > div").length) < 25) {
       console.log("addquestion");
       $('<div>').attr({
         class: 'container',

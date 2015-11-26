@@ -215,6 +215,7 @@ $(document).ready(function() {
   });
 
   // add question
+  // ADD dashes to get rid of ambiguity
   $("#editQuizForm").on('click', '#addQuestion', function (e) {
     console.log("addquestionclicked");
     var tempQuestionNum = ($("#editQuiz > div").length);
@@ -281,6 +282,7 @@ $(document).ready(function() {
         $('<br>').attr({
           id: 'br'+tempQuestionNum+a
         }).appendTo('#answer' + tempQuestionNum);
+        console.log('#answer' + tempQuestionNum);
       }
       $('<br>').appendTo('#question'+tempQuestionNum);
       $('<label>').attr({

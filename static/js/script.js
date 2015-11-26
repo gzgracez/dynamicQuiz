@@ -138,8 +138,8 @@ $(document).ready(function() {
     var tempID = this.id;
     var tempChunks = tempID.split('-');
     console.log(tempID.length);
-    var tempQuestionNum = parseFloat(tempChunks[1]);
-    var tempAnswerNum = parseFloat(tempChunks[2]);
+    var tempQuestionNum = parseInt(tempChunks[1]);
+    var tempAnswerNum = parseInt(tempChunks[2]);
     console.log(tempID + ": " + tempQuestionNum + ": " + tempAnswerNum);
     // Limit min and max number of answer choices
     // add answer
@@ -215,7 +215,9 @@ $(document).ready(function() {
   // add question
   $("#editQuizForm").on('click', '#addQuestion', function (e) {
     console.log("addquestionclicked");
-    var tempQuestionNum = ($("#editQuiz > div").length);
+    var tempID = ($("#editQuiz div:last").attr('id'));
+    var tempQuestionNum = parseInt(tempID.substring(6,tempID.length)) + 1;
+    console.log(tempQuestionNum);
     var defaultNumOfAnswers = 1; //2 answers
     if (($("#editQuiz > div").length) <= 25) {
       console.log("addquestion");

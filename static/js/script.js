@@ -126,6 +126,7 @@ $(document).ready(function() {
   });
   document.getElementById("previousQuestion").addEventListener("click", back);
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
+  
   $("#answerChoices").keyup(function(event){
     if(event.keyCode == 13){
       $("#nextQuestion").click();
@@ -217,6 +218,91 @@ $('#titlesDropdown').change(function() {
 // submit edited quiz
 document.getElementById("editquizsubmit").addEventListener("click", function (e) {
   submitEditedQuiz();
+});
+
+document.getElementById("addQuestion").addEventListener("click", function (e) {
+  var tempQuestionNum = ($("#editQuiz > div").length);
+  console.log(tempQuestionNum);
+  $('<label>').attr({
+        for: 'questionlabel'+i,
+        id: 'questionlabel'+i
+    }).appendTo('#question'+i);
+    $("#questionlabel"+i).text("Question "+(i+1));
+    $('<button>').attr({
+        id: 'removeQuestion-'+i,
+        class: 'btn btn-danger removeQuestion'
+    }).appendTo('#question'+i);
+    $("#removeQuestion-"+i).text("Remove question");
+    $('<input>').attr({
+        type: 'text',
+        id: 'question'+i,
+        name: 'questions',
+        class: 'form-control',
+        value: quiz["questions"][i]["text"]
+    }).appendTo('#question'+i);
+    $('<br>').appendTo('#question'+i);
+    $('<label>').attr({
+        for: 'answerLabel'+i,
+        id: 'answerLabel'+i,
+        class: 'answerLabel'
+    }).appendTo('#question'+i);
+    $("#answerLabel"+i).text("Answer Choices:");
+    $('<button>').attr({
+        id: 'editQuizAddAns-'+i+'-'+(quiz["questions"][i]["answers"].length-1),
+        class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
+    }).appendTo('#question'+i);
+    $("#editQuizAddAns-"+i+'-'+(quiz["questions"][i]["answers"].length-1)).text("+");
+    $('<button>').attr({
+        id: 'editQuizRemoveAns-'+i+'-'+(quiz["questions"][i]["answers"].length-1),
+        class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
+    }).appendTo('#question'+i);
+    $("#editQuizRemoveAns-"+i+'-'+(quiz["questions"][i]["answers"].length-1)).text("—");
+    $('<br>').appendTo('#question'+i);
+    $('<br>').appendTo('#question'+i);
+    $('<div>').attr({
+        class: 'container',
+        id: 'answer'+i,
+        name: 'answers'
+    }).appendTo('#question'+i);
+    for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
+      $('<input>').attr({
+          type: 'radio',
+          name: 'answersr'+i,
+          class: 'answersradioclass',
+          id: 'answerradiobutton'+i+a
+      }).appendTo('#answer' + i);
+      $('<input>').attr({
+          id: 'answer'+i+a,
+          class: 'form-control editanswers',
+          name: 'answers',
+          value: quiz["questions"][i]["answers"][a]
+      }).appendTo('#answer' + i);
+      if (quiz["questions"][i]["correct_answer"] === a) {
+        document.getElementById('answer'+i+a).style.borderColor = "green";
+        document.getElementById('answer'+i+a).style.borderWidth = "thick";
+        $('input[name="answersr' + i + '"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
+      }
+      $('<br>').attr({
+        id: 'br'+i+a
+      }).appendTo('#answer' + i);
+    }
+    $('<br>').appendTo('#question'+i);
+    $('<label>').attr({
+        for: 'metaTags'+i,
+        id: 'metaTagsLabel'+i,
+        class: 'answerLabel'
+    }).appendTo('#question'+i);
+    $("#metaTagsLabel"+i).text("Meta Tags:");
+    $('<br>').appendTo('#question'+i);
+    $('<input>').attr({
+        type: 'text',
+        id: 'metaTag'+i,
+        name: 'metaTag',
+        class: 'form-control',
+        value: quiz["questions"][i]["meta_tags"]
+    }).appendTo('#question'+i);
+    $('<br>').appendTo('#question'+i);
+    e.preventDefault();
 });
 
 // After name is submitted on initial screen
@@ -436,16 +522,16 @@ function editQuizFormat(){
   $('<button>').attr({
       id: 'addQuestion',
       class: 'btn btn-success'
-  }).appendTo('#question'+i);
+  }).appendTo('#editQuiz');
   $("#addQuestion").text("Add a question");
-  $('<br>').appendTo('#question'+i);
-  $('<br>').appendTo('#question'+i);
+  $('<br>').appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
   $('<input>').attr({
       type: 'submit',
       id: 'editquizsubmit',
       class: 'btn btn-warning',
       text: 'Submit'
-  }).appendTo('#question'+i);
+  }).appendTo('#editQuiz');
 }
 
 function submitEditedQuiz(){

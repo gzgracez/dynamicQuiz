@@ -124,7 +124,32 @@ $(document).ready(function() {
 
   // edit quiz
   $(".editQuizFormDiv").delegate('.editQuizAddRemoveAns', 'click', function(e){
-    console.log(this.id);
+    var tempID = this.id;
+    var tempQuestionNum = parseFloat(tempID[tempID.length - 2]);
+    var tempAnswerNum = parseFloat(tempID[tempID.length - 1]);
+    console.log( tempID + ": " + tempID.length + ": " + tempQuestionNum);
+    // REPLACE ID AFTER ADDITION OR REMOVAL OF ANSWER CHOICE
+    // add answer
+    if (tempID.length === 16) {
+      console.log ("add");
+      tempQuestionNum += 1;
+      tempAnswerNum += 1;
+      $('<input>').attr({
+          type: 'radio',
+          name: 'answersr'+tempQuestionNum,
+          class: 'answersradioclass',
+          id: 'answerradiobutton'+tempQuestionNum+tempAnswerNum
+      }).appendTo('#editQuiz');
+      $('<input>').attr({
+          id: 'answer'+tempQuestionNum+tempAnswerNum,
+          class: 'form-control editanswers',
+          name: 'answers',
+      }).appendTo('#editQuiz');
+    }
+    // remove answer
+    else {
+      console.log ("remove");
+    }
     e.preventDefault();
     e.stopImmediatePropagation();
     return false;
@@ -272,11 +297,6 @@ function editQuizFormat(){
         value: quiz["questions"][i]["text"]
     }).appendTo('#editQuiz');
     $('<br>').appendTo('#editQuiz');
-    // $('<div>').attr({
-    //     class: 'container',
-    //     id: 'answer'+i,
-    //     name: 'answers'
-    // }).appendTo('#editQuiz');
     $('<label>').attr({
         for: 'answerLabel'+i,
         id: 'answerLabel'+i,
@@ -284,15 +304,15 @@ function editQuizFormat(){
     }).appendTo('#editQuiz');
     $("#answerLabel"+i).text("Answer Choices:");
     $('<button>').attr({
-        id: 'editQuizAddAns'+i,
+        id: 'editQuizAddAns'+i+quiz["questions"][i]["answers"].length,
         class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
     }).appendTo('#editQuiz');
-    $("#editQuizAddAns"+i).text("+");
+    $("#editQuizAddAns"+i+quiz["questions"][i]["answers"].length).text("+");
     $('<button>').attr({
-        id: 'editQuizRemoveAns'+i,
+        id: 'editQuizRemoveAns'+i+quiz["questions"][i]["answers"].length,
         class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
     }).appendTo('#editQuiz');
-    $("#editQuizRemoveAns"+i).text("—");
+    $("#editQuizRemoveAns"+i+quiz["questions"][i]["answers"].length).text("—");
     $('<br>').appendTo('#editQuiz');
     $('<br>').appendTo('#editQuiz');
     for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {

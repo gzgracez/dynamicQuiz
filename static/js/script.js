@@ -123,11 +123,10 @@ $(document).ready(function() {
   });
 
   // edit quiz
-  $(".editQuizFormDiv").click(function(e){
+  $(".editQuizFormDiv").delegate('.editQuizAddRemoveAns', 'click', function(e){
+    console.log(this.id);
     e.preventDefault();
-    e.stopImmediatePropagation()
-    var temp = $(this).attr('class');
-    console.log(temp);
+    e.stopImmediatePropagation();
     return false;
   });
 });
@@ -273,11 +272,11 @@ function editQuizFormat(){
         value: quiz["questions"][i]["text"]
     }).appendTo('#editQuiz');
     $('<br>').appendTo('#editQuiz');
-    $('<div>').attr({
-        class: 'container',
-        id: 'answer'+i,
-        name: 'answers'
-    }).appendTo('#editQuiz');
+    // $('<div>').attr({
+    //     class: 'container',
+    //     id: 'answer'+i,
+    //     name: 'answers'
+    // }).appendTo('#editQuiz');
     $('<label>').attr({
         for: 'answerLabel'+i,
         id: 'answerLabel'+i,

@@ -187,7 +187,10 @@ $(document).ready(function() {
 });
 
 $(".editQuizFormDiv").delegate('.removeQuestion', 'click', function(e) {
-  alert(this.id);
+  var tempID = this.id;
+  var tempChunks = tempID.split('-');
+  var tempQuestion = tempChunks[1];
+  $('#question' + tempQuestion).remove();
   e.preventDefault();
   e.stopImmediatePropagation();
   return false;
@@ -341,10 +344,10 @@ function editQuizFormat(){
     }).appendTo('#question'+i);
     $("#questionlabel"+i).text("Question "+(i+1));
     $('<button>').attr({
-        id: 'removeQuestion'+i,
+        id: 'removeQuestion-'+i,
         class: 'btn btn-danger removeQuestion'
     }).appendTo('#question'+i);
-    $("#removeQuestion"+i).text("Remove question");
+    $("#removeQuestion-"+i).text("Remove question");
     $('<input>').attr({
         type: 'text',
         id: 'question'+i,

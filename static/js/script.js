@@ -216,7 +216,7 @@ $(document).ready(function() {
   $("#editQuizForm").on('click', '#addQuestion', function (e) {
     console.log("addquestionclicked");
     var tempQuestionNum = ($("#editQuiz > div").length);
-    var defaultNumOfAnswers = 4; //5 answers
+    var defaultNumOfAnswers = 1; //2 answers
     if (($("#editQuiz > div").length) <= 25) {
       console.log("addquestion");
       $('<div>').attr({

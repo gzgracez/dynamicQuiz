@@ -151,15 +151,15 @@ $(document).ready(function() {
           type: 'radio',
           name: 'answersr' + tempQuestionNum,
           class: 'answersradioclass',
-          id: 'answerradiobutton' + tempQuestionNum + tempAnswerNum
+          id: 'answerradiobutton-' + tempQuestionNum + '-' + tempAnswerNum
         }).appendTo('#answer' + tempQuestionNum);
         $('<input>').attr({
-          id: 'answer' + tempQuestionNum + tempAnswerNum,
+          id: 'answer-' + tempQuestionNum + '-' + tempAnswerNum,
           class: 'form-control editanswers',
           name: 'answers',
         }).appendTo('#answer' + tempQuestionNum);
         $('<br>').attr({
-          id: 'br' + tempQuestionNum + tempAnswerNum
+          id: 'br-' + tempQuestionNum + '-' + tempAnswerNum
         }).appendTo('#answer' + tempQuestionNum);
         $(this).attr("id", "editQuizAddAns-" + tempQuestionNum + '-' + tempAnswerNum);
         $('#editQuizRemoveAns-' + tempQuestionNum + '-' + (tempAnswerNum - 1)).attr("id", "editQuizRemoveAns-" + tempQuestionNum + '-' + tempAnswerNum);
@@ -172,11 +172,9 @@ $(document).ready(function() {
     else {
       console.log("remove");
       if ((tempAnswerNum - 1) > 0) {
-        console.log("actually remove");
-        $('#answerradiobutton' + tempQuestionNum + tempAnswerNum).remove();
-        console.log('#answerradiobutton' + tempQuestionNum + tempAnswerNum);
-        $('#answer' + tempQuestionNum + tempAnswerNum).remove();
-        $('#br' + tempQuestionNum + tempAnswerNum).remove();
+        $('#answerradiobutton-' + tempQuestionNum + '-' + tempAnswerNum).remove();
+        $('#answer-' + tempQuestionNum + '-' + tempAnswerNum).remove();
+        $('#br-' + tempQuestionNum + '-' + tempAnswerNum).remove();
         tempAnswerNum -= 1;
         $(this).attr("id", "editQuizRemoveAns-" + tempQuestionNum + '-' + tempAnswerNum);
         $('#editQuizAddAns-' + tempQuestionNum + '-' + (tempAnswerNum + 1)).attr("id", "editQuizAddAns-" + tempQuestionNum + '-' + tempAnswerNum);
@@ -215,7 +213,6 @@ $(document).ready(function() {
   });
 
   // add question
-  // ADD dashes to get rid of ambiguity
   $("#editQuizForm").on('click', '#addQuestion', function (e) {
     console.log("addquestionclicked");
     var tempQuestionNum = ($("#editQuiz > div").length);
@@ -272,17 +269,16 @@ $(document).ready(function() {
           type: 'radio',
           name: 'answersr'+tempQuestionNum,
           class: 'answersradioclass',
-          id: 'answerradiobutton'+tempQuestionNum+a
+          id: 'answerradiobutton-'+tempQuestionNum+'-'+a
         }).appendTo('#answer' + tempQuestionNum);
         $('<input>').attr({
-          id: 'answer'+tempQuestionNum+a,
+          id: 'answer-'+tempQuestionNum+'-'+a,
           class: 'form-control editanswers',
           name: 'answers'
         }).appendTo('#answer' + tempQuestionNum);
         $('<br>').attr({
-          id: 'br'+tempQuestionNum+a
+          id: 'br-'+tempQuestionNum+'-'+a
         }).appendTo('#answer' + tempQuestionNum);
-        console.log('#answer' + tempQuestionNum);
       }
       $('<br>').appendTo('#question'+tempQuestionNum);
       $('<label>').attr({
@@ -485,18 +481,18 @@ function editQuizFormat(){
         type: 'radio',
         name: 'answersr'+i,
         class: 'answersradioclass',
-        id: 'answerradiobutton'+i+a
+        id: 'answerradiobutton-'+i+'-'+a
       }).appendTo('#answer' + i);
       $('<input>').attr({
-        id: 'answer'+i+a,
+        id: 'answer-'+i+'-'+a,
         class: 'form-control editanswers',
         name: 'answers',
         value: quiz["questions"][i]["answers"][a]
       }).appendTo('#answer' + i);
       if (quiz["questions"][i]["correct_answer"] === a) {
-        document.getElementById('answer'+i+a).style.borderColor = "green";
-        document.getElementById('answer'+i+a).style.borderWidth = "thick";
-        $('input[name="answersr' + i + '"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
+        document.getElementById('answer-'+i+'-'+a).style.borderColor = "green";
+        document.getElementById('answer-'+i+'-'+a).style.borderWidth = "thick";
+        $('input[name="answersr' + i + '"][id="answerradiobutton-'+i+'-'+a+'"]').prop('checked',true);
       }
       $('<br>').attr({
         id: 'br'+i+a

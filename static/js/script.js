@@ -214,89 +214,95 @@ $(document).ready(function() {
     submitEditedQuiz();
   });
 
+  // add question
   $("#editQuizForm").on('click', '#addQuestion', function (e) {
-    e.preventDefault();
+    console.log("addquestionclicked");
     var tempQuestionNum = ($("#editQuiz > div").length);
-    console.log(tempQuestionNum);
-    $('<label>').attr({
-      for: 'questionlabel'+i,
-        id: 'questionlabel'+i
-    }).appendTo('#question'+i);
-    $("#questionlabel"+i).text("Question "+(i+1));
-    $('<button>').attr({
-      id: 'removeQuestion-'+i,
-      class: 'btn btn-danger removeQuestion'
-    }).appendTo('#question'+i);
-    $("#removeQuestion-"+i).text("Remove question");
-    $('<input>').attr({
-      type: 'text',
-      id: 'question'+i,
-      name: 'questions',
-      class: 'form-control',
-      value: quiz["questions"][i]["text"]
-    }).appendTo('#question'+i);
-    $('<br>').appendTo('#question'+i);
-    $('<label>').attr({
-      for: 'answerLabel'+i,
-        id: 'answerLabel'+i,
-      class: 'answerLabel'
-    }).appendTo('#question'+i);
-    $("#answerLabel"+i).text("Answer Choices:");
-    $('<button>').attr({
-      id: 'editQuizAddAns-'+i+'-'+(quiz["questions"][i]["answers"].length-1),
-      class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
-    }).appendTo('#question'+i);
-    $("#editQuizAddAns-"+i+'-'+(quiz["questions"][i]["answers"].length-1)).text("+");
-    $('<button>').attr({
-      id: 'editQuizRemoveAns-'+i+'-'+(quiz["questions"][i]["answers"].length-1),
-      class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
-    }).appendTo('#question'+i);
-    $("#editQuizRemoveAns-"+i+'-'+(quiz["questions"][i]["answers"].length-1)).text("—");
-    $('<br>').appendTo('#question'+i);
-    $('<br>').appendTo('#question'+i);
-    $('<div>').attr({
-      class: 'container',
-      id: 'answer'+i,
-      name: 'answers'
-    }).appendTo('#question'+i);
-    for (var a = 0; a < quiz["questions"][i]["answers"].length; a++) {
+    var defaultNumOfAnswers = 4; //5 answers
+    if (($("#editQuiz > div").length) <= 25) {
+      console.log("addquestion");
+      $('<div>').attr({
+        class: 'container',
+        id: 'question'+tempQuestionNum,
+        name: 'questions'
+      }).insertAfter("#question" + (tempQuestionNum-1));
+      $('<label>').attr({
+        for: 'questionlabel'+tempQuestionNum,
+          id: 'questionlabel'+tempQuestionNum
+      }).appendTo('#question'+tempQuestionNum);
+      $("#questionlabel"+tempQuestionNum).text("Question "+(tempQuestionNum+1));
+      $('<button>').attr({
+        id: 'removeQuestion-'+tempQuestionNum,
+        class: 'btn btn-danger removeQuestion'
+      }).appendTo('#question'+tempQuestionNum);
+      $("#removeQuestion-"+tempQuestionNum).text("Remove question");
       $('<input>').attr({
-        type: 'radio',
-        name: 'answersr'+i,
-        class: 'answersradioclass',
-        id: 'answerradiobutton'+i+a
-      }).appendTo('#answer' + i);
-      $('<input>').attr({
-        id: 'answer'+i+a,
-        class: 'form-control editanswers',
-        name: 'answers',
-        value: quiz["questions"][i]["answers"][a]
-      }).appendTo('#answer' + i);
-      if (quiz["questions"][i]["correct_answer"] === a) {
-        document.getElementById('answer'+i+a).style.borderColor = "green";
-        document.getElementById('answer'+i+a).style.borderWidth = "thick";
-        $('input[name="answersr' + i + '"][id="answerradiobutton'+i+a+'"]').prop('checked',true);
+        type: 'text',
+        id: 'question'+tempQuestionNum,
+        name: 'questions',
+        class: 'form-control'
+      }).appendTo('#question'+tempQuestionNum);
+      $('<br>').appendTo('#question'+tempQuestionNum);
+      $('<label>').attr({
+        for: 'answerLabel'+tempQuestionNum,
+          id: 'answerLabel'+tempQuestionNum,
+        class: 'answerLabel'
+      }).appendTo('#question'+tempQuestionNum);
+      $("#answerLabel"+tempQuestionNum).text("Answer Choices:");
+      $('<button>').attr({
+        id: 'editQuizAddAns-'+tempQuestionNum+'-'+(defaultNumOfAnswers),
+        class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
+      }).appendTo('#question'+tempQuestionNum);
+      $("#editQuizAddAns-"+tempQuestionNum+'-'+(defaultNumOfAnswers)).text("+");
+      $('<button>').attr({
+        id: 'editQuizRemoveAns-'+tempQuestionNum+'-'+(defaultNumOfAnswers),
+        class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
+      }).appendTo('#question'+tempQuestionNum);
+      $("#editQuizRemoveAns-"+tempQuestionNum+'-'+(defaultNumOfAnswers)).text("—");
+      $('<br>').appendTo('#question'+tempQuestionNum);
+      $('<br>').appendTo('#question'+tempQuestionNum);
+      $('<div>').attr({
+        class: 'container',
+        id: 'answer'+tempQuestionNum,
+        name: 'answers'
+      }).appendTo('#question'+tempQuestionNum);
+      for (var a = 0; a < defaultNumOfAnswers+1; a++) {
+        $('<input>').attr({
+          type: 'radio',
+          name: 'answersr'+tempQuestionNum,
+          class: 'answersradioclass',
+          id: 'answerradiobutton'+tempQuestionNum+a
+        }).appendTo('#answer' + tempQuestionNum);
+        $('<input>').attr({
+          id: 'answer'+tempQuestionNum+a,
+          class: 'form-control editanswers',
+          name: 'answers'
+        }).appendTo('#answer' + tempQuestionNum);
+        $('<br>').attr({
+          id: 'br'+tempQuestionNum+a
+        }).appendTo('#answer' + tempQuestionNum);
       }
-      $('<br>').attr({
-        id: 'br'+i+a
-      }).appendTo('#answer' + i);
+      $('<br>').appendTo('#question'+tempQuestionNum);
+      $('<label>').attr({
+        for: 'metaTags'+tempQuestionNum,
+          id: 'metaTagsLabel'+tempQuestionNum,
+        class: 'answerLabel'
+      }).appendTo('#question'+tempQuestionNum);
+      $("#metaTagsLabel"+tempQuestionNum).text("Meta Tags:");
+      $('<br>').appendTo('#question'+tempQuestionNum);
+      $('<input>').attr({
+        type: 'text',
+        id: 'metaTag'+tempQuestionNum,
+        name: 'metaTag',
+        class: 'form-control'
+      }).appendTo('#question'+tempQuestionNum);
+      $('<br>').appendTo('#question'+tempQuestionNum);
+    } 
+    else {
+      console.log("CANNOT ADD MORE QUESTIONS");
+      // POSSIBLE NOTIFICATION
     }
-    $('<br>').appendTo('#question'+i);
-    $('<label>').attr({
-      for: 'metaTags'+i,
-        id: 'metaTagsLabel'+i,
-      class: 'answerLabel'
-    }).appendTo('#question'+i);
-    $("#metaTagsLabel"+i).text("Meta Tags:");
-    $('<br>').appendTo('#question'+i);
-    $('<input>').attr({
-      type: 'text',
-      id: 'metaTag'+i,
-      name: 'metaTag',
-      class: 'form-control',
-      value: quiz["questions"][i]["meta_tags"]
-    }).appendTo('#question'+i);
-    $('<br>').appendTo('#question'+i);
+    e.preventDefault();
   });
 });
 // After name is submitted on initial screen
@@ -426,7 +432,6 @@ function editQuizFormat(){
   $('#editQuiz').show();
   $('#editQuiz').empty();
   for (var i = 0; i < quizLength; i++) {
-    // console.log(quiz["questions"][i]);
     $('<div>').attr({
       class: 'container',
       id: 'question'+i,

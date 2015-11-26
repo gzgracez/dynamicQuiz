@@ -1,5 +1,6 @@
 /*//update title of tab
 Take Quiz, modify quiz, edit quiz, delete quiz
+use templating for dropdown quiz selection?
 */
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -17,15 +18,6 @@ app.set('view engine', 'ejs');
 app.get('/', function (req, res) {
   res.render('index');
 });
-
-/*
-app.get('/template', function (req,res) {
-  var muppets = {
-    
-  };
-//res.render('index', {characters:muppets});  
-})
-*/
 
 app.get('/titles', function (req, res) {
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
@@ -69,12 +61,24 @@ app.post('/quiz/:id', function (req, res) {
   var sentTargetQuiz = JSON.parse(req.body);
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
-  var targetQuiz = jsonContent[req.params.id];
 
-  jsonContent[targetQuiz] = sentTargetQuiz;
+  jsonContent[req.params.id] = sentTargetQuiz;
   var jsonString = JSON.stringify(jsonContent);
   fs.writeFile("data/allQuizzes.json", jsonString);
   res.send(req.body);
+});
+
+app.put('/quiz/:id', function (req, res) {
+  var sentQuiz = JSON.parse(req.body);
+
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  jsonContent[req.params.id] = sentQuiz;
+
+  var jsonString = JSON.stringify(jsonContent);
+  fs.writeFile("data/allQuizzes.json", jsonString);
+
+  res.send("updated");
 });
 
 app.delete('/quiz/:id', function (req, res) {
@@ -84,13 +88,6 @@ app.delete('/quiz/:id', function (req, res) {
   var jsonString = JSON.stringify(jsonContent);
   fs.writeFile("data/allQuizzes.json", jsonString);
   res.send("deleted");
-});
-
-app.put('/quiz/:id', function (req, res) {
-  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
-  var jsonContent = JSON.parse(readQuiz);
-  var targetQuiz = jsonContent[req.params.id];
-  res.send(targetQuiz);
 });
 
 app.post('/users', function(req, res){

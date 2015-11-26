@@ -130,12 +130,14 @@ $(document).ready(function() {
   // edit quiz
   $(".editQuizFormDiv").delegate('.editQuizAddRemoveAns', 'click', function(e){
     var tempID = this.id;
-    var tempQuestionNum = parseFloat(tempID[tempID.length - 2]);
-    var tempAnswerNum = parseFloat(tempID[tempID.length - 1]);
+    var tempChunks = tempID.split('-');
+    console.log(tempID.length);
+    var tempQuestionNum = parseFloat(tempChunks[1]);
+    var tempAnswerNum = parseFloat(tempChunks[2]);
     console.log( tempID + ": " + tempQuestionNum + ": " + tempAnswerNum);
     // Limit min and max number of answer choices
     // add answer
-    if (tempID.length === 16) {
+    if (tempID.length < 19) {
       console.log ("add");
       if ((tempAnswerNum + 1) < 6) {
         tempAnswerNum += 1;
@@ -153,8 +155,8 @@ $(document).ready(function() {
         $('<br>').attr({
           id: 'br' + tempQuestionNum + tempAnswerNum
         }).appendTo('#answer' + tempQuestionNum);
-        $(this).attr("id","editQuizAddAns"+tempQuestionNum+tempAnswerNum);
-        $('#editQuizRemoveAns'+tempQuestionNum+(tempAnswerNum-1)).attr("id","editQuizRemoveAns"+tempQuestionNum+tempAnswerNum);
+        $(this).attr("id","editQuizAddAns-"+tempQuestionNum+'-'+tempAnswerNum);
+        $('#editQuizRemoveAns-'+tempQuestionNum+'-'+(tempAnswerNum-1)).attr("id","editQuizRemoveAns-"+tempQuestionNum+'-'+tempAnswerNum);
       }
       else {
         /* NOTIFICATION: too many or too few answer choices? 
@@ -171,8 +173,8 @@ $(document).ready(function() {
         $('#answer'+tempQuestionNum+tempAnswerNum).remove();
         $('#br' + tempQuestionNum + tempAnswerNum).remove();
         tempAnswerNum -= 1;
-        $(this).attr("id","editQuizRemoveAns"+tempQuestionNum+tempAnswerNum);
-        $('#editQuizAddAns'+tempQuestionNum+(tempAnswerNum+1)).attr("id","editQuizAddAns"+tempQuestionNum+tempAnswerNum);
+        $(this).attr("id","editQuizRemoveAns-"+tempQuestionNum+'-'+tempAnswerNum);
+        $('#editQuizAddAns-'+tempQuestionNum+'-'+(tempAnswerNum+1)).attr("id","editQuizAddAns-"+tempQuestionNum+'-'+tempAnswerNum);
       }
       else {
         /* NOTIFICATION: too many or too few answer choices? 
@@ -183,6 +185,10 @@ $(document).ready(function() {
     // e.stopImmediatePropagation();
     return false;
   });
+});
+
+$('#titlesDropdown').change(function() {
+  $('#editQuiz').hide();
 });
 
 // After name is submitted on initial screen
@@ -333,15 +339,15 @@ function editQuizFormat(){
     }).appendTo('#editQuiz');
     $("#answerLabel"+i).text("Answer Choices:");
     $('<button>').attr({
-        id: 'editQuizAddAns'+i+(quiz["questions"][i]["answers"].length-1),
+        id: 'editQuizAddAns-'+i+'-'+(quiz["questions"][i]["answers"].length-1),
         class: 'btn btn-success editQuizAddAns editQuizAddRemoveAns'
     }).appendTo('#editQuiz');
-    $("#editQuizAddAns"+i+(quiz["questions"][i]["answers"].length-1)).text("+");
+    $("#editQuizAddAns-"+i+'-'+(quiz["questions"][i]["answers"].length-1)).text("+");
     $('<button>').attr({
-        id: 'editQuizRemoveAns'+i+(quiz["questions"][i]["answers"].length-1),
+        id: 'editQuizRemoveAns-'+i+'-'+(quiz["questions"][i]["answers"].length-1),
         class: 'btn btn-danger editQuizRemoveAns editQuizAddRemoveAns'
     }).appendTo('#editQuiz');
-    $("#editQuizRemoveAns"+i+(quiz["questions"][i]["answers"].length-1)).text("—");
+    $("#editQuizRemoveAns-"+i+'-'+(quiz["questions"][i]["answers"].length-1)).text("—");
     $('<br>').appendTo('#editQuiz');
     $('<br>').appendTo('#editQuiz');
     $('<div>').attr({

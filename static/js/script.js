@@ -66,7 +66,12 @@ $(document).ready(function() {
     // if there exists a quiz
     if (selectedQuiz > -1) {
       console.log(selectedQuiz);
-      loadQuizToEdit(selectedQuiz);
+      if ($('#editQuiz').is(":hidden")){
+        loadQuizToEdit(selectedQuiz);
+      }
+      else {
+        $('#editQuiz').hide();
+      }
     }
     else {
       console.log(selectedQuiz);

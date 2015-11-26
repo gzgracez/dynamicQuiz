@@ -1,3 +1,8 @@
+/*
+Minimum of 3 questions per quiz
+Between 2 and 7 answer choices per question
+*/
+
 /* 
 Set title based on selected quiz
 Change dropdown CSS
@@ -137,9 +142,9 @@ $(document).ready(function() {
     console.log( tempID + ": " + tempQuestionNum + ": " + tempAnswerNum);
     // Limit min and max number of answer choices
     // add answer
-    if (tempID.length < 19) {
+    if (tempID.length < 21) {
       console.log ("add");
-      if ((tempAnswerNum + 1) < 6) {
+      if ((tempAnswerNum + 1) < 7) {
         tempAnswerNum += 1;
         $('<input>').attr({
             type: 'radio',
@@ -187,13 +192,22 @@ $(document).ready(function() {
 });
 
 $(".editQuizFormDiv").delegate('.removeQuestion', 'click', function(e) {
-  var tempID = this.id;
-  var tempChunks = tempID.split('-');
-  var tempQuestion = tempChunks[1];
-  $('#question' + tempQuestion).remove();
-  e.preventDefault();
-  e.stopImmediatePropagation();
-  return false;
+  if (($("#editQuiz > div").length) > 3) {
+    var tempID = this.id;
+    var tempChunks = tempID.split('-');
+    var tempQuestion = tempChunks[1];
+    $('#question' + tempQuestion).remove();
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  }
+  else {
+    console.log ("CANNOT DELETE MORE QUESTIONS");
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+    // POSSIBLE NOTIFICATION
+  }
 });
 
 $('#titlesDropdown').change(function() {

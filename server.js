@@ -25,46 +25,21 @@ app.get('/', function (req, res) {
   res.render('index',{titles: titles});
 });
 
-app.get('/titles', function (req, res) {
-  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
-  var jsonContent = JSON.parse(readQuiz);
-  var titles = "[";
-  for (var i = 0; i<jsonContent.length; i++) {
-    if (i < jsonContent.length -1)
-      titles += "\"" + jsonContent[i]["title"] + "\"" + ", ";
-    else
-      titles += "\"" + jsonContent[i]["title"] + "\"";
-  }
-  titles += "]";
-  res.send(titles);
-});
-
-app.get('/titlesandids', function (req, res) {
+app.get('/,/quiz', function (req, res) {
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
   var titles = [];
   for (var i = 0; i<jsonContent.length; i++) {
     titles[i] = jsonContent[i]["title"];
-    titles[jsonContent.length + i] = jsonContent[i]["id"];
   }
   console.log(titles);
   res.send(JSON.stringify(titles));
-});
-
-app.get('/quiz', function (req, res) {
-  var readQuiz = fs.readFileSync("data/quiz.json", 'utf8');
-  res.send(readQuiz);
 });
 
 app.post('/quiz', function(req, res){
   var jsonString = JSON.stringify(req.body);
   fs.writeFile("data/quiz.json", jsonString);
   res.send(req.body);
-});
-
-app.get('/users', function (req, res) {
-  var readUsers = fs.readFileSync("data/users.json", 'utf8');
-  res.send(readUsers);
 });
 
 app.get('/quiz/:id', function (req, res) {
@@ -78,19 +53,6 @@ app.get('/quiz/:id', function (req, res) {
     }
   }
   res.send(targetQuiz);
-});
-
-app.post('/quiz/:id', function (req, res) {
-  console.log(JSON.stringify(req.body));
-  var sentTargetQuiz = JSON.parse(JSON.stringify(req.body));
-  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
-  var jsonContent = JSON.parse(readQuiz);
-  console.log (jsonContent.keys());
-
-  // jsonContent[req.params.id] = sentTargetQuiz;
-  // var jsonString = JSON.stringify(jsonContent);
-  // fs.writeFile("data/allQuizzes.json", jsonString);
-  // res.send(req.body);
 });
 
 app.put('/quiz/:id', function (req, res) {
@@ -125,11 +87,43 @@ app.delete('/quiz/:id', function (req, res) {
   res.send("deleted");
 });
 
+app.get('/users', function (req, res) {
+  var readUsers = fs.readFileSync("data/users.json", 'utf8');
+  res.send(readUsers);
+});
+
 app.post('/users', function(req, res){
   var jsonString = JSON.stringify(req.body);
   fs.writeFile("data/users.json", jsonString);
   res.send(req.body);
 });
+
+app.get('/titles', function (req, res) {
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var titles = "[";
+  for (var i = 0; i<jsonContent.length; i++) {
+    if (i < jsonContent.length -1)
+      titles += "\"" + jsonContent[i]["title"] + "\"" + ", ";
+    else
+      titles += "\"" + jsonContent[i]["title"] + "\"";
+  }
+  titles += "]";
+  res.send(titles);
+});
+
+app.get('/titlesandids', function (req, res) {
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var titles = [];
+  for (var i = 0; i<jsonContent.length; i++) {
+    titles[i] = jsonContent[i]["title"];
+    titles[jsonContent.length + i] = jsonContent[i]["id"];
+  }
+  console.log(titles);
+  res.send(JSON.stringify(titles));
+});
+
 
 var server = app.listen(process.env.PORT || 4000, function() {
   var host = server.address().address;

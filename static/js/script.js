@@ -57,6 +57,7 @@ $(document).ready(function() {
   $('#quizSuccess').hide();
   $('#quizWarning').hide();
   $('#placeholderWarning').hide();
+  $('#placeholderSuccess').hide();
   $('#reload').hide();
   $('#editQuiz').hide();
   $('#piechart').hide();
@@ -66,6 +67,7 @@ $(document).ready(function() {
     $('#quizSuccess').hide();
     $('#quizWarning').hide();
     $('#placeholderWarning').hide();
+    $('#placeholderSuccess').hide();
   });
 
   //start quiz
@@ -605,6 +607,10 @@ function submitEditedQuiz(){
       },
       success: function(data){
         console.log("edited quiz sent");
+        $('#editQuiz').hide();
+        $('#placeholderSuccess > p > span').text("Quiz has been updated!");
+        $('#placeholderSuccess > p > span').append('&nbsp;');
+        $('#placeholderSuccess').show();
       },
       fail: function(){
         // console.log("EDIT QUIZ FAILED");

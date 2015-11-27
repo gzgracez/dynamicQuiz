@@ -207,7 +207,7 @@ $(document).ready(function() {
   // add question
   $("#editQuizForm").on('click', '#addQuestion', function (e) {
     var tempID = ($("#editQuiz div:last").attr('id'));
-    var tempQuestionNum = parseInt(tempID.substring(6,tempID.length)) + 1;
+    var tempQuestionNum = parseInt(tempID.substring(6)) + 1;
     var defaultNumOfAnswers = 1; //2 answers
     if (($("#editQuiz > div").length) < 25) {
       $('<div>').attr({
@@ -521,6 +521,7 @@ function editQuizFormat(){
   }).appendTo('#editQuiz');
 }
 
+// CHECK IF CORRECT ANSWER IS SELECTED BY USER
 function submitEditedQuiz(){
   var tempJSON = {
     "id": quiz["id"],
@@ -530,16 +531,31 @@ function submitEditedQuiz(){
     "difficulty": quiz["difficulty"],
     "questions": []
   };
-  console.log(tempJSON);
+  // console.log(tempJSON);
   var divSize = $("#editQuiz > div").length;
   console.log($("#editQuiz > div"));
   $("#editQuiz > div").each(function() {
-    var tempQuestion = {};
-    $(this).each(function() {
-      console.log ($(this).attr('id'));
+    var tempID = $(this).attr('id');
+    var tempQuestionNum = parseInt(tempID.substring(11));
+    var tempAnswers = [];
+    $("#answer"+tempQuestionNum+ " .editanswers").each(function(){
+      tempAnswers.push($(this).val());
     });
-    console.log ($(this).attr('id'));
+    var tempChunks = $('input[name=answersr' + tempQuestionNum + ']:checked', '#editQuizForm').attr("id").split("-");
+    var tempCorrectAnswer = tempChunks[2];
+    var tempMetaTags = $("#metaTag"+tempQuestionNum).val().split(",");
+    var tempQuestion = {
+      "text": $("#question"+tempQuestionNum).val(),
+      "answers": tempAnswers,
+      "correct_answer": tempCorrectAnswer,
+      "global_correct": 0,
+      "global_total": 0,
+      "meta_tags": tempMetaTags
+    };
+    console.log(tempQuestion);
+    tempJSON["questions"].push(tempQuestion);
   });
+  console.log(tempJSON);
 }
 
 // Show questions and answers

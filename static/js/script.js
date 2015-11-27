@@ -560,7 +560,7 @@ function submitEditedQuiz(){
       tempAnswers.push($(this).val());
     });
     var tempChunks = $('input[name=answersr' + tempQuestionNum + ']:checked', '#editQuizForm').attr("id").split("-");
-    var tempCorrectAnswer = tempChunks[2];
+    var tempCorrectAnswer = parseInt(tempChunks[2]);
     var tempMetaTags = $("#metaTag"+tempQuestionNum).val().split(",");
     var tempQuestion = {
       "text": $("#question"+tempQuestionNum).val(),
@@ -570,10 +570,28 @@ function submitEditedQuiz(){
       "global_total": 0,
       "meta_tags": tempMetaTags
     };
-    console.log(tempQuestion);
     tempJSON["questions"].push(tempQuestion);
   });
-  console.log(tempJSON);
+  console.log(JSON.stringify(tempJSON));
+  $.ajax({
+      type:"PUT",
+      url: "quiz/" + quiz["id"],
+      data: JSON.stringify(tempJSON),
+      timeout: 2000,
+      contentType: "application/json; charset=utf-8",
+      beforeSend: function(){
+        // console.log ("BEFORE EDIT QUIZ SEND");
+      },
+      complete: function() {
+        // console.log ("COMPLETE EDIT QUIZ LOADING");
+      },
+      success: function(data){
+        console.log("edited quiz sent");
+      },
+      fail: function(){
+        // console.log("EDIT QUIZ FAILED");
+      }
+    });
 }
 
 // Show questions and answers

@@ -64,22 +64,31 @@ app.get('/quiz/:id', function (req, res) {
 });
 
 app.post('/quiz/:id', function (req, res) {
-  var sentTargetQuiz = JSON.parse(req.body);
+  console.log(JSON.stringify(req.body));
+  var sentTargetQuiz = JSON.parse(JSON.stringify(req.body));
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
+  console.log (jsonContent.keys());
 
-  jsonContent[req.params.id] = sentTargetQuiz;
-  var jsonString = JSON.stringify(jsonContent);
-  fs.writeFile("data/allQuizzes.json", jsonString);
-  res.send(req.body);
+  // jsonContent[req.params.id] = sentTargetQuiz;
+  // var jsonString = JSON.stringify(jsonContent);
+  // fs.writeFile("data/allQuizzes.json", jsonString);
+  // res.send(req.body);
 });
 
 app.put('/quiz/:id', function (req, res) {
-  var sentQuiz = JSON.parse(req.body);
+  // var sentQuiz = JSON.parse(req.body);
+  var sentQuiz = req.body;
 
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
-  jsonContent[req.params.id] = sentQuiz;
+  jsonContent[req.params.id-1] = sentQuiz;
+  for (var i = 0; i < jsonContent.length; i++) {
+    if (jsonContent[i]["id"] === parseInt(req.params.id)) {
+      jsonContent[i] = sentQuiz;
+      break;
+    }
+  }
 
   var jsonString = JSON.stringify(jsonContent);
   fs.writeFile("data/allQuizzes.json", jsonString);

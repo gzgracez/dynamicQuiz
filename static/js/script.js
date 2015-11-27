@@ -66,17 +66,14 @@ $(document).ready(function() {
   document.getElementById("update_quiz").addEventListener("click", function(e) {
     console.log("update");
     selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
-    console.log(selectedQuiz);
     // if there exists a quiz
     if (selectedQuiz > -1) {
-      console.log(selectedQuiz);
       if ($('#editQuiz').is(":hidden")) {
         loadQuizToEdit(selectedQuiz);
       } else {
         $('#editQuiz').hide();
       }
     } else {
-      console.log(selectedQuiz);
       $('#quizSuccess').hide();
       $('#quizWarning').show();
     }
@@ -135,14 +132,10 @@ $(document).ready(function() {
   $(".editQuizFormDiv").delegate('.editQuizAddRemoveAns', 'click', function(e) {
     var tempID = this.id;
     var tempChunks = tempID.split('-');
-    console.log(tempID.length);
     var tempQuestionNum = parseInt(tempChunks[1]);
     var tempAnswerNum = parseInt(tempChunks[2]);
-    console.log(tempID + ": " + tempQuestionNum + ": " + tempAnswerNum);
-    // Limit min and max number of answer choices
     // add answer
     if (tempID.length < 21) {
-      console.log("add");
       if ((tempAnswerNum + 1) < 7) {
         tempAnswerNum += 1;
         $('<input>').attr({
@@ -212,13 +205,10 @@ $(document).ready(function() {
 
   // add question
   $("#editQuizForm").on('click', '#addQuestion', function (e) {
-    console.log("addquestionclicked");
     var tempID = ($("#editQuiz div:last").attr('id'));
     var tempQuestionNum = parseInt(tempID.substring(6,tempID.length)) + 1;
-    console.log(tempQuestionNum);
     var defaultNumOfAnswers = 1; //2 answers
     if (($("#editQuiz > div").length) < 25) {
-      console.log("addquestion");
       $('<div>').attr({
         class: 'container',
         id: 'question'+tempQuestionNum,
@@ -306,7 +296,6 @@ $(document).ready(function() {
 // After name is submitted on initial screen
 function nameForm(){
   name = $('#nameForm').serializeArray()[0]["value"];
-  console.log(name);
   if (name.length === 0) {
     $('#nameFormWarning').fadeIn();
   }
@@ -532,7 +521,11 @@ function editQuizFormat(){
 }
 
 function submitEditedQuiz(){
-  // get the submitted quiz
+  var divSize = $("#editQuiz > div").length;
+  console.log(divSize);
+  for (var i = 0; i < divSize; i++) {
+    console.log (divSize);
+  }
 }
 
 // Show questions and answers
@@ -625,7 +618,6 @@ function back(){
 function whichChecked() {
   for (var i = 0; i < numAns; i++) {
     if ($("input[name='answers'][id='" + i + "']").is(':checked')) {
-      // console.log ("The answer chosen is " + i + " " + quiz["questions"][currentQuestion]["correct_answer"]);
       // if already added to userAnswers
       if (currentQuestion < userAnswers.length) {
         if (i === quiz["questions"][currentQuestion]["correct_answer"]) {

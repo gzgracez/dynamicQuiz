@@ -522,10 +522,10 @@ function editQuizFormat(){
 
 function submitEditedQuiz(){
   var divSize = $("#editQuiz > div").length;
-  console.log(divSize);
-  for (var i = 0; i < divSize; i++) {
-    console.log (divSize);
-  }
+  console.log($("#editQuiz > div"));
+  $("#editQuiz > div").each(function() {
+    console.log ($(this).attr('id'));
+  })
 }
 
 // Show questions and answers

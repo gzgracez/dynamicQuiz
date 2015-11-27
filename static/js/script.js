@@ -170,6 +170,19 @@ $(document).ready(function() {
         addQuestion(tempQuestionNum);
       }
     }
+    $('<button>').attr({
+      id: 'addQuestion',
+      class: 'btn btn-success'
+    }).appendTo('#editQuiz');
+    $("#addQuestion").text("Add a question");
+    $('<br>').appendTo('#editQuiz');
+    $('<br>').appendTo('#editQuiz');
+    $('<input>').attr({
+      type: 'submit',
+      id: 'editquizsubmit',
+      class: 'btn btn-warning',
+      text: 'Submit'
+    }).appendTo('#editQuiz');
     $('#editQuiz').show();
     e.preventDefault();
   });

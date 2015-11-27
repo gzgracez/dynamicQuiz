@@ -100,6 +100,9 @@ $(document).ready(function() {
     } else {
       $('#quizSuccess').hide();
       $('#quizWarning').show();
+      $("#quizWarning").fadeTo(2000, 500).slideUp(500, function(){
+        $("#quizWarning").hide();
+      });
     }
     e.preventDefault();
   });
@@ -126,6 +129,9 @@ $(document).ready(function() {
           // console.log("DELETE sent");
           $("delete_quiz").attr("disabled", false);
           $('#quizSuccess').show();
+          $("#quizSuccess").fadeTo(2000, 500).slideUp(500, function(){
+            $("#quizSuccess").hide();
+          });
           $("#titlesDropdown").empty();
           loadTitles();
         },
@@ -139,6 +145,9 @@ $(document).ready(function() {
       // console.log(selectedQuiz);
       $('#quizSuccess').hide();
       $('#quizWarning').show();
+      $("#quizWarning").fadeTo(2000, 500).slideUp(500, function(){
+        $("#quizWarning").hide();
+      });
     }
     e.preventDefault();
   });
@@ -240,6 +249,9 @@ $(document).ready(function() {
       $('#placeholderWarning > p > span').text("Please select correct answers for each question!");
       $('#placeholderWarning > p > span').append('&nbsp;');
       $('#placeholderWarning').show();
+      $("#placeholderWarning").fadeTo(2000, 500).slideUp(500, function(){
+        $("#placeholderWarning").hide();
+      });
     }
   });
 
@@ -332,12 +344,16 @@ $(document).ready(function() {
     }
     e.preventDefault();
   });
+
 });
 // After name is submitted on initial screen
 function nameForm(){
   name = $('#nameForm').serializeArray()[0]["value"];
   if (name.length === 0) {
     $('#nameFormWarning').fadeIn();
+    $("#nameFormWarning").fadeTo(2000, 500).slideUp(500, function(){
+      $("#nameFormWarning").hide();
+    });
   }
   else {
     $('#nameFormWarning').hide();
@@ -611,6 +627,9 @@ function submitEditedQuiz(){
         $('#placeholderSuccess > p > span').text("Quiz has been updated!");
         $('#placeholderSuccess > p > span').append('&nbsp;');
         $('#placeholderSuccess').show();
+        $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
+          $("#placeholderSuccess").hide();
+        });
       },
       fail: function(){
         // console.log("EDIT QUIZ FAILED");
@@ -896,6 +915,9 @@ function nextQuestion() {
       // if no answer is checked
       if (!$("input[name='answers']").is(':checked')){
         $('#answerWarning').fadeIn();
+        $("#answerWarning").fadeTo(2000, 500).slideUp(500, function(){
+          $("#answerWarning").hide();
+        });
         if (currentQuestion === 0) {
           $('#previousQuestion').hide();
         }
@@ -931,6 +953,9 @@ function nextQuestion() {
     // if answer is not checked
     if (!$("input[name='answers']").is(':checked')){
       $('#answerWarning').show();
+      $("#answerWarning").fadeTo(2000, 500).slideUp(500, function(){
+        $("#answerWarning").hide();
+      });
     }
     // if an answer is checked
     else {

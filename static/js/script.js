@@ -4,6 +4,7 @@ Between 2 and 7 answer choices per question
 */
 
 /* 
+Meta tags for quiz - unnecessary
 Set title based on selected quiz
 Change dropdown CSS
 */
@@ -521,11 +522,21 @@ function editQuizFormat(){
 }
 
 function submitEditedQuiz(){
+  var tempJSON = {
+    "id": quiz["id"],
+    "title": quiz["title"],
+    "description": quiz["description"],
+    "meta_tags": quiz["meta_tags"],
+    "difficulty": quiz["difficulty"],
+    "questions": []
+  };
+  console.log(tempJSON);
   var divSize = $("#editQuiz > div").length;
   console.log($("#editQuiz > div"));
   $("#editQuiz > div").each(function() {
+
     console.log ($(this).attr('id'));
-  })
+  });
 }
 
 // Show questions and answers

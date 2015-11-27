@@ -39,6 +39,7 @@ $(document).ready(function() {
   $('#backHome').hide();
   $('#quizSuccess').hide();
   $('#quizWarning').hide();
+  $('#placeholderWarning').hide();
   $('#reload').hide();
   $('#editQuiz').hide();
   $('#piechart').hide();
@@ -47,6 +48,7 @@ $(document).ready(function() {
     $('#answerWarning').hide();
     $('#quizSuccess').hide();
     $('#quizWarning').hide();
+    $('#placeholderWarning').hide();
   });
 
   //start quiz
@@ -201,7 +203,23 @@ $(document).ready(function() {
   // submit edited quiz
   $("#editQuizForm").on('click', '#editquizsubmit', function(e) {
     e.preventDefault();
-    submitEditedQuiz();
+    var radioChecked = true;
+    $("#editQuiz > div").each(function() {
+      var tempID = $(this).attr('id');
+      var tempQuestionNum = parseInt(tempID.substring(11));
+      if(!$("input:radio[name='answersr" + tempQuestionNum + "']").is(":checked")){
+        radioChecked = false;
+        return false;
+      }
+    });
+    if (radioChecked) {
+      submitEditedQuiz();
+    }
+    else {
+      $('#placeholderWarning > p > span').text("Please select correct answers for each question!");
+      $('#placeholderWarning > p > span').append('&nbsp;');
+      $('#placeholderWarning').show();
+    }
   });
 
   // add question

@@ -114,7 +114,12 @@ app.put('/quiz/:id', function (req, res) {
 app.delete('/quiz/:id', function (req, res) {
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
-  jsonContent.splice(req.params.id, 1);
+  for (var i = 0; i < jsonContent.length; i++) {
+    if (jsonContent[i]["id"] === parseInt(req.params.id)) {
+      jsonContent.splice(i, 1);
+      break;
+    }
+  }
   var jsonString = JSON.stringify(jsonContent);
   fs.writeFile("data/allQuizzes.json", jsonString);
   res.send("deleted");

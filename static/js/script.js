@@ -20,9 +20,26 @@ var userJSON;
 var score = 0;
 var titles;
 var selectedQuiz = 0;
+var ids;
 
 // Initial setup
 $(document).ready(function() {
+  $.getJSON('titlesandids')
+  .done(function (data) {
+    console.log(data);
+    titles = data.slice(0,data.length/2);
+    ids = data.slice(data.length/2);
+    if (titles === undefined) {
+      $('#ajaxloading').text("Sorry, we cannot load the quizzes. Please reload the page to try again.");
+      $('#ajaxloading').show();
+      $('#reload').show();
+    }
+  })
+  .fail(function() {
+    $('#ajaxloading').text("Sorry, we cannot load the quizzes. Please reload the page to try again.");
+    $('#ajaxloading').show();
+    $('#reload').show();
+  });
   $('#title').text("Dynamic Quiz");
   $('#title').hide().fadeIn("slow");
   $('#nameForm').hide().fadeIn("slow");
@@ -68,7 +85,9 @@ $(document).ready(function() {
   //update quiz
   document.getElementById("update_quiz").addEventListener("click", function(e) {
     console.log("update");
-    selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
+    console.log($('#titlesDropdown option:selected').text());
+    console.log(titles.indexOf($('#titlesDropdown option:selected').text()));
+    selectedQuiz = ids[titles.indexOf($('#titlesDropdown option:selected').text())];
     // if there exists a quiz
     if (selectedQuiz > -1) {
       if ($('#editQuiz').is(":hidden")) {
@@ -85,7 +104,7 @@ $(document).ready(function() {
 
   //delete quiz
   document.getElementById("delete_quiz").addEventListener("click", function(e) {
-    selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
+    selectedQuiz = ids[titles.indexOf($('#titlesDropdown option:selected').text())];
     // if there exists a quiz
     if (selectedQuiz > -1) {
       $.ajax({
@@ -322,7 +341,7 @@ function nameForm(){
     $('#nameFormWarning').hide();
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");
-    selectedQuiz = document.getElementById("titlesDropdown").selectedIndex;
+    selectedQuiz = ids[titles.indexOf($('#titlesDropdown option:selected').text())];
     var selectedTitle = $('#titlesDropdown option:selected').text();
     $('#title').text(selectedTitle);
     document.title = selectedTitle;
@@ -332,12 +351,14 @@ function nameForm(){
 
 // load titles in allQuizzes
 function loadTitles(){
-  $.getJSON('titles')
+  $.getJSON('titlesandids')
   .done(function (data) {
     $('#ajaxloading').hide();
     $('#backHome').hide();
     $('#reload').hide();
-    titles = data;
+    titles = data.slice(0,data.length/2);
+    ids = data.slice(data.length/2);
+    console.log(ids);
     if (titles === undefined) {
       $('#ajaxloading').text("Sorry, we cannot load the quizzes. Please reload the page to try again.");
       $('#ajaxloading').show();
@@ -539,7 +560,6 @@ function editQuizFormat(){
   }).appendTo('#editQuiz');
 }
 
-// CHECK IF CORRECT ANSWER IS SELECTED BY USER
 function submitEditedQuiz(){
   var tempJSON = {
     "id": quiz["id"],
@@ -549,7 +569,6 @@ function submitEditedQuiz(){
     "difficulty": quiz["difficulty"],
     "questions": []
   };
-  // console.log(tempJSON);
   var divSize = $("#editQuiz > div").length;
   console.log($("#editQuiz > div"));
   $("#editQuiz > div").each(function() {
@@ -572,7 +591,6 @@ function submitEditedQuiz(){
     };
     tempJSON["questions"].push(tempQuestion);
   });
-  console.log(JSON.stringify(tempJSON));
   $.ajax({
       type:"PUT",
       url: "quiz/" + quiz["id"],

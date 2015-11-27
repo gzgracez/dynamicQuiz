@@ -39,6 +39,18 @@ app.get('/titles', function (req, res) {
   res.send(titles);
 });
 
+app.get('/titlesandids', function (req, res) {
+  var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  var jsonContent = JSON.parse(readQuiz);
+  var titles = [];
+  for (var i = 0; i<jsonContent.length; i++) {
+    titles[i] = jsonContent[i]["title"];
+    titles[jsonContent.length + i] = jsonContent[i]["id"];
+  }
+  console.log(titles);
+  res.send(JSON.stringify(titles));
+});
+
 app.get('/quiz', function (req, res) {
   var readQuiz = fs.readFileSync("data/quiz.json", 'utf8');
   res.send(readQuiz);
@@ -55,11 +67,16 @@ app.get('/users', function (req, res) {
   res.send(readUsers);
 });
 
-//handler for /user/:id which responds with the user id
 app.get('/quiz/:id', function (req, res) {
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
-  var targetQuiz = jsonContent[req.params.id];
+  var targetQuiz;;
+  for (var i = 0; i < jsonContent.length; i++) {
+    if (jsonContent[i]["id"] === parseInt(req.params.id)) {
+      targetQuiz = jsonContent[i];
+      break;
+    }
+  }
   res.send(targetQuiz);
 });
 
@@ -77,9 +94,7 @@ app.post('/quiz/:id', function (req, res) {
 });
 
 app.put('/quiz/:id', function (req, res) {
-  // var sentQuiz = JSON.parse(req.body);
   var sentQuiz = req.body;
-
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
   jsonContent[req.params.id-1] = sentQuiz;

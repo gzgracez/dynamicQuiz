@@ -718,7 +718,7 @@
             "Physics",
             "Fun"
         ],
-        "difficluty": "1-10",
+        "difficulty": "1-10",
         "questions": [
             {
                 "text": "How many planets are in the solar system?",

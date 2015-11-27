@@ -150,7 +150,6 @@ $(document).ready(function() {
           $("#quizSuccess").fadeTo(2000, 500).slideUp(500, function(){
             $("#quizSuccess").hide();
           });
-          $("#titlesDropdown").empty();
           loadTitles();
         },
         fail: function() {
@@ -167,6 +166,11 @@ $(document).ready(function() {
         $("#quizWarning").hide();
       });
     }
+    e.preventDefault();
+  });
+
+  document.getElementById("reset_quiz").addEventListener("click", function(e) {
+    loadDefaultQuizzes();
     e.preventDefault();
   });
 
@@ -305,7 +309,6 @@ $(document).ready(function() {
       });
     }
   });
-
 });
 // After name is submitted on initial screen
 function nameForm(){
@@ -337,13 +340,13 @@ function loadTitles(){
     $('#reload').hide();
     titles = data.slice(0,data.length/2);
     ids = data.slice(data.length/2);
-    console.log(ids);
     if (titles === undefined) {
       $('#ajaxloading').text("Sorry, we cannot load the quizzes. Please reload the page to try again.");
       $('#ajaxloading').show();
       $('#reload').show();
     }
     else {
+      $("#titlesDropdown").empty();
       for (var i = 0; i < titles.length; i++) {
         var select = document.getElementById("titlesDropdown");
         var option = document.createElement("option");
@@ -363,6 +366,42 @@ function loadTitles(){
       e.preventDefault();
       loadTitles();
     });
+  });
+}
+
+function loadDefaultQuizzes() {
+  // $("delete_quiz").attr("disabled", true);
+  $.ajax({
+    type:"GET",
+    url: "reset",
+    timeout: 2000,
+    beforeSend: function(){
+      $("#reset_quiz").attr("disabled", true);
+      // console.log ("BEFORE RESET SEND");
+    },
+    complete: function() {
+      console.log ("COMPLETE RESET LOADING");
+      $('#ajaxloading').hide();
+      $('#backHome').hide();
+      $('#reload').hide();
+      $("#reset_quiz").attr("disabled", false);
+      loadTitles();
+    },
+    success: function(data){
+      // console.log("RESET sent");
+    },
+    fail: function(){
+      // console.log ('RESET FAIL');
+      $('#ajaxloading').text("Sorry, we cannot reset the quizzes. Please reload the page to try again.");
+      $('#ajaxloading').show();
+      $('#reload').show();
+    },
+    always: function() {
+      $('#reload').on('click', function(e){
+        e.preventDefault();
+        loadDefaultQuizzes();
+      });
+    }
   });
 }
 

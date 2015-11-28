@@ -133,7 +133,7 @@ $(document).ready(function() {
     if (selectedQuiz > -1) {
       $.ajax({
         type: "DELETE",
-        url: "quiz/" + quiz["id"],
+        url: "quiz/" + selectedQuiz,
         timeout: 2000,
         contentType: "application/json; charset=utf-8",
         beforeSend: function() {

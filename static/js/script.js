@@ -453,6 +453,21 @@ function loadQuizToCreate() {
     class: 'form-control'
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
+
+  $('<label>').attr({
+    for: 'descriptionLabel',
+      id: 'descriptionLabel'
+  }).appendTo('#editQuiz');
+  $("#descriptionLabel").text("Quiz Description:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'descriptionInput',
+    name: 'metaTags',
+    class: 'form-control'
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
+
   $('<label>').attr({
     for: 'quizMetaTagsLabel',
       id: 'quizMetaTagsLabel'
@@ -466,6 +481,7 @@ function loadQuizToCreate() {
     class: 'form-control'
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
+
   for (var i = 0; i < 3; i++) {
     if (i === 0) {
       var tempQuestionNum = 0;
@@ -619,6 +635,22 @@ function editQuizFormat(){
     value: quiz["title"]
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
+
+  $('<label>').attr({
+    for: 'descriptionLabel',
+      id: 'descriptionLabel'
+  }).appendTo('#editQuiz');
+  $("#descriptionLabel").text("Quiz Description:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'descriptionInput',
+    name: 'metaTags',
+    class: 'form-control',
+    value: quiz["description"]
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
+
   $('<label>').attr({
     for: 'quizMetaTagsLabel',
       id: 'quizMetaTagsLabel'
@@ -824,10 +856,11 @@ function addQuestion(tempQuestionNum) {
 function submitCreatedQuiz(){
   var tempTitle = $("#titleInput").val();
   var tempQuizMetaTags = $("#quizMetaTagsInput").val().split(",");
+  var tempQuizDescription = $("#descriptionInput").val();
   var tempJSON = {
     "id": quiz["id"],
     "title": tempTitle,
-    "description": quiz["description"],
+    "description": tempQuizDescription,
     "meta_tags": tempQuizMetaTags,
     "difficulty": quiz["difficulty"],
     "questions": []
@@ -885,10 +918,11 @@ function submitCreatedQuiz(){
 function submitEditedQuiz(){
   var tempTitle = $("#titleInput").val();
   var tempQuizMetaTags = $("#quizMetaTagsInput").val().split(",");
+  var tempQuizDescription = $("#descriptionInput").val();
   var tempJSON = {
     "id": quiz["id"],
     "title": tempTitle,
-    "description": quiz["description"],
+    "description": tempQuizDescription,
     "meta_tags": tempQuizMetaTags,
     "difficulty": quiz["difficulty"],
     "questions": []

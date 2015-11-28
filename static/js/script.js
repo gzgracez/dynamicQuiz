@@ -1163,16 +1163,16 @@ function userScore() {
     });
     createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
   })
-.fail(function() {
-  console.log("Failed to load user JSON");
-  for (var i = 0; i < quizLength; i++){
-    if (userAnswers[i][1]) {
-      quiz["questions"][i]["global_correct"]+=1;
+  .fail(function() {
+    console.log("Failed to load user JSON");
+    for (var i = 0; i < quizLength; i++){
+      if (userAnswers[i][1]) {
+        quiz["questions"][i]["global_correct"]+=1;
+      }
+      quiz["questions"][i]["global_total"]+=1;
     }
-    quiz["questions"][i]["global_total"]+=1;
-  }
-  createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
-});
+    createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
+  });
 }
 
 // Calculate Score and add to global + user scores

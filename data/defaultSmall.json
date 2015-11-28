@@ -1,0 +1,1050 @@
+[{
+	"id": 1,
+	"title": "The Inside Story",
+	"description": "Matt Armstrong Quiz",
+	"meta_tags": ["Matt", "Armstrong"],
+	"difficulty": "17",
+	"questions": [{
+		"text": "What town is Matt Armstrong from?",
+		"answers": ["Amherst", "Boston", "New Bedford", "Wayland", "Salem"],
+		"correct_answer": 3,
+		"global_correct": 1,
+		"global_total": 15,
+		"meta_tags": ["Massachusetts Town"]
+	}, {
+		"text": "What sport does Matt Armstrong play?",
+		"answers": ["Basketball", "Soccer", "Baseball", "Swimming"],
+		"correct_answer": 3,
+		"global_correct": 1,
+		"global_total": 15,
+		"meta_tags": ["Sports"]
+	}, {
+		"text": "What is Matt Armstrong's address?",
+		"answers": ["101 West 87th Street, Apt. 1007, New York, NY 10024", "345 East 68th Street, Apt. 5ABC, New York, NY 10065", "279 Central Park West, Apt. 11C, New York, NY 10024", "65 Central Park West, Apt. 12A, New York, NY 10023"],
+		"correct_answer": 1,
+		"global_correct": 4,
+		"global_total": 15,
+		"meta_tags": ["Street Address"]
+	}, {
+		"text": "What summer camp did Matt Armstrong go to?",
+		"answers": ["Penn State Penitentiary", "Camp Wapanacki", "Camp Wanapatei", "Camp Winnebago", "Camp Kingsley Pines"],
+		"correct_answer": 4,
+		"global_correct": 1,
+		"global_total": 15,
+		"meta_tags": ["Camp"]
+	}, {
+		"text": "What is on the second shelf of Matt Armstrong's room?",
+		"answers": ["Monopoly", "A Red Sox Jersey", "An Xbox 360", "Statues", "Books"],
+		"correct_answer": 4,
+		"global_correct": 1,
+		"global_total": 15,
+		"meta_tags": ["Shelf"]
+	}, {
+		"text": "What is the name of Matt Armstrong's sister?",
+		"answers": ["Grace", "Kate", "Amanda", "Chloe", "Alexis"],
+		"correct_answer": 2,
+		"global_correct": 5,
+		"global_total": 15,
+		"meta_tags": ["Name Tag"]
+	}, {
+		"text": "What is Matt Armstrong's tennis ranking?",
+		"answers": ["0", "21", "1564", "67", "405", "Unranked"],
+		"correct_answer": 2,
+		"global_correct": 9,
+		"global_total": 15,
+		"meta_tags": ["Tennis Ball"]
+	}, {
+		"text": "Where does Matt Armstrong's dad work?",
+		"answers": ["Memorial Sloan Kettering", "Citi Bank", "Mumford and Sons", "Aetna Insurance", "Mcdonalds", "Best Buy"],
+		"correct_answer": 0,
+		"global_correct": 1,
+		"global_total": 15,
+		"meta_tags": ["Science Research"]
+	}, {
+		"text": "What is Matt Armstrong's favourite League of Legends Champion?",
+		"answers": ["Alistar", "Brand", "Xerath", "Malphite", "Leblanc"],
+		"correct_answer": 3,
+		"global_correct": 2,
+		"global_total": 15,
+		"meta_tags": ["League of Legends"]
+	}, {
+		"text": "What is hanging on the wall in Matt's room?",
+		"answers": ["A Nickleback Poster", "A Tapestry", "A Samurai Sword", "A Cookie", "A Stuffed Sheep"],
+		"correct_answer": 3,
+		"global_correct": 3,
+		"global_total": 15,
+		"meta_tags": ["Samurai Sword"]
+	}]
+}, {
+	"id": 2,
+	"title": "Music Quiz",
+	"description": "Quiz",
+	"meta_tags": ["Music"],
+	"questions": [{
+		"text": "What is a whole step above B?",
+		"answers": ["D", "F", "G#", "C#", "A flat"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano"]
+	}, {
+		"text": "What is the fourth note in a C major scale?",
+		"answers": ["A", "F", "G flat", "A flat", "B#"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano"]
+	}, {
+		"text": "Which is a major triad?",
+		"answers": ["D, F#, B", "F, D, B flat", "D, F#, A", "D, G flat, A", "F, G, B"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano"]
+	}, {
+		"text": "What is the 7th note of a G major scale?",
+		"answers": ["A", "F flat", "F#", "G", "E flat"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano"]
+	}, {
+		"text": "How many flats are in the key signature of B flat?",
+		"answers": ["1", "2", "3", "4", "5"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano"]
+	}, {
+		"text": "Which is a the formula for a Dorian scale?",
+		"answers": ["W-H-W-W-W-H-W", "H-W-W-W-H-W-W", "W-W-W-W-W-W-W", "H-H-W-W-W-H-W", "H-W-W-W-W-H-H"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano"]
+	}, {
+		"text": "What scale is exactly the same as the E Locrian scale?",
+		"answers": ["G Phrygian", "F Locrian", "A Phrygian", "C Major", "F Minor"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano"]
+	}, {
+		"text": "Which of the following was an Italian classical composer, born south of Verona, Italy, known for his contributions to 18th-century opera?",
+		"answers": ["Antonio Vivaldi", "Giacomo Puccini", "Vincenzo Bellini", "Antonio Salieri", "Gioacchino Rossini"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano", "Vivaldi", "Puccini", "Bellini", "Salieri", "Rossini"]
+	}, {
+		"text": "What is the time signature in Led Zeppelin’s 'The Ocean?'' ",
+		"answers": ["4/4 -> 2/4", "3/4", "5/8 -> 3/8", "6/8 -> 3/2", "4/4 -> 2/4 -> 3/8"],
+		"correct_answer": 4,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano", "Led Zeppelin"]
+	}, {
+		"text": "What is, according to Billboard, the most successful song of all time?",
+		"answers": ["'The Twist', Chubby Checker", "'Smooth', Santana ft. Rob Thomas", "'I Gotta Feeling', The Black Eyed Peas", "'Another Day in Paradise', Phil Collins", "'Hey Jude', The Beatles"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Music", "Violin", "Piano", "Santana", "The Beatles"]
+	}]
+}, {
+	"id": 3,
+	"title": "My Quiz",
+	"description": "........",
+	"difficulty": "-19",
+	"meta_tags": ["literature", "fun"],
+	"questions": [{
+		"text": "What was the original title of Farenheight 451?",
+		"answers": ["Farenheight 452", "The Fireman", "Burnin' Up", "Paper Houses", "Celsius 233"],
+		"correct_answer": 1,
+		"global_correct": 8,
+		"global_total": 3,
+		"meta_tags": ["fire"]
+	}, {
+		"text": "What is the best-selling novel of all time?",
+		"answers": ["Jane Eyre", "Don Quixote", "The Bible", "The Adventures of Huckleberry Finn", "War and Peace", "Freakonomics"],
+		"correct_answer": 1,
+		"global_correct": 5,
+		"global_total": 3,
+		"meta_tags": ["book"]
+	}, {
+		"text": "What type of bird did Edgar Allen Poe originally want to write about?",
+		"answers": ["Parrot", "Raven", "Cockatoo", "Mockingjay", "Sparrow", "Finch"],
+		"correct_answer": 0,
+		"global_correct": 8,
+		"global_total": 3,
+		"meta_tags": ["bird", "raven", "Edgar Allen Poe", "Mockingjay"]
+	}, {
+		"text": "Which Shakespeare play does not feature a ghost?",
+		"answers": ["Julius Caesar", "Richard III", "Hamlet", "King Lear", "Macbeth"],
+		"correct_answer": 3,
+		"global_correct": 1,
+		"global_total": 3,
+		"meta_tags": ["Shakespeare", "ghost"]
+	}, {
+		"text": "What was the original title of Pride and Prejudice?",
+		"answers": ["Class and Heartlessness", "Elizabeth + Darcy 5Ever", "First Impressions"],
+		"correct_answer": 2,
+		"global_correct": 1,
+		"global_total": 3,
+		"meta_tags": ["impressionism"]
+	}, {
+		"text": "How many different words are in John Milton's paradise lost?",
+		"answers": ["1,789", "2,000", "6,666", "8,000", "250"],
+		"correct_answer": 3,
+		"global_correct": 1,
+		"global_total": 3,
+		"meta_tags": ["Paradise Lost"]
+	}, {
+		"text": "Who is Shelock Holmes's archrival?",
+		"answers": ["Morgart", "Voledmort", "Rorschach", "Loki", "Moriarity"],
+		"correct_answer": 4,
+		"global_correct": 1,
+		"global_total": 3,
+		"meta_tags": ["Sherlock Holmes", "Moriarty"]
+	}, {
+		"text": "Which poem did Robert Frost not write?",
+		"answers": ["The Witch of Coos", "Fire and Ice", "The Doormouse"],
+		"correct_answer": 2,
+		"global_correct": 2,
+		"global_total": 3,
+		"meta_tags": ["Robert Frost", "Snowy"]
+	}, {
+		"text": "\"I am an invisible man.\" This is the first line of which book?",
+		"answers": ["The Invisible Man", "The Catcher in the Rye", "1984", "Notes From Underground"],
+		"correct_answer": 0,
+		"global_correct": 1,
+		"global_total": 3,
+		"meta_tags": ["invisible man", "literature"]
+	}, {
+		"text": "What is the name of the man being tried in To Kill a Mockingbird?",
+		"answers": ["Sam Clemens", "Boo Radley", "Bill Johnson", "Tom Robinson"],
+		"correct_answer": 3,
+		"global_correct": 1,
+		"global_total": 3,
+		"meta_tags": ["Mockingbird"]
+	}]
+}, {
+	"id": 4,
+	"title": "Software Engineering Class Fun Food Facts!",
+	"description": "A fun quiz testing your knowledge on food facts about your classmates!",
+	"meta_tags": ["yummy", "food", "fun", "classmates", "eat"],
+	"difficulty": "1-5",
+	"questions": [{
+		"text": "What is Matthew's favorite food?",
+		"answers": ["Hamburger", "Pizza", "Sushi", "Salad"],
+		"correct_answer": 2,
+		"meta_tags": ["Japanese food"],
+		"global_correct": 14,
+		"global_total": 29
+	}, {
+		"text": "What does Catherine refuse to eat?",
+		"answers": ["Red Peppers", "Seafood", "Eggs", "Mushrooms"],
+		"correct_answer": 1,
+		"meta_tags": ["seafood"],
+		"global_correct": 9,
+		"global_total": 29
+	}, {
+		"text": "What snack food does Grace like to put on her cookies?",
+		"answers": ["Goldfish", "Wheat Thins", "Pretzels", "Potato Chips"],
+		"correct_answer": 3,
+		"meta_tags": ["potato chips"],
+		"global_correct": 9,
+		"global_total": 29
+	}, {
+		"text": "What non-consumable item did Alastair ingest at the age of 3?",
+		"answers": ["A penny", "A bolt", "A lego", "A bottle cap"],
+		"correct_answer": 0,
+		"meta_tags": ["coins"],
+		"global_correct": 2,
+		"global_total": 29
+	}, {
+		"text": "What food did Sam stuff in his nose at the age of 1?",
+		"answers": ["M&Ms", "Raisins", "Skittles", "Mini marshmallows"],
+		"correct_answer": 1,
+		"meta_tags": ["raisin"],
+		"global_correct": 6,
+		"global_total": 29
+	}, {
+		"text": "What topping did Max stuff in his nose this past summer?",
+		"answers": ["Caramel", "Chocolate Sauce", "Whipped Cream", "Butterscotch"],
+		"correct_answer": 2,
+		"meta_tags": ["whipped cream"],
+		"global_correct": 13,
+		"global_total": 29
+	}, {
+		"text": "What is Justin's favorite holiday food?",
+		"answers": ["Roasted Squab", "Peking Duck", "Longevity Noodles", "Moon Cake"],
+		"correct_answer": 3,
+		"meta_tags": ["moon cake"],
+		"global_correct": 15,
+		"global_total": 29
+	}, {
+		"text": "What does Conor bring to movie theaters as a snack?",
+		"answers": ["Croutons", "Pita Chips", "Dried Peas", "Fried Rice"],
+		"correct_answer": 0,
+		"meta_tags": ["salad"],
+		"global_correct": 6,
+		"global_total": 29
+	}, {
+		"text": "What is David's favorite ice cream flavor?",
+		"answers": ["Chocolate", "Mint Chip", "Vanilla", "Coffee"],
+		"correct_answer": 2,
+		"meta_tags": ["ice cream"],
+		"global_correct": 17,
+		"global_total": 29
+	}, {
+		"text": "What does Nathalie like putting in her oatmeal?",
+		"answers": ["Almonds", "Marshmallows", "Coffee Beans", "Turkey"],
+		"correct_answer": 3,
+		"meta_tags": ["oatmeal"],
+		"global_correct": 14,
+		"global_total": 29
+	}]
+}, {
+	"id": 5,
+	"title": "Solar System Quiz",
+	"description": "Test your knowledge of the Solar System",
+	"meta_tags": ["Science", "Physics", "Fun"],
+	"difficulty": "1-10",
+	"questions": [{
+		"text": "How many planets are in the solar system?",
+		"answers": ["1", "8", "9", "12"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Solar System", "Planets"]
+	}, {
+		"text": "Pluto is classified as a...",
+		"answers": ["Planet", "Dwarf Planet", "Comet", "Astroid"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Pluto", "Planet"]
+	}, {
+		"text": "About how hot is the sun?",
+		"answers": ["Very Hot", "5000 F", "10000 F", "15000 F", "20000 F"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Sun", "Star"]
+	}, {
+		"text": "In what shape do planets orbit a single star?",
+		"answers": ["Circle", "Ellipse", "Parabola", "Spiral"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Planet", "Orbit"]
+	}, {
+		"text": "The Moons of Uranus are named after...",
+		"answers": ["Ancient Egyptian Gods", "Roman Emperors", "Biblical Figures", "Characters from Shakespeare's plays"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Uranus", "Planet"]
+	}, {
+		"text": "The first man-made object to leave the solar system was...",
+		"answers": ["Voyager 1", "Voyager 2", "New Horizon", "Orion"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Deep Space", "Solar System"]
+	}, {
+		"text": "Many scientists view the canyons on Mars' surface primarily as evidence of...",
+		"answers": ["Early volcanic activity", "Numerous dust storms", "Early erosion from water", "Frequent tectonic activity"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Mars", "Planet"]
+	}, {
+		"text": "Venus has surface temperatures that can melt lead. This is mainly due to...",
+		"answers": ["Intense heat from the sun", "Rampant Greenhouse Effect", "Geothermal Heat", "Tidal forces with the sun"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Venus", "Planet"]
+	}, {
+		"text": "About how many times does Mercury orbit the Sun in one Neptune Year?",
+		"answers": ["105 times", "231 times", "574 times", "685 times", "1001 times"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Mercury", "Planet"]
+	}, {
+		"text": "How long does it take for light that leave the sun to pass Saturn?",
+		"answers": ["10 minutes", "50 minutes", "80 minutes", "110 minutes", "150 minutes"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Saturn", "Planet"]
+	}]
+}, {
+	"id": 6,
+	"title": "Chemistry Quiz",
+	"description": "Test your chemistry knowledge!",
+	"meta_tags": ["science", "chemistry", "fun"],
+	"difficulty": "1-20",
+	"questions": [{
+		"text": "What is the specific heat of water?",
+		"answers": ["4.18 J/g&deg;C", "5.18 J/g&deg;C", "40.56 J/g&deg;C", "20.56 J/g&deg;C", "-2.56 J/g&deg;C"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["specific heat", "water", "heat capacity"]
+	}, {
+		"text": "What is the molar mass of iron?",
+		"answers": ["0.56 grams", "5.6 grams", " 56 grams", "560 grams"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["iron", "protons"]
+	}, {
+		"text": "What does the symbol Au stand for?",
+		"answers": ["aluminum", "silver", "gold", "arsenic", "actinium"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["gold", "chemistry"]
+	}, {
+		"text": "How can we solve for change in internal energy?",
+		"answers": ["mC&#916;T", "P&#916;V", "q/T", "q + w"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["internal energy", "energy"]
+	}, {
+		"text": "What is one type of calorimetry?",
+		"answers": ["clock calorimetry", "coffee cup calorimetry", "styrofoam calorimetry"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["calorimetry"]
+	}, {
+		"text": "What is the ideal gas law?",
+		"answers": ["Pn=VRT", "PV=nRT", "RT=nPV", "PTV=nR", "V=nRPT", "n=PVRT"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["ideal gas law", "gas"]
+	}, {
+		"text": "Is enthalpy a state function?",
+		"answers": ["Yes", "No"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["enthalpy", "H", "state function"]
+	}, {
+		"text": "What is one type of calorimetry?",
+		"answers": ["bomb calorimetry", "plastic calorimetry", "wood calorimetry", "air calorimetry"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["calorimetry"]
+	}, {
+		"text": "What is the molar mass of hydrogen?",
+		"answers": ["0.01 grams", "0.1 grams", "1 gram", "10 grams", "100 grams", "1000 grams"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["hydrogen"]
+	}, {
+		"text": "What is the first law of thermodynamics?",
+		"answers": ["Conservation of mass", "Conservation of volume", "Conservation of energy"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["thermodynamics", "first law of thermodynamics"]
+	}, {
+		"text": "Is work a state function?",
+		"answers": ["Yes", "No"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["work", "w", "state function"]
+	}, {
+		"text": "What is the volume of a rectangular prism?",
+		"answers": ["length x width x height", "length x width", "length x height", "length x width x height x circumference"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["rectangular prism", "volume"]
+	}, {
+		"text": "What is the molar mass of tin?",
+		"answers": ["0.119 grams", "1.19 grams", "11.9 grams", "119 grams", "1190 grams"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["tin", "Sn"]
+	}, {
+		"text": "How do we solve for Gibbs' free energy?",
+		"answers": ["H - PV", "PV + TS", "q + PV", "TP + q", "q + TS", "H - TS"],
+		"correct_answer": 5,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["free energy", "Gibbs"]
+	}, {
+		"text": "Is free energy a state function?",
+		"answers": ["yes", "no"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["free energy", "Gibbs", "state function"]
+	}, {
+		"text": "What is the molar mass of one gram of titanium?",
+		"answers": ["4.8 grams", "48 grams", "480 grams", "4800 grams"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["titanium", "chemistry"]
+	}, {
+		"text": "What does the symbol Sb stand for?",
+		"answers": ["Antimony", "Selenium", "Sabenium", "Beryllium", "Tantaium"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["antimony"]
+	}, {
+		"text": "How do we solve for entropy?",
+		"answers": ["n/q", "V/P", "P/T", "q/T"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["entropy", "probability"]
+	}, {
+		"text": "Is entropy a state function?",
+		"answers": ["Yes", "No"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["entropy", "state function"]
+	}, {
+		"text": "How many protons does argon have?",
+		"answers": ["9", "18", "27", "36", "45", "54", "63"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["argon", "protons"]
+	}]
+}, {
+	"id": 7,
+	"title": "Space Quiz",
+	"description": "Space Quiz",
+	"meta_tags": ["Space", "Astrophysics", "Astronomy", "Stars", "Planets", "Galaxies", "Universe"],
+	"difficulty": "12",
+	"questions": [{
+		"text": "When did the Universe begin, according to the Big Bang Theory?",
+		"answers": ["4.1 billion years ago", "13.7 billion years ago", "14.6 billion years ago", "50 millions years ago"],
+		"correct_answer": 1,
+		"global_correct": 1,
+		"global_total": 4,
+		"meta_tags": ["Universe", "Big Bang Theory"]
+	}, {
+		"text": "What is the nearest galaxy to the Milky Way?",
+		"answers": ["Fireomeda", "Belomanus", "Andromeda", "Micrasare", "JustinHeWay", "Casertada"],
+		"correct_answer": 2,
+		"global_correct": 2,
+		"global_total": 4,
+		"meta_tags": ["galaxy", "stars", "andromeda"]
+	}, {
+		"text": "What is the name of the first successful U.S.A moon mission (that landed people on the moon)?",
+		"answers": ["Neptune 7", "Uranus 1", "Apollo 17", "Apollo 11", "Neptune 16"],
+		"correct_answer": 3,
+		"global_correct": 2,
+		"global_total": 4,
+		"meta_tags": ["Apollo", "Moon", "Rocket"]
+	}, {
+		"text": "What is the name of the first robotic space probe to successfully land on a Comet?",
+		"answers": ["Rosetta", "Fayre", "Stonk"],
+		"correct_answer": 0,
+		"global_correct": 2,
+		"global_total": 4,
+		"meta_tags": ["Probe", "Comet"]
+	}, {
+		"text": "What is the name of the recent space probe that has taken the highest quality pictures of Pluto to date?",
+		"answers": ["Seventeen", "Big Bang", "Rosetta", "Plutonian1", "Key Hole One", "Terra Field", "New Horizons"],
+		"correct_answer": 6,
+		"global_correct": 2,
+		"global_total": 4,
+		"meta_tags": ["Pluto"]
+	}, {
+		"text": "How old is our Sun?",
+		"answers": ["10 million years", "615 million years", "1.7 billion years", "4.5 billion years"],
+		"correct_answer": 3,
+		"global_correct": 2,
+		"global_total": 4,
+		"meta_tags": ["Sun", "Star"]
+	}, {
+		"text": "What is the number of years needed to complete one Halley's Comet cycle?",
+		"answers": ["56", "75", "11", "34"],
+		"correct_answer": 1,
+		"global_correct": 1,
+		"global_total": 4,
+		"meta_tags": ["Halley's Comet", "Comet"]
+	}, {
+		"text": "What is the point of no return called in regards to light in a black hole?",
+		"answers": ["Flat Horizon", "New Horizons", "Event Horizon", "Spaghettification", "Takayushi's Line"],
+		"correct_answer": 2,
+		"global_correct": 1,
+		"global_total": 4,
+		"meta_tags": ["Black Hole", "Event Horizon"]
+	}, {
+		"text": "What is the size of the Milky Way? (light years across)",
+		"answers": ["17,500 Light Years", "100,000 Light Years", "210,000 Light Years", "315,000 Light Years", "351,000 Light Years"],
+		"correct_answer": 1,
+		"global_correct": 2,
+		"global_total": 4,
+		"meta_tags": ["Milky Way"]
+	}, {
+		"text": "What is the most accurate description for the temperature of planet \"JustinHe\", located in galaxy \"Awesomeness?\"",
+		"answers": ["Super Cool", "Moderate", "376 degrees Celcius", "Absolute value of swag degrees"],
+		"correct_answer": 0,
+		"global_correct": 2,
+		"global_total": 4,
+		"meta_tags": ["Planets", "Suns"]
+	}]
+}, {
+	"id": 8,
+	"title": "Physics Quiz",
+	"description": "BEST QUIZ EVER",
+	"meta_tags": ["science", "books", "friends", "english", "sports", "leagueoflegends", "jewish", "argentina", "math"],
+	"diffifculty": "1-20",
+	"questions": [{
+		"text": "1). What is Alastairs middle name?",
+		"answers": ["Borthwick", "Johnny", "Conor", "James"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "english"
+	}, {
+		"text": "2). What is 9 plus 10?",
+		"answers": ["21", "66", "34", "19", "394950495"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "addition"
+	}, {
+		"text": "3). What is Kerner's mom's maiden name?",
+		"answers": ["Gallow", "Neumeyer", "Katz"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "name"
+	}, {
+		"text": "4). What is Ivkov's middle name?",
+		"answers": ["Javier", "Dragan", "Yusef", "Milow", "Novak"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "argentina"
+	}, {
+		"text": "5). What is Armstrongs's middle name?",
+		"answers": ["David", "Issac", "Samuel", "Jacob", "Hayden"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "middlename"
+	}, {
+		"text": "6). What is Joon's favorite league champion?",
+		"answers": ["Leblanc", "Diana", "Cho'gath", "Yasuo", "Fiora"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "leagueoflegends"
+	}, {
+		"text": "7). Most OP league champion?",
+		"answers": ["Darius", "Riven", "Gangplank", "Garen", "Leblanc"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "leagueoflegends"
+	}, {
+		"text": "8). What is Andrea's (matt's mom's) favorite sport?",
+		"answers": ["Tennis", "Swimming", "Fieldhockey", "Skiing"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "sports"
+	}, {
+		"text": "9). What is Scott Armstrong's favorite book?",
+		"answers": ["The Davinci Code", "Pet Cemetery", "Lost World", "American Sniper", "Pelican Brief"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "books"
+	}, {
+		"text": "10). Who is Conor Yuen's best friend?",
+		"answers": ["Justin He", "Alastair Beeson", "No Friends", "Ulises Acosta", "Matt Armstrong"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": "foreveralone"
+	}]
+}, {
+	"id": 9,
+	"title": "LoTR Quiz",
+	"description": "How well do you know your rings?",
+	"meta_tags": ["Lord of The Rings", "LoTR", "Tolkien", "Hobbits"],
+	"difficulty": "17",
+	"questions": [{
+		"text": "Who said, \"Nine companions. So be it. You shall be the fellowship of the ring.\"?",
+		"answers": ["Elrond", "Gandalf", "Aragorn", "Celeborn", "Saruman"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Rivendell"]
+	}, {
+		"text": "How many rings of power were forged?",
+		"answers": ["1", "19", "20", "13"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Rings"]
+	}, {
+		"text": "What gift does Galadriel give to Gimli in Lothlorien?",
+		"answers": ["Elvish rope", "Three strands of her hair", "A pint crafted from wood", "A dagger", "A vial of light"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Galadriel"]
+	}, {
+		"text": "What was Gollum's name as a Hobbit?",
+		"answers": ["Deagol", "Bandobras", "Smeagol", "Tobold"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Gollum"]
+	}, {
+		"text": "Who said, \"I don't know half of you half as well as I should like, and I like less than half of you half as well as you deserve.\"?",
+		"answers": ["Gandalf", "Merry", "Pippin", "Bilbo", "Sauron"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["The Shire"]
+	}, {
+		"text": "Who is Shelob",
+		"answers": ["An ent", "A beastly spider", "An elf queen", "An Uruk-hai leader"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Mordor"]
+	}, {
+		"text": "Why can Arwen choose a mortal life?",
+		"answers": ["Her immortality is tied to her Evenstar necklace, which she gives away.", "Galadriel, Arwen's grandmother, used Nenya to give Arewen mortality.", "All elves can choose a mortal life.", "Her family has human ancestry"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Elves"]
+	}, {
+		"text": "Who leads Frodo and Sam to Buckelberry Ferry?",
+		"answers": ["Farmer Maggot", "Merry and Pippin", "Gandalf", "Bilbo", "Arwen"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Frodo"]
+	}, {
+		"text": "Which Hobbit stabs the Witch King?",
+		"answers": ["Frodo", "Pippin", "Merry", "Sam"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Witch King"]
+	}, {
+		"text": "Who said, \"I would have followed you, my brother...my captain...my king\"?",
+		"answers": ["Legolas", "Pippin", "Aragorn", "Boromir", "Sam"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Gondor"]
+	}, {
+		"text": "Who rescues Gandalf atop Orthanc?",
+		"answers": ["Aragorn, Gimli, and Legolas", "Frodo and Sam", "Gwaihir", "Gothmog"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Orthanc"]
+	}, {
+		"text": "Who becomes Sam's wife?",
+		"answers": ["Linda Proudfoot", "Primrose Cotton", "Belladonna Took", "Rosie Cotton", "Daisy Baggins"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Sam"]
+	}, {
+		"text": "What is Aragorn's horse's name?",
+		"answers": ["Bill", "Brego", "Roheryn", "Asfaloth"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Aragorn"]
+	}, {
+		"text": "Who said, \"I don't want to be in a battle, but waiting on the edge of one I can't escape is even worse.\"?",
+		"answers": ["Merry", "Frodo", "Eowyn", "Pippin", "Gimli"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Mordor"]
+	}, {
+		"text": "Who does Bilbo share his birthday with?",
+		"answers": ["Pippin", "Smeagol", "Frodo", "Belladonna (Took) Baggins"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Bilbo"]
+	}, {
+		"text": "What gift does Galadriel give to Aragorn?",
+		"answers": ["Nothing", "Elven scabbard and the Elfstone", "Mithril", "The Light of Earendil", "A dagger"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Galadriel"]
+	}, {
+		"text": "Who does Saruman nickname the \"Bird-whisperer\"?",
+		"answers": ["Radagast", "Gandalf", "Legolas", "Sam"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Saruman"]
+	}, {
+		"text": "Who stabs Saruman?",
+		"answers": ["Theoden", "Aragorn", "Gandalf", "Wormtongue", "Legolas"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Saruman"]
+	}, {
+		"text": "Who said, \"One small bite is enough to fill the stomach of a grown man!\"?",
+		"answers": ["Aragorn", "Borimir", "Legolas", "Faramir"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Bread"]
+	}, {
+		"text": "For Hobbits, what meal comes after elevensies?",
+		"answers": ["Afternoon tea", "Dinner", "Luncheon", "Supper", "Second breakfast"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["Lunch"]
+	}]
+}, {
+	"id": 10,
+	"title": "Can you guess who said it?",
+	"description": "Quiz by Nathalie Young",
+	"difficulty": 10,
+	"questions": [{
+		"text": "Happiness in not something ready made. It comes from your own actions",
+		"answers": ["John Locke", "Dalai Lama", "Dr. Seuss", "Confucius"],
+		"correct_answer": 1,
+		"global_correct": 6,
+		"global_total": 41,
+		"meta_tags": ["greeneggsandham", "yellowsmileyface"]
+	}, {
+		"text": "Anytime I feel lost, I pull out a map and stare. I stare until I have reminded myself that life is a giant adventure, so much to do, to see",
+		"answers": ["Angelina Jolie", "Aesop", "Coco Chanel"],
+		"correct_answer": 0,
+		"global_correct": 6,
+		"global_total": 41,
+		"meta_tags": ["maps", "oldmaps"]
+	}, {
+		"text": "Common sense is not so common",
+		"answers": ["Kanye West", "Benjamin Franklin", "Michael Jordan", "Napolean", "Voltaire"],
+		"correct_answer": 4,
+		"global_correct": 18,
+		"global_total": 41,
+		"meta_tags": ["michaeljordan", "napoleanportrait"]
+	}, {
+		"text": "The best thing to hold onto in life is each other",
+		"answers": ["Buddha", "Audrey Hepburn", "Bob Marley"],
+		"correct_answer": 1,
+		"global_correct": 10,
+		"global_total": 41,
+		"meta_tags": ["holdinghands", "buddha", "audreyhepburn"]
+	}, {
+		"text": "You have to learn the rules of the game. And then you have to play better than anyone else",
+		"answers": ["Asap Rocky", "Albert Einstein"],
+		"correct_answer": 1,
+		"global_correct": 31,
+		"global_total": 41,
+		"meta_tags": ["asaprocky", "chessboard", "alberteinstein"]
+	}, {
+		"text": "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment",
+		"answers": ["Buddha", "Helen Keller", "Friedrich Nietsche", "J.R.R. Tolkien"],
+		"correct_answer": 0,
+		"global_correct": 7,
+		"global_total": 41,
+		"meta_tags": ["penandscroll", "FriedrichNietsche"]
+	}, {
+		"text": "What about love? What about love",
+		"answers": ["Nelson Mandela", "Martin Luther King Jr.", "The Weeknd", "Donald Trump"],
+		"correct_answer": 2,
+		"global_correct": 13,
+		"global_total": 41,
+		"meta_tags": ["cartoonheart", "donaldtrump"]
+	}, {
+		"text": "Have you finished your homework",
+		"answers": ["Adina Young", "George Haywood", "Woody Young", "Arlette Haywood"],
+		"correct_answer": 0,
+		"global_correct": 14,
+		"global_total": 41,
+		"meta_tags": ["homework", "textbooks"]
+	}, {
+		"text": "Be as you wish to seem",
+		"answers": ["Lao Tzu", "Plato", "Mahatma Gandi", "Socrates"],
+		"correct_answer": 3,
+		"global_correct": 23,
+		"global_total": 41,
+		"meta_tags": ["plato", "socrates"]
+	}, {
+		"text": "I believe there's a god above me, I'm just the god of everything else",
+		"answers": ["Jay Z", "Kanye West", "Pusha T"],
+		"correct_answer": 2,
+		"global_correct": 26,
+		"global_total": 41,
+		"meta_tags": ["praying", "sky", "god"]
+	}, {
+		"text": "I'm not a businessman, I'm a business, man",
+		"answers": ["Jay Z", "Kanye West", "Pusha T"],
+		"correct_answer": 0,
+		"global_correct": 10,
+		"global_total": 41,
+		"meta_tags": ["businessman", "jayz"]
+	}, {
+		"text": "I love the name of honor, more than I fear death",
+		"answers": ["Julius Caesar", "John Adams"],
+		"correct_answer": 0,
+		"global_correct": 16,
+		"global_total": 41,
+		"meta_tags": ["honor", "death", "juliuscaesar"]
+	}],
+	"highscores": [{
+		"name": "Nathalie Young",
+		"score": 12,
+		"date": "10/5/2015"
+	}, {
+		"name": "natnat",
+		"score": 11,
+		"date": "10/4/2015"
+	}, {
+		"name": "nathhhh",
+		"score": "11",
+		"date": "10/4/2015"
+	}]
+}, {
+	"id": 11,
+	"title": "Treasure Hunt Hard",
+	"description": "Do not try this quiz if you have a fear of failing",
+	"questions": [{
+		"text": "The Recited Container Of Looks",
+		"answers": ["The Pool", "The Swamp", "The Turf", "The Red Stair Case"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 1,
+		"meta_tags": ["red"]
+	}, {
+		"text": "The Fish was trying to say \"Radiator\"",
+		"answers": ["The Basement Theater", "The Library", "The Computer Lab", "The 1709 Room"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 1,
+		"meta_tags": ["theater"]
+	}, {
+		"text": "escort escort escort escort escort escort escort escort escort escort",
+		"answers": ["The Morse Theater", "The Weight Room", "The Lower Gym", "The Tennis Courts"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 1,
+		"meta_tags": ["tennis"]
+	}, {
+		"text": "Are you going to answer this question correctly?",
+		"answers": ["yes", "no"],
+		"correct_answer": 0,
+		"global_correct": 1,
+		"global_total": 1,
+		"meta_tags": ["logic"]
+	}, {
+		"text": "1500 Paper Dispenser",
+		"answers": ["The Balcony", "Ms. Keigher's Office", "The 3D Printer", "The Orange Stair Case"],
+		"correct_answer": 2,
+		"global_correct": 0,
+		"global_total": 1,
+		"meta_tags": ["rome"]
+	}, {
+		"text": "Where Change is Inevitable",
+		"answers": ["The Brass", "The Lower School Kitchen", "The Tennis Courts", "The Locker Room"],
+		"correct_answer": 3,
+		"global_correct": 0,
+		"global_total": 1,
+		"meta_tags": ["locker"]
+	}, {
+		"text": "Who's There",
+		"answers": ["The Pool", "The Swamp", "First Base on the Turf", "The Red Stair Case", "The Blue Stair Case", "The Cafeteria"],
+		"correct_answer": 2,
+		"global_correct": 1,
+		"global_total": 1,
+		"meta_tags": ["baseball"]
+	}, {
+		"text": "When Jesus Subs for his Mom he's...",
+		"answers": ["The Pool", "The Swamp", "The Turf", "The Red Stair Case", "The Nurses Office"],
+		"correct_answer": 4,
+		"global_correct": 1,
+		"global_total": 1,
+		"meta_tags": ["hospital"]
+	}, {
+		"text": "5:09 PM",
+		"answers": ["The 1709 Room", "The Brass", "The Ceramics Room"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 1,
+		"meta_tags": ["military"]
+	}, {
+		"text": "What Lines of Six Dollars would Form",
+		"answers": ["The Morse", "The Pool", "The Blue Stair Case", "The Computer Lab"],
+		"correct_answer": 1,
+		"global_correct": 1,
+		"global_total": 1,
+		"meta_tags": ["pool"]
+	}, {
+		"text": "The Price of Cutlery after Dusk",
+		"answers": ["Ms. Bagby's Office", "The 1709 Room", "The Brass", "The Photography Room", "The English Hallway"],
+		"correct_answer": 3,
+		"global_correct": 1,
+		"global_total": 1,
+		"meta_tags": ["silver"]
+	}],
+	"difficulty": 19,
+	"global_correct": 5,
+	"global_total": 11,
+	"meta_tags": ["extremely difficult", "not for the faint of heart"]
+}, {
+	"id": 12,
+	"title": "SAMPLE",
+	"description": "test",
+	"meta_tags": ["test"],
+	"difficulty": "10",
+	"questions": [{
+		"text": "Q1",
+		"answers": ["yes", "no"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["yes"]
+	}, {
+		"text": "Q2",
+		"answers": ["yes", "no"],
+		"correct_answer": 1,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["yes"]
+	}, {
+		"text": "Q3",
+		"answers": ["yes", "no"],
+		"correct_answer": 0,
+		"global_correct": 0,
+		"global_total": 0,
+		"meta_tags": ["yes"]
+	}]
+}]

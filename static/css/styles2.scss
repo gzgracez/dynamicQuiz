@@ -198,3 +198,17 @@ td{
   text-align: center;
   font-weight: 300;
 }
+
+#reset_quiz {
+  color: white;
+  background: #006666;
+  // background: -webkit-linear-gradient(#00CCFF, #0099FF); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(#00CCFF, #0099FF); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(#00CCFF, #0099FF); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(#00CCFF, #0099FF); /* Standard syntax (must be last) */
+}
+
+#revert_quiz {
+  color: white;
+  background: #0099FF;
+}

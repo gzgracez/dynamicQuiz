@@ -97,9 +97,16 @@ app.delete('/quiz/:id', function (req, res) {
 
 app.get('/reset', function (req, res) {
   var readIn = fs.readFileSync("data/defaultallquizzes.json", 'utf8');
-  var jsonString = readIn;
-  fs.writeFile("data/allQuizzes.json", jsonString);
+  var readInAdded = fs.readFileSync("data/allQuizzes.json", 'utf8');
+  fs.writeFile("data/allQuizzesRevert.json", readInAdded);
+  fs.writeFile("data/allQuizzes.json", readIn);
   res.send("default quizzes restored");
+});
+
+app.get('/revert', function (req, res) {
+  var readIn = fs.readFileSync("data/allQuizzesRevert.json", 'utf8');
+  fs.writeFile("data/allQuizzes.json", readIn);
+  res.send("reverted");
 });
 
 app.get('/users', function (req, res) {

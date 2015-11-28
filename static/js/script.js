@@ -81,17 +81,17 @@ $(document).ready(function() {
   //create quiz
   document.getElementById("create_quiz").addEventListener("click", function(e) {
     console.log("create");
-      if ($("#createquizsubmit").length) {
-        if ($('#editQuiz').is(":hidden")) {
-          loadQuizToCreate();
-        } 
-        else {
-          $('#editQuiz').hide();
-        }
-      }
-      else {
+    if ($("#createquizsubmit").length) {
+      if ($('#editQuiz').is(":hidden")) {
         loadQuizToCreate();
+      } 
+      else {
+        $('#editQuiz').hide();
       }
+    }
+    else {
+      loadQuizToCreate();
+    }
     e.preventDefault();
   });
 
@@ -169,19 +169,19 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  document.getElementById("reset_quiz").addEventListener("click", function(e) {
-    loadDefaultQuizzes();
-    e.preventDefault();
-  });
+document.getElementById("reset_quiz").addEventListener("click", function(e) {
+  loadDefaultQuizzes();
+  e.preventDefault();
+});
 
-  document.getElementById("previousQuestion").addEventListener("click", back);
-  document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
+document.getElementById("previousQuestion").addEventListener("click", back);
+document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
 
-  $("#answerChoices").keyup(function(event) {
-    if (event.keyCode == 13) {
-      $("#nextQuestion").click();
-    }
-  });
+$("#answerChoices").keyup(function(event) {
+  if (event.keyCode == 13) {
+    $("#nextQuestion").click();
+  }
+});
 
   // edit quiz
   $(".editQuizFormDiv").delegate('.editQuizAddRemoveAns', 'click', function(e) {
@@ -233,14 +233,14 @@ $(document).ready(function() {
     return false;
   });
 
-  $(".editQuizFormDiv").delegate('.removeQuestion', 'click', function(e) {
-    if (($("#editQuiz > div").length) > 3) {
-      var tempID = this.id;
-      var tempChunks = tempID.split('-');
-      var tempQuestion = tempChunks[1];
-      $('#questiondiv' + tempQuestion).remove();
-    } else {
-      console.log("CANNOT DELETE MORE QUESTIONS");
+$(".editQuizFormDiv").delegate('.removeQuestion', 'click', function(e) {
+  if (($("#editQuiz > div").length) > 3) {
+    var tempID = this.id;
+    var tempChunks = tempID.split('-');
+    var tempQuestion = tempChunks[1];
+    $('#questiondiv' + tempQuestion).remove();
+  } else {
+    console.log("CANNOT DELETE MORE QUESTIONS");
       // POSSIBLE NOTIFICATION
     }
     e.preventDefault();
@@ -248,9 +248,9 @@ $(document).ready(function() {
     return false;
   });
 
-  $('#titlesDropdown').change(function() {
-    $('#editQuiz').hide();
-  });
+$('#titlesDropdown').change(function() {
+  $('#editQuiz').hide();
+});
 
   // submit edited quiz
   $("#editQuizForm").on('click', '#editquizsubmit', function(e) {
@@ -369,14 +369,12 @@ function loadTitles(){
   });
 }
 
-function loadDefaultQuizzes() {
-  // $("delete_quiz").attr("disabled", true);
-  $.ajax({
-    type:"GET",
-    url: "reset",
-    timeout: 2000,
-    beforeSend: function(){
-      $("#reset_quiz").attr("disabled", true);
+function loadDefaultQuizzes() {  $.ajax({
+  type:"GET",
+  url: "reset",
+  timeout: 2000,
+  beforeSend: function(){
+    $("#reset_quiz").attr("disabled", true);
       // console.log ("BEFORE RESET SEND");
     },
     complete: function() {
@@ -442,6 +440,32 @@ function loadQuiz(target){
 
 function loadQuizToCreate() {
   $('#editQuiz').empty();
+  $('<label>').attr({
+    for: 'titleLabel',
+      id: 'titleLabel'
+  }).appendTo('#editQuiz');
+  $("#titleLabel").text("Quiz Title:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'titleInput',
+    name: 'title',
+    class: 'form-control'
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
+  $('<label>').attr({
+    for: 'quizMetaTagsLabel',
+      id: 'quizMetaTagsLabel'
+  }).appendTo('#editQuiz');
+  $("#quizMetaTagsLabel").text("Quiz Meta Tags:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'quizMetaTagsInput',
+    name: 'metaTags',
+    class: 'form-control'
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
   for (var i = 0; i < 3; i++) {
     if (i === 0) {
       var tempQuestionNum = 0;
@@ -581,6 +605,34 @@ function loadQuizToEdit(target) {
 function editQuizFormat(){
   $('#editQuiz').show();
   $('#editQuiz').empty();
+  $('<label>').attr({
+    for: 'titleLabel',
+      id: 'titleLabel'
+  }).appendTo('#editQuiz');
+  $("#titleLabel").text("Quiz Title:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'titleInput',
+    name: 'title',
+    class: 'form-control',
+    value: quiz["title"]
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
+  $('<label>').attr({
+    for: 'quizMetaTagsLabel',
+      id: 'quizMetaTagsLabel'
+  }).appendTo('#editQuiz');
+  $("#quizMetaTagsLabel").text("Quiz Meta Tags:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'quizMetaTagsInput',
+    name: 'metaTags',
+    class: 'form-control',
+    value: quiz["meta_tags"]
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
   for (var i = 0; i < quizLength; i++) {
     $('<div>').attr({
       class: 'container',
@@ -801,12 +853,12 @@ function submitCreatedQuiz(){
     tempJSON["questions"].push(tempQuestion);
   });
   $.ajax({
-      type:"PUT",
-      url: "quiz/" + quiz["id"],
-      data: JSON.stringify(tempJSON),
-      timeout: 2000,
-      contentType: "application/json; charset=utf-8",
-      beforeSend: function(){
+    type:"PUT",
+    url: "quiz/" + quiz["id"],
+    data: JSON.stringify(tempJSON),
+    timeout: 2000,
+    contentType: "application/json; charset=utf-8",
+    beforeSend: function(){
         // console.log ("BEFORE EDIT QUIZ SEND");
       },
       complete: function() {
@@ -860,12 +912,12 @@ function submitEditedQuiz(){
     tempJSON["questions"].push(tempQuestion);
   });
   $.ajax({
-      type:"PUT",
-      url: "quiz/" + quiz["id"],
-      data: JSON.stringify(tempJSON),
-      timeout: 2000,
-      contentType: "application/json; charset=utf-8",
-      beforeSend: function(){
+    type:"PUT",
+    url: "quiz/" + quiz["id"],
+    data: JSON.stringify(tempJSON),
+    timeout: 2000,
+    contentType: "application/json; charset=utf-8",
+    beforeSend: function(){
         // console.log ("BEFORE EDIT QUIZ SEND");
       },
       complete: function() {
@@ -1069,16 +1121,16 @@ function userScore() {
     });
     createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
   })
-  .fail(function() {
-    console.log("Failed to load user JSON");
-    for (var i = 0; i < quizLength; i++){
-      if (userAnswers[i][1]) {
-        quiz["questions"][i]["global_correct"]+=1;
-      }
-      quiz["questions"][i]["global_total"]+=1;
+.fail(function() {
+  console.log("Failed to load user JSON");
+  for (var i = 0; i < quizLength; i++){
+    if (userAnswers[i][1]) {
+      quiz["questions"][i]["global_correct"]+=1;
     }
-    createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
-  });
+    quiz["questions"][i]["global_total"]+=1;
+  }
+  createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
+});
 }
 
 // Calculate Score and add to global + user scores

@@ -23,7 +23,7 @@
   <form id="nameForm" role="form">
     <div class="form-group">
       <label for="name">First Name:</label>
-      <input type="text" name="nameValue" placeholder="First Name" class="form-control"><br>
+      <input type="text" id="firstName" name="nameValue" placeholder="First Name" class="form-control"><br>
       <select class="form-control" id="titlesDropdown">
         <% for(var i=0; i<titles.length; i++) {%>
            <option><%= titles[i] %></option>

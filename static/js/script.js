@@ -298,6 +298,16 @@ $(document).ready(function() {
         return false;
       }
     });
+
+    if($('input[type="text"]').not(document.getElementById("firstName")).filter(function () {
+        return $.trim($(this).val()).length > 0
+      }).length == 0) {
+      console.log ("all filled out");
+    }
+    else {
+      console.log ('missing fields');
+    }
+
     if (radioChecked) {
       submitCreatedQuiz();
     }
@@ -543,6 +553,7 @@ function loadQuizToCreate() {
         }).appendTo('#answer' + tempQuestionNum);
         $('<input>').attr({
           id: 'answer-'+tempQuestionNum+'-'+a,
+          type: 'text',
           class: 'form-control editanswers',
           name: 'answers'
         }).appendTo('#answer' + tempQuestionNum);
@@ -724,6 +735,7 @@ function editQuizFormat(){
       }).appendTo('#answer' + i);
       $('<input>').attr({
         id: 'answer-'+i+'-'+a,
+        type: 'text',
         class: 'form-control editanswers',
         name: 'answers',
         value: quiz["questions"][i]["answers"][a]
@@ -827,6 +839,7 @@ function addQuestion(tempQuestionNum) {
       }).appendTo('#answer' + tempQuestionNum);
       $('<input>').attr({
         id: 'answer-'+tempQuestionNum+'-'+a,
+        type: 'text',
         class: 'form-control editanswers',
         name: 'answers'
       }).appendTo('#answer' + tempQuestionNum);

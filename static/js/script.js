@@ -43,6 +43,7 @@ $(document).ready(function() {
   $('#title').text("Dynamic Quiz");
   $('#title').hide().fadeIn("slow");
   $('#nameForm').hide().fadeIn("slow");
+  $('#description').hide();
   $('#answerChoices').hide();
   $('#previousQuestion').hide();
   $('#nextQuestion').hide();
@@ -132,7 +133,7 @@ $(document).ready(function() {
     if (selectedQuiz > -1) {
       $.ajax({
         type: "DELETE",
-        url: "quiz/" + selectedQuiz,
+        url: "quiz/" + quiz["id"],
         timeout: 2000,
         contentType: "application/json; charset=utf-8",
         beforeSend: function() {
@@ -421,6 +422,8 @@ function loadQuiz(target){
       quizLength = quiz["questions"].length;
       $('#nextQuestion').show();
       $('#answerChoices').show();
+      $('#description').text(quiz["description"]);
+      $('#description').show();
       nextQuestion();
     }
   })
@@ -858,11 +861,11 @@ function submitCreatedQuiz(){
   var tempQuizMetaTags = $("#quizMetaTagsInput").val().split(",");
   var tempQuizDescription = $("#descriptionInput").val();
   var tempJSON = {
-    "id": quiz["id"],
+    "id": 0,
     "title": tempTitle,
     "description": tempQuizDescription,
     "meta_tags": tempQuizMetaTags,
-    "difficulty": quiz["difficulty"],
+    "difficulty": "10",
     "questions": []
   };
   var divSize = $("#editQuiz > div").length;
@@ -888,8 +891,8 @@ function submitCreatedQuiz(){
     tempJSON["questions"].push(tempQuestion);
   });
   $.ajax({
-    type:"PUT",
-    url: "quiz/" + quiz["id"],
+    type:"POST",
+    url: "quiz",
     data: JSON.stringify(tempJSON),
     timeout: 2000,
     contentType: "application/json; charset=utf-8",
@@ -908,6 +911,7 @@ function submitCreatedQuiz(){
         $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
           $("#placeholderSuccess").hide();
         });
+        loadTitles();
       },
       fail: function(){
         // console.log("EDIT QUIZ FAILED");
@@ -1316,8 +1320,8 @@ function nextQuestion() {
 
       // Global Scores
       $.ajax({
-        type:"POST",
-        url: "quiz/" + selectedQuiz,
+        type:"PUT",
+        url: "quiz/" + quiz["id"],
         data: JSON.stringify(quiz),
         timeout: 2000,
         contentType: "application/json; charset=utf-8",

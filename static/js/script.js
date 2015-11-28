@@ -175,11 +175,6 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  document.getElementById("revert_quiz").addEventListener("click", function(e) {
-    revert();
-    e.preventDefault();
-  });
-
   document.getElementById("previousQuestion").addEventListener("click", back);
   document.getElementById("nextQuestion").addEventListener("click", nextQuestion);
 
@@ -427,47 +422,6 @@ function loadDefaultQuizzes() {
       $('#reload').on('click', function(e){
         e.preventDefault();
         loadDefaultQuizzes();
-      });
-    }
-  });
-}
-
-function revert() {
-  $.ajax({
-  type:"GET",
-  url: "revert",
-  timeout: 2000,
-  beforeSend: function(){
-    $("#revert_quiz").attr("disabled", true);
-      // console.log ("BEFORE REVERT SEND");
-    },
-    complete: function() {
-      console.log ("COMPLETE REVERT LOADING");
-      $('#ajaxloading').hide();
-      $('#backHome').hide();
-      $('#reload').hide();
-      $('#placeholderSuccess > p > span').text("Quizzes have been reverted!");
-      $('#placeholderSuccess > p > span').append('&nbsp;');
-      $('#placeholderSuccess').show();
-      $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
-        $("#placeholderSuccess").hide();
-      });
-      $("#revert_quiz").attr("disabled", false);
-      loadTitles();
-    },
-    success: function(data){
-      // console.log("REVERT sent");
-    },
-    fail: function(){
-      // console.log ('REVERT FAIL');
-      $('#ajaxloading').text("Sorry, we cannot revert the quizzes. Please reload the page to try again.");
-      $('#ajaxloading').show();
-      $('#reload').show();
-    },
-    always: function() {
-      $('#reload').on('click', function(e){
-        e.preventDefault();
-        revert();
       });
     }
   });

@@ -301,7 +301,7 @@ $(document).ready(function() {
 
     if($('input[type="text"]').not(document.getElementById("firstName")).filter(function () {
         return $.trim($(this).val()).length > 0
-      }).length == 0) {
+      }).length == $('input[type="text"]').not(document.getElementById("firstName")).length) {
       console.log ("all filled out");
     }
     else {

@@ -211,8 +211,7 @@ $(document).ready(function() {
           $(this).attr("id", "editQuizAddAns-" + tempQuestionNum + '-' + tempAnswerNum);
           $('#editQuizRemoveAns-' + tempQuestionNum + '-' + (tempAnswerNum - 1)).attr("id", "editQuizRemoveAns-" + tempQuestionNum + '-' + tempAnswerNum);
         } else {
-          /* NOTIFICATION: too many or too few answer choices? 
-          Or explain in instructions*/
+          console.log("max num of answers");
         }
       }
       // remove answer
@@ -226,8 +225,7 @@ $(document).ready(function() {
           $(this).attr("id", "editQuizRemoveAns-" + tempQuestionNum + '-' + tempAnswerNum);
           $('#editQuizAddAns-' + tempQuestionNum + '-' + (tempAnswerNum + 1)).attr("id", "editQuizAddAns-" + tempQuestionNum + '-' + tempAnswerNum);
         } else {
-          /* NOTIFICATION: too many or too few answer choices? 
-          Or explain in instructions*/
+          console.log('min num of answers');
         }
       }
       e.preventDefault();
@@ -240,9 +238,9 @@ $(document).ready(function() {
       var tempChunks = tempID.split('-');
       var tempQuestion = tempChunks[1];
       $('#questiondiv' + tempQuestion).remove();
-    } else {
+    } 
+    else {
       console.log("CANNOT DELETE MORE QUESTIONS");
-        // POSSIBLE NOTIFICATION
       }
       e.preventDefault();
       e.stopImmediatePropagation();
@@ -257,6 +255,7 @@ $(document).ready(function() {
   $("#editQuizForm").on('click', '#editquizsubmit', function(e) {
     e.preventDefault();
     var radioChecked = true;
+    var textInput = true;
     $("#editQuiz > div").each(function() {
       var tempID = $(this).attr('id');
       var tempQuestionNum = parseInt(tempID.substring(11));
@@ -265,7 +264,15 @@ $(document).ready(function() {
         return false;
       }
     });
-    if (radioChecked) {
+
+    if($('input[type="text"]').not(document.getElementById("firstName")).filter(function () {
+        return $.trim($(this).val()).length > 0;
+      }).length < $('input[type="text"]').not(document.getElementById("firstName")).length) {
+      console.log ("missing fields");
+      textInput = false;
+    }
+
+    if (radioChecked && textInput) {
       submitEditedQuiz();
     }
     else {
@@ -301,7 +308,7 @@ $(document).ready(function() {
     });
 
     if($('input[type="text"]').not(document.getElementById("firstName")).filter(function () {
-        return $.trim($(this).val()).length > 0
+        return $.trim($(this).val()).length > 0;
       }).length < $('input[type="text"]').not(document.getElementById("firstName")).length) {
       console.log ("missing fields");
       textInput = false;
@@ -864,7 +871,6 @@ function addQuestion(tempQuestionNum) {
   } 
   else {
     console.log("CANNOT ADD MORE QUESTIONS");
-    // POSSIBLE NOTIFICATION
   }
 }
 

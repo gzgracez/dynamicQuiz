@@ -276,7 +276,7 @@ $(document).ready(function() {
       submitEditedQuiz();
     }
     else {
-      $('#placeholderWarning > p > span').text("Please select correct answers for each question!");
+      $('#placeholderWarning > p > span').text("Please select correct answers and fill out all text fields for each question!");
       $('#placeholderWarning > p > span').append('&nbsp;');
       $('#placeholderWarning').show();
       $("#placeholderWarning").fadeTo(2000, 500).slideUp(500, function(){

@@ -32,7 +32,6 @@ app.get('/,/quiz', function (req, res) {
   for (var i = 0; i<jsonContent.length; i++) {
     titles[i] = jsonContent[i]["title"];
   }
-  console.log(titles);
   res.send(JSON.stringify(titles));
 });
 
@@ -142,7 +141,6 @@ app.get('/titlesandids', function (req, res) {
     titles[i] = jsonContent[i]["title"];
     titles[jsonContent.length + i] = jsonContent[i]["id"];
   }
-  console.log(titles);
   res.send(JSON.stringify(titles));
 });
 

@@ -897,26 +897,26 @@ function submitCreatedQuiz(){
     timeout: 2000,
     contentType: "application/json; charset=utf-8",
     beforeSend: function(){
-        // console.log ("BEFORE EDIT QUIZ SEND");
-      },
-      complete: function() {
-        // console.log ("COMPLETE EDIT QUIZ LOADING");
-      },
-      success: function(data){
-        console.log("edited quiz sent");
-        $('#editQuiz').hide();
-        $('#placeholderSuccess > p > span').text("Quiz has been updated!");
-        $('#placeholderSuccess > p > span').append('&nbsp;');
-        $('#placeholderSuccess').show();
-        $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
-          $("#placeholderSuccess").hide();
-        });
-        loadTitles();
-      },
-      fail: function(){
-        // console.log("EDIT QUIZ FAILED");
-      }
-    });
+      // console.log ("BEFORE EDIT QUIZ SEND");
+    },
+    complete: function() {
+      // console.log ("COMPLETE EDIT QUIZ LOADING");
+    },
+    success: function(data){
+      console.log("edited quiz sent");
+      $('#editQuiz').hide();
+      $('#placeholderSuccess > p > span').text("Quiz has been updated!");
+      $('#placeholderSuccess > p > span').append('&nbsp;');
+      $('#placeholderSuccess').show();
+      $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
+        $("#placeholderSuccess").hide();
+      });
+      loadTitles();
+    },
+    fail: function(){
+      // console.log("EDIT QUIZ FAILED");
+    }
+  });
 }
 
 function submitEditedQuiz(){

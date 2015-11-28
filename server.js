@@ -40,7 +40,9 @@ app.post('/quiz', function(req, res){
   var sentQuiz = req.body;
   var readQuiz = fs.readFileSync("data/allQuizzes.json", 'utf8');
   var jsonContent = JSON.parse(readQuiz);
-  sentQuiz["id"] = jsonContent[jsonContent.length-1]["id"] + 1;
+  if (jsonContent.length > 0) {
+    sentQuiz["id"] = jsonContent[jsonContent.length-1]["id"] + 1;
+  }
   jsonContent.push(sentQuiz);
 
   var jsonString = JSON.stringify(jsonContent);

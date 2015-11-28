@@ -290,6 +290,7 @@ $(document).ready(function() {
   $("#editQuizForm").on('click', '#createquizsubmit', function(e) {
     e.preventDefault();
     var radioChecked = true;
+    var textInput = true;
     $("#editQuiz > div").each(function() {
       var tempID = $(this).attr('id');
       var tempQuestionNum = parseInt(tempID.substring(11));
@@ -301,21 +302,19 @@ $(document).ready(function() {
 
     if($('input[type="text"]').not(document.getElementById("firstName")).filter(function () {
         return $.trim($(this).val()).length > 0
-      }).length == $('input[type="text"]').not(document.getElementById("firstName")).length) {
-      console.log ("all filled out");
-    }
-    else {
-      console.log ('missing fields');
+      }).length < $('input[type="text"]').not(document.getElementById("firstName")).length) {
+      console.log ("missing fields");
+      textInput = false;
     }
 
-    if (radioChecked) {
+    if (radioChecked && textInput) {
       submitCreatedQuiz();
     }
     else {
-      $('#placeholderWarning > p > span').text("Please select correct answers for each question!");
+      $('#placeholderWarning > p > span').text("Please select correct answers and fill out all text fields for each question!");
       $('#placeholderWarning > p > span').append('&nbsp;');
       $('#placeholderWarning').show();
-      $("#placeholderWarning").fadeTo(2000, 500).slideUp(500, function(){
+      $("#placeholderWarning").fadeTo(5000, 500).slideUp(500, function(){
         $("#placeholderWarning").hide();
       });
     }
@@ -882,7 +881,6 @@ function submitCreatedQuiz(){
     "questions": []
   };
   var divSize = $("#editQuiz > div").length;
-  console.log($("#editQuiz > div"));
   $("#editQuiz > div").each(function() {
     var tempID = $(this).attr('id');
     var tempQuestionNum = parseInt(tempID.substring(11));

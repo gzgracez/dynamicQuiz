@@ -213,7 +213,7 @@ $(document).ready(function() {
           $('#editQuizRemoveAns-' + tempQuestionNum + '-' + (tempAnswerNum - 1)).attr("id", "editQuizRemoveAns-" + tempQuestionNum + '-' + tempAnswerNum);
         }
         else {
-          $('#placeholderWarning > p > span').text("Reached maximum number of answers!");
+          $('#placeholderWarning > p > span').text("Cannot add answer choice - reached maximum number of answers!");
           $('#placeholderWarning > p > span').append('&nbsp;');
           $('#placeholderWarning').show();
           $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
@@ -233,7 +233,7 @@ $(document).ready(function() {
           $('#editQuizAddAns-' + tempQuestionNum + '-' + (tempAnswerNum + 1)).attr("id", "editQuizAddAns-" + tempQuestionNum + '-' + tempAnswerNum);
         } 
         else {
-          $('#placeholderWarning > p > span').text("Reached minimum number of answers!");
+          $('#placeholderWarning > p > span').text("Cannot remove answer choice - reached minimum number of answers!");
           $('#placeholderWarning > p > span').append('&nbsp;');
           $('#placeholderWarning').show();
           $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
@@ -253,7 +253,7 @@ $(document).ready(function() {
       $('#questiondiv' + tempQuestion).remove();
     } 
     else {
-      $('#placeholderWarning > p > span').text("Reached minimum number of questions!");
+      $('#placeholderWarning > p > span').text("Cannot remove question - reached minimum number of questions!");
       $('#placeholderWarning > p > span').append('&nbsp;');
       $('#placeholderWarning').show();
       $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
@@ -901,7 +901,7 @@ function addQuestion(tempQuestionNum) {
     $('<br>').appendTo('#questiondiv'+tempQuestionNum);
   } 
   else {
-    $('#placeholderWarning > p > span').text("Reached maximum number of questions!");
+    $('#placeholderWarning > p > span').text("Cannot add question - reached maximum number of questions!");
     $('#placeholderWarning > p > span').append('&nbsp;');
     $('#placeholderWarning').show();
     $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){

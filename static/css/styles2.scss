@@ -213,14 +213,14 @@ td{
   background: #0099FF;
 }
 
-#notifications {
+.customNotifications {
   position: fixed;
   right: 0px;
   width: 50%;
-  top: 5px; 
+  top: 5%; 
   div {
     margin-bottom: 5px;
-    margin-right: 5px;
+    margin-right: 5%;
     float: right;
   }
 }

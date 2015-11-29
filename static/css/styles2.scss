@@ -213,8 +213,12 @@ td{
   background: #0099FF;
 }
 
-.alert {  
+#notifications {
   position: fixed;
-  top: 5%;
-  right: 5%;
+  right: 0px;
+  width: 50%;
+  top: 5px; 
+  div {
+    margin-bottom: 5px;
+  }
 }

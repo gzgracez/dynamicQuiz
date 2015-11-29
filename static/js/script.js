@@ -267,7 +267,11 @@ $(document).ready(function() {
 
     $(':text').not(document.getElementById("firstName")).each(function() {
       if(!($.trim($(this).val()).length > 0)) {
+        $(this).css({ "border": '#FF0000 1px solid'});
         textInput = false;
+      }
+      else {
+        $(this).css({ "border": '1px solid #ccc'});
       }
     });
 
@@ -308,7 +312,11 @@ $(document).ready(function() {
 
     $(':text').not(document.getElementById("firstName")).each(function() {
       if(!($.trim($(this).val()).length > 0)) {
+        $(this).css({ "border": '#FF0000 1px solid'});
         textInput = false;
+      }
+      else {
+        $(this).css({ "border": '1px solid #ccc'});
       }
     });
 

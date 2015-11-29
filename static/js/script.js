@@ -21,6 +21,7 @@ var score = 0;
 var titles;
 var selectedQuiz = 0;
 var ids;
+var notificationFadeTime = 3000;
 
 // Initial setup
 $(document).ready(function() {
@@ -119,7 +120,7 @@ $(document).ready(function() {
     else {
       $('#quizSuccess').hide();
       $('#quizWarning').show();
-      $("#quizWarning").fadeTo(2000, 500).slideUp(500, function(){
+      $("#quizWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
         $("#quizWarning").hide();
       });
     }
@@ -148,7 +149,7 @@ $(document).ready(function() {
           // console.log("DELETE sent");
           $("delete_quiz").attr("disabled", false);
           $('#quizSuccess').show();
-          $("#quizSuccess").fadeTo(2000, 500).slideUp(500, function(){
+          $("#quizSuccess").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
             $("#quizSuccess").hide();
           });
           loadTitles();
@@ -163,7 +164,7 @@ $(document).ready(function() {
       // console.log(selectedQuiz);
       $('#quizSuccess').hide();
       $('#quizWarning').show();
-      $("#quizWarning").fadeTo(2000, 500).slideUp(500, function(){
+      $("#quizWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
         $("#quizWarning").hide();
       });
     }
@@ -210,8 +211,14 @@ $(document).ready(function() {
           }).appendTo('#answer' + tempQuestionNum);
           $(this).attr("id", "editQuizAddAns-" + tempQuestionNum + '-' + tempAnswerNum);
           $('#editQuizRemoveAns-' + tempQuestionNum + '-' + (tempAnswerNum - 1)).attr("id", "editQuizRemoveAns-" + tempQuestionNum + '-' + tempAnswerNum);
-        } else {
-          console.log("max num of answers");
+        }
+        else {
+          $('#placeholderWarning > p > span').text("Reached maximum number of answers!");
+          $('#placeholderWarning > p > span').append('&nbsp;');
+          $('#placeholderWarning').show();
+          $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
+            $("#placeholderWarning").hide();
+          });
         }
       }
       // remove answer
@@ -224,8 +231,14 @@ $(document).ready(function() {
           tempAnswerNum -= 1;
           $(this).attr("id", "editQuizRemoveAns-" + tempQuestionNum + '-' + tempAnswerNum);
           $('#editQuizAddAns-' + tempQuestionNum + '-' + (tempAnswerNum + 1)).attr("id", "editQuizAddAns-" + tempQuestionNum + '-' + tempAnswerNum);
-        } else {
-          console.log('min num of answers');
+        } 
+        else {
+          $('#placeholderWarning > p > span').text("Reached minimum number of answers!");
+          $('#placeholderWarning > p > span').append('&nbsp;');
+          $('#placeholderWarning').show();
+          $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
+            $("#placeholderWarning").hide();
+          });
         }
       }
       e.preventDefault();
@@ -240,12 +253,17 @@ $(document).ready(function() {
       $('#questiondiv' + tempQuestion).remove();
     } 
     else {
-      console.log("CANNOT DELETE MORE QUESTIONS");
-      }
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      return false;
-    });
+      $('#placeholderWarning > p > span').text("Reached minimum number of questions!");
+      $('#placeholderWarning > p > span').append('&nbsp;');
+      $('#placeholderWarning').show();
+      $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
+        $("#placeholderWarning").hide();
+      });
+    }
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  });
 
   $('#titlesDropdown').change(function() {
     $('#editQuiz').hide();
@@ -282,7 +300,7 @@ $(document).ready(function() {
       $('#placeholderWarning > p > span').text("Please select correct answers and fill out all text fields for each question!");
       $('#placeholderWarning > p > span').append('&nbsp;');
       $('#placeholderWarning').show();
-      $("#placeholderWarning").fadeTo(2000, 500).slideUp(500, function(){
+      $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
         $("#placeholderWarning").hide();
       });
     }
@@ -327,7 +345,7 @@ $(document).ready(function() {
       $('#placeholderWarning > p > span').text("Please select correct answers and fill out all text fields for each question!");
       $('#placeholderWarning > p > span').append('&nbsp;');
       $('#placeholderWarning').show();
-      $("#placeholderWarning").fadeTo(5000, 500).slideUp(500, function(){
+      $("#placeholderWarning").fadeTo(6000, 500).slideUp(500, function(){
         $("#placeholderWarning").hide();
       });
     }
@@ -338,7 +356,7 @@ function nameForm(){
   name = $('#nameForm').serializeArray()[0]["value"];
   if (name.length === 0) {
     $('#nameFormWarning').fadeIn();
-    $("#nameFormWarning").fadeTo(2000, 500).slideUp(500, function(){
+    $("#nameFormWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
       $("#nameFormWarning").hide();
     });
   }
@@ -409,7 +427,7 @@ function loadDefaultQuizzes() {
       $('#placeholderSuccess > p > span').text("Quizzes have been reset!");
       $('#placeholderSuccess > p > span').append('&nbsp;');
       $('#placeholderSuccess').show();
-      $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
+      $("#placeholderSuccess").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
         $("#placeholderSuccess").hide();
       });
       $("#reset_quiz").attr("disabled", false);
@@ -883,7 +901,12 @@ function addQuestion(tempQuestionNum) {
     $('<br>').appendTo('#questiondiv'+tempQuestionNum);
   } 
   else {
-    console.log("CANNOT ADD MORE QUESTIONS");
+    $('#placeholderWarning > p > span').text("Reached maximum number of questions!");
+    $('#placeholderWarning > p > span').append('&nbsp;');
+    $('#placeholderWarning').show();
+    $("#placeholderWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
+      $("#placeholderWarning").hide();
+    });
   }
 }
 
@@ -938,7 +961,7 @@ function submitCreatedQuiz(){
       $('#placeholderSuccess > p > span').text("Quiz has been updated!");
       $('#placeholderSuccess > p > span').append('&nbsp;');
       $('#placeholderSuccess').show();
-      $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
+      $("#placeholderSuccess").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
         $("#placeholderSuccess").hide();
       });
       loadTitles();
@@ -1001,7 +1024,7 @@ function submitEditedQuiz(){
         $('#placeholderSuccess > p > span').text("Quiz has been updated!");
         $('#placeholderSuccess > p > span').append('&nbsp;');
         $('#placeholderSuccess').show();
-        $("#placeholderSuccess").fadeTo(2000, 500).slideUp(500, function(){
+        $("#placeholderSuccess").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
           $("#placeholderSuccess").hide();
         });
       },
@@ -1289,7 +1312,7 @@ function nextQuestion() {
       // if no answer is checked
       if (!$("input[name='answers']").is(':checked')){
         $('#answerWarning').fadeIn();
-        $("#answerWarning").fadeTo(2000, 500).slideUp(500, function(){
+        $("#answerWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
           $("#answerWarning").hide();
         });
         if (currentQuestion === 0) {
@@ -1327,7 +1350,7 @@ function nextQuestion() {
     // if answer is not checked
     if (!$("input[name='answers']").is(':checked')){
       $('#answerWarning').show();
-      $("#answerWarning").fadeTo(2000, 500).slideUp(500, function(){
+      $("#answerWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
         $("#answerWarning").hide();
       });
     }

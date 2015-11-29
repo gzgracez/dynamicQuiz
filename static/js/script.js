@@ -265,12 +265,11 @@ $(document).ready(function() {
       }
     });
 
-    if($('input[type="text"]').not(document.getElementById("firstName")).filter(function () {
-        return $.trim($(this).val()).length > 0;
-      }).length < $('input[type="text"]').not(document.getElementById("firstName")).length) {
-      console.log ("missing fields");
-      textInput = false;
-    }
+    $(':text').not(document.getElementById("firstName")).each(function() {
+      if(!($.trim($(this).val()).length > 0)) {
+        textInput = false;
+      }
+    });
 
     if (radioChecked && textInput) {
       submitEditedQuiz();
@@ -307,12 +306,11 @@ $(document).ready(function() {
       }
     });
 
-    if($('input[type="text"]').not(document.getElementById("firstName")).filter(function () {
-        return $.trim($(this).val()).length > 0;
-      }).length < $('input[type="text"]').not(document.getElementById("firstName")).length) {
-      console.log ("missing fields");
-      textInput = false;
-    }
+    $(':text').not(document.getElementById("firstName")).each(function() {
+      if(!($.trim($(this).val()).length > 0)) {
+        textInput = false;
+      }
+    });
 
     if (radioChecked && textInput) {
       submitCreatedQuiz();

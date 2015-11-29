@@ -172,7 +172,7 @@ $(document).ready(function() {
   });
 
   document.getElementById("reset_quiz").addEventListener("click", function(e) {
-    loadDefaultQuizzes();
+    resetQuizzes();
     e.preventDefault();
   });
 
@@ -411,7 +411,7 @@ function loadTitles(){
   });
 }
 
-function loadDefaultQuizzes() {
+function resetQuizzes() {
   $.ajax({
   type:"GET",
   url: "reset",
@@ -446,7 +446,7 @@ function loadDefaultQuizzes() {
     always: function() {
       $('#reload').on('click', function(e){
         e.preventDefault();
-        loadDefaultQuizzes();
+        resetQuizzes();
       });
     }
   });
@@ -530,6 +530,20 @@ function loadQuizToCreate() {
     id: 'quizMetaTagsInput',
     name: 'metaTags',
     class: 'form-control'
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
+
+  $('<label>').attr({
+    for: 'difficultyLabel',
+      id: 'difficultyLabel'
+  }).appendTo('#editQuiz');
+  $("#difficultyLabel").text("Quiz Difficulty:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'difficultyInput',
+    name: 'difficulty',
+    class: 'form-control',
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -717,6 +731,22 @@ function editQuizFormat(){
     value: quiz["meta_tags"]
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
+
+  $('<label>').attr({
+    for: 'difficultyLabel',
+      id: 'difficultyLabel'
+  }).appendTo('#editQuiz');
+  $("#difficultyLabel").text("Quiz Difficulty:");
+  $('<br>').appendTo('#editQuiz');
+  $('<input>').attr({
+    type: 'text',
+    id: 'difficultyInput',
+    name: 'difficulty',
+    class: 'form-control',
+    value: quiz["difficulty"]
+  }).appendTo('#editQuiz');
+  $('<br>').appendTo('#editQuiz');
+
   for (var i = 0; i < quizLength; i++) {
     $('<div>').attr({
       class: 'container',
@@ -915,12 +945,13 @@ function submitCreatedQuiz(){
   var tempTitle = $("#titleInput").val();
   var tempQuizMetaTags = $("#quizMetaTagsInput").val().split(",");
   var tempQuizDescription = $("#descriptionInput").val();
+  var tempQuizDifficulty = $("#difficultyInput").val();
   var tempJSON = {
     "id": 0,
     "title": tempTitle,
     "description": tempQuizDescription,
     "meta_tags": tempQuizMetaTags,
-    "difficulty": "10",
+    "difficulty": tempQuizDifficulty,
     "questions": []
   };
   var divSize = $("#editQuiz > div").length;
@@ -977,12 +1008,13 @@ function submitEditedQuiz(){
   var tempTitle = $("#titleInput").val();
   var tempQuizMetaTags = $("#quizMetaTagsInput").val().split(",");
   var tempQuizDescription = $("#descriptionInput").val();
+  var tempQuizDifficulty = $("#difficultyInput").val();
   var tempJSON = {
     "id": quiz["id"],
     "title": tempTitle,
     "description": tempQuizDescription,
     "meta_tags": tempQuizMetaTags,
-    "difficulty": quiz["difficulty"],
+    "difficulty": tempQuizDifficulty,
     "questions": []
   };
   var divSize = $("#editQuiz > div").length;

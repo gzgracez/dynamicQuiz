@@ -355,7 +355,7 @@ $(document).ready(function() {
 function nameForm(){
   name = $('#nameForm').serializeArray()[0]["value"];
   if (name.length === 0) {
-    $('#nameFormWarning').fadeIn();
+    $('#nameFormWarning').show();
     $("#nameFormWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
       $("#nameFormWarning").hide();
     });
@@ -1344,7 +1344,7 @@ function nextQuestion() {
     if (currentQuestion > -1) {
       // if no answer is checked
       if (!$("input[name='answers']").is(':checked')){
-        $('#answerWarning').fadeIn();
+        $('#answerWarning').show();
         $("#answerWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
           $("#answerWarning").hide();
         });

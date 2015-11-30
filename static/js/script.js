@@ -205,6 +205,7 @@ $(document).ready(function() {
             id: 'answer-' + tempQuestionNum + '-' + tempAnswerNum,
             class: 'form-control editanswers',
             name: 'answers',
+            placeholder: 'Answer Choice'
           }).appendTo('#answer' + tempQuestionNum);
           $('<br>').attr({
             id: 'br-' + tempQuestionNum + '-' + tempAnswerNum
@@ -501,7 +502,8 @@ function loadQuizToCreate() {
     type: 'text',
     id: 'titleInput',
     name: 'title',
-    class: 'form-control'
+    class: 'form-control',
+    placeholder: "Quiz Title"
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -515,7 +517,8 @@ function loadQuizToCreate() {
     type: 'text',
     id: 'descriptionInput',
     name: 'metaTags',
-    class: 'form-control'
+    class: 'form-control',
+    placeholder: "Quiz Description"
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -529,7 +532,8 @@ function loadQuizToCreate() {
     type: 'text',
     id: 'quizMetaTagsInput',
     name: 'metaTags',
-    class: 'form-control'
+    class: 'form-control',
+    placeholder: 'Quiz Meta Tags (ex: tag, tag, tag)'
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -544,6 +548,7 @@ function loadQuizToCreate() {
     id: 'difficultyInput',
     name: 'difficulty',
     class: 'form-control',
+    placeholder: "Quiz Difficulty"
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -570,7 +575,8 @@ function loadQuizToCreate() {
         type: 'text',
         id: 'question'+tempQuestionNum,
         name: 'questions',
-        class: 'form-control'
+        class: 'form-control',
+        placeholder: "Question"
       }).appendTo('#questiondiv'+tempQuestionNum);
       $('<br>').appendTo('#questiondiv'+tempQuestionNum);
       $('<label>').attr({
@@ -607,7 +613,8 @@ function loadQuizToCreate() {
           id: 'answer-'+tempQuestionNum+'-'+a,
           type: 'text',
           class: 'form-control editanswers',
-          name: 'answers'
+          name: 'answers',
+          placeholder: "Answer Choice"
         }).appendTo('#answer' + tempQuestionNum);
         $('<br>').attr({
           id: 'br-'+tempQuestionNum+'-'+a
@@ -625,7 +632,8 @@ function loadQuizToCreate() {
         type: 'text',
         id: 'metaTag'+tempQuestionNum,
         name: 'metaTag',
-        class: 'form-control'
+        class: 'form-control',
+        placeholder: 'Meta Tag for Question (ex: tag, tag, tag)'
       }).appendTo('#questiondiv'+tempQuestionNum);
       $('<br>').appendTo('#questiondiv'+tempQuestionNum);
     }
@@ -698,7 +706,8 @@ function editQuizFormat(){
     id: 'titleInput',
     name: 'title',
     class: 'form-control',
-    value: quiz["title"]
+    value: quiz["title"],
+    placeholder: "Quiz Title"
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -713,7 +722,8 @@ function editQuizFormat(){
     id: 'descriptionInput',
     name: 'metaTags',
     class: 'form-control',
-    value: quiz["description"]
+    value: quiz["description"],
+    placeholder: "Quiz Description"
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -728,7 +738,8 @@ function editQuizFormat(){
     id: 'quizMetaTagsInput',
     name: 'metaTags',
     class: 'form-control',
-    value: quiz["meta_tags"]
+    value: quiz["meta_tags"],
+    placeholder: "Quiz Meta Tags"
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -743,7 +754,8 @@ function editQuizFormat(){
     id: 'difficultyInput',
     name: 'difficulty',
     class: 'form-control',
-    value: quiz["difficulty"]
+    value: quiz["difficulty"],
+    placeholder: "Quiz Difficulty"
   }).appendTo('#editQuiz');
   $('<br>').appendTo('#editQuiz');
 
@@ -768,7 +780,8 @@ function editQuizFormat(){
       id: 'question'+i,
       name: 'questions',
       class: 'form-control',
-      value: quiz["questions"][i]["text"]
+      value: quiz["questions"][i]["text"],
+      placeholder: "Question"
     }).appendTo('#questiondiv'+i);
     $('<br>').appendTo('#questiondiv'+i);
     $('<label>').attr({
@@ -806,7 +819,8 @@ function editQuizFormat(){
         type: 'text',
         class: 'form-control editanswers',
         name: 'answers',
-        value: quiz["questions"][i]["answers"][a]
+        value: quiz["questions"][i]["answers"][a],
+        placeholder: "Answer Choice"
       }).appendTo('#answer' + i);
       if (quiz["questions"][i]["correct_answer"] === a) {
         document.getElementById('answer-'+i+'-'+a).style.borderColor = "green";
@@ -830,7 +844,8 @@ function editQuizFormat(){
       id: 'metaTag'+i,
       name: 'metaTag',
       class: 'form-control',
-      value: quiz["questions"][i]["meta_tags"]
+      value: quiz["questions"][i]["meta_tags"],
+      placeholder: 'Meta Tag for Question (ex: tag, tag, tag)'
     }).appendTo('#questiondiv'+i);
     $('<br>').appendTo('#questiondiv'+i);
   }
@@ -872,7 +887,8 @@ function addQuestion(tempQuestionNum) {
       type: 'text',
       id: 'question'+tempQuestionNum,
       name: 'questions',
-      class: 'form-control'
+      class: 'form-control',
+      placeholder: "Question"
     }).appendTo('#questiondiv'+tempQuestionNum);
     $('<br>').appendTo('#questiondiv'+tempQuestionNum);
     $('<label>').attr({
@@ -909,7 +925,8 @@ function addQuestion(tempQuestionNum) {
         id: 'answer-'+tempQuestionNum+'-'+a,
         type: 'text',
         class: 'form-control editanswers',
-        name: 'answers'
+        name: 'answers',
+        placeholder: "Answer Choice"
       }).appendTo('#answer' + tempQuestionNum);
       $('<br>').attr({
         id: 'br-'+tempQuestionNum+'-'+a
@@ -927,7 +944,8 @@ function addQuestion(tempQuestionNum) {
       type: 'text',
       id: 'metaTag'+tempQuestionNum,
       name: 'metaTag',
-      class: 'form-control'
+      class: 'form-control',
+      placeholder: "Meta Tags (ex: tag, tag, tag)"
     }).appendTo('#questiondiv'+tempQuestionNum);
     $('<br>').appendTo('#questiondiv'+tempQuestionNum);
   } 

@@ -357,12 +357,14 @@ $(document).ready(function() {
 function nameForm(){
   name = $('#nameForm').serializeArray()[0]["value"];
   if (name.length === 0) {
+    $('#firstName').css({ "border": '1px solid #FF0000'});
     $('#nameFormWarning').show();
     $("#nameFormWarning").fadeTo(notificationFadeTime, 500).slideUp(500, function(){
       $("#nameFormWarning").hide();
     });
   }
   else {
+    $('#firstName').css({ "border": '1px solid #ccc'});
     $('#nameFormWarning').hide();
     $('#nameForm').hide();
     $('#welcome').text("Welcome " + name + "!");

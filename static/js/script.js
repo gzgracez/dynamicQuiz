@@ -1075,6 +1075,7 @@ function submitEditedQuiz(){
       success: function(data){
         // console.log("edited quiz sent");
         $('#editQuiz').hide();
+        loadTitles();
         $('#placeholderSuccess > p > span').text("Quiz has been updated!");
         $('#placeholderSuccess > p > span').append('&nbsp;');
         $('#placeholderSuccess').show();

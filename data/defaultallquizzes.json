@@ -1420,7 +1420,7 @@
             "argentina",
             "math"
         ],
-        "diffifculty": "1-20",
+        "difficulty": "1-20",
         "questions": [
             {
                 "text": "1). What is Alastairs middle name?",
@@ -1889,6 +1889,7 @@
         "title": "Can you guess who said it?",
         "description": "Quiz by Nathalie Young",
         "difficulty": 10,
+        "meta_tags": "quiz",
         "questions": [
             {
                 "text": "Happiness in not something ready made. It comes from your own actions",

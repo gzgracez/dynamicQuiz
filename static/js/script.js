@@ -945,7 +945,7 @@ function addQuestion(tempQuestionNum) {
       id: 'metaTag'+tempQuestionNum,
       name: 'metaTag',
       class: 'form-control',
-      placeholder: "Meta Tags (ex: tag, tag, tag)"
+      placeholder: "Meta Tags for Question (ex: tag, tag, tag)"
     }).appendTo('#questiondiv'+tempQuestionNum);
     $('<br>').appendTo('#questiondiv'+tempQuestionNum);
   } 

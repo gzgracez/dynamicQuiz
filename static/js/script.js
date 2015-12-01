@@ -423,7 +423,7 @@ function resetQuizzes() {
       // console.log ("BEFORE RESET SEND");
     },
     complete: function() {
-      console.log ("COMPLETE RESET LOADING");
+      // console.log ("COMPLETE RESET LOADING");
       $('#ajaxloading').hide();
       $('#backHome').hide();
       $('#reload').hide();
@@ -1007,7 +1007,7 @@ function submitCreatedQuiz(){
       // console.log ("COMPLETE EDIT QUIZ LOADING");
     },
     success: function(data){
-      console.log("edited quiz sent");
+      // console.log("edited quiz sent");
       $('#editQuiz').hide();
       $('#placeholderSuccess > p > span').text("Quiz has been updated!");
       $('#placeholderSuccess > p > span').append('&nbsp;');
@@ -1037,7 +1037,7 @@ function submitEditedQuiz(){
     "questions": []
   };
   var divSize = $("#editQuiz > div").length;
-  console.log($("#editQuiz > div"));
+  // console.log($("#editQuiz > div"));
   $("#editQuiz > div").each(function() {
     var tempID = $(this).attr('id');
     var tempQuestionNum = parseInt(tempID.substring(11));
@@ -1071,7 +1071,7 @@ function submitEditedQuiz(){
         // console.log ("COMPLETE EDIT QUIZ LOADING");
       },
       success: function(data){
-        console.log("edited quiz sent");
+        // console.log("edited quiz sent");
         $('#editQuiz').hide();
         $('#placeholderSuccess > p > span').text("Quiz has been updated!");
         $('#placeholderSuccess > p > span').append('&nbsp;');
@@ -1260,7 +1260,7 @@ function userScore() {
         // console.log ("COMPLETE USER LOADING");
       },
       success: function(data){
-        console.log("users sent");
+        // console.log("users sent");
       },
       fail: function(){
         // console.log("USER FAILED");
@@ -1269,7 +1269,7 @@ function userScore() {
     createPieChart(quizLength-score, score, ((quizLength-score)*100)/quizLength, 100*score/quizLength);
   })
   .fail(function() {
-    console.log("Failed to load user JSON");
+    // console.log("Failed to load user JSON");
     for (var i = 0; i < quizLength; i++){
       if (userAnswers[i][1]) {
         quiz["questions"][i]["global_correct"]+=1;
@@ -1437,7 +1437,7 @@ function nextQuestion() {
           // console.log ("COMPLETE LOADING");
         },
         success: function(data){
-          console.log("quiz sent");
+          // console.log("quiz sent");
         },
         fail: function(){
           // console.log("FAILED");

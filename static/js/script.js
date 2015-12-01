@@ -633,7 +633,7 @@ function loadQuizToCreate() {
         id: 'metaTag'+tempQuestionNum,
         name: 'metaTag',
         class: 'form-control',
-        placeholder: 'Meta Tag for Question (ex: tag, tag, tag)'
+        placeholder: 'Meta Tags for Question (ex: tag, tag, tag)'
       }).appendTo('#questiondiv'+tempQuestionNum);
       $('<br>').appendTo('#questiondiv'+tempQuestionNum);
     }
@@ -845,7 +845,7 @@ function editQuizFormat(){
       name: 'metaTag',
       class: 'form-control',
       value: quiz["questions"][i]["meta_tags"],
-      placeholder: 'Meta Tag for Question (ex: tag, tag, tag)'
+      placeholder: 'Meta Tags for Question (ex: tag, tag, tag)'
     }).appendTo('#questiondiv'+i);
     $('<br>').appendTo('#questiondiv'+i);
   }

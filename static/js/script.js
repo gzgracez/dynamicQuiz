@@ -27,7 +27,7 @@ var notificationFadeTime = 3000;
 $(document).ready(function() {
   $.getJSON('titlesandids')
   .done(function (data) {
-    console.log(data);
+    // console.log(data);
     titles = data.slice(0,data.length/2);
     ids = data.slice(data.length/2);
     if (titles === undefined) {
@@ -74,7 +74,7 @@ $(document).ready(function() {
 
   //start quiz
   document.getElementById("start_quiz").addEventListener("click", function(e) {
-    console.log("start");
+    // console.log("start");
     $('#editQuiz').hide();
     e.preventDefault();
     nameForm();
@@ -82,7 +82,7 @@ $(document).ready(function() {
 
   //create quiz
   document.getElementById("create_quiz").addEventListener("click", function(e) {
-    console.log("create");
+    // console.log("create");
     if ($("#createquizsubmit").length) {
       if ($('#editQuiz').is(":hidden")) {
         loadQuizToCreate();
@@ -99,9 +99,9 @@ $(document).ready(function() {
 
   //update quiz
   document.getElementById("update_quiz").addEventListener("click", function(e) {
-    console.log("update");
-    console.log($('#titlesDropdown option:selected').text());
-    console.log(titles.indexOf($('#titlesDropdown option:selected').text()));
+    // console.log("update");
+    // console.log($('#titlesDropdown option:selected').text());
+    // console.log(titles.indexOf($('#titlesDropdown option:selected').text()));
     selectedQuiz = ids[titles.indexOf($('#titlesDropdown option:selected').text())];
     // if there exists a quiz
     if (selectedQuiz > -1) {
@@ -202,6 +202,7 @@ $(document).ready(function() {
             id: 'answerradiobutton-' + tempQuestionNum + '-' + tempAnswerNum
           }).appendTo('#answer' + tempQuestionNum);
           $('<input>').attr({
+            type: 'text',
             id: 'answer-' + tempQuestionNum + '-' + tempAnswerNum,
             class: 'form-control editanswers',
             name: 'answers',
@@ -224,7 +225,7 @@ $(document).ready(function() {
       }
       // remove answer
       else {
-        console.log("remove");
+        // console.log("remove");
         if ((tempAnswerNum - 1) > 0) {
           $('#answerradiobutton-' + tempQuestionNum + '-' + tempAnswerNum).remove();
           $('#answer-' + tempQuestionNum + '-' + tempAnswerNum).remove();

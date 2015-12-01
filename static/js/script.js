@@ -1,15 +1,12 @@
 /*
-Minimum of 3 questions per quiz
-Between 2 and 7 answer choices per question
+* Option to reset to the default set of quizzes
+* Top ten users
+  * Keeps track of users (by username) who have taken the quiz multiple times (averages user's score)
+* Dismiss-able notifications/alerts
+* Forms and multiple choice answers can be submitted with the ```enter``` key
+* Checks that all text inputs and radio buttons have been entered/selected before submission of create and edit quiz
 */
 
-/* 
-Meta tags for quiz - unnecessary
-Set title based on selected quiz
-Change dropdown CSS
-*/
-
-// Make separate method for checking which answer is selected
 var quiz;
 var name = "Name";
 var currentQuestion = -1;
